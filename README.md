@@ -17,6 +17,7 @@ Static Jekyll TinyPress driven website to replace solrevdev.com blogger account
 * https://dnsimple.com/dashboard
 * https://help.github.com/articles/troubleshooting-jekyll-builds/
 * https://gist.github.com/razor-x/8166421
+* https://github.com/mfenner/jekyll-travis
 
 
 
