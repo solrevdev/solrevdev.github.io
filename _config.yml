@@ -6,3 +6,4 @@ title: solrevdev
 tagline: developer / devops / comedy nerd / amateur boxer
 description: A blog about things I find on the web, tools and technologies that I like.
 paginate: 5
+exclude: ['Rakefile']
