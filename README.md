@@ -3,6 +3,9 @@ Static Jekyll TinyPress driven website to replace solrevdev.com blogger account
 
 ## travis and github custom domain resources
 
+* http://sgoettschkes.me/p/deploying-a-jekyll-website-to-github-pages-using-travisci.html
+* http://intenseagile.com/2015/04/27/running-jekyll-on-codeanywhere.html
+
 * http://www.steveklabnik.com/automatically_update_github_pages_with_travis_example/
 * http://awestruct.org/auto-deploy-to-github-pages/
 * https://github.com/mbonaci/mbo-storm/wiki/Integrate-Travis-CI-with-your-GitHub-repo
@@ -18,6 +21,7 @@ Static Jekyll TinyPress driven website to replace solrevdev.com blogger account
 * https://help.github.com/articles/troubleshooting-jekyll-builds/
 * https://gist.github.com/razor-x/8166421
 * https://github.com/mfenner/jekyll-travis
+
 
 
 
