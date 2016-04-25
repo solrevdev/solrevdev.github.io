@@ -1,6 +1,29 @@
 # solrevdev.github.io
 Static Jekyll TinyPress driven website to replace solrevdev.com blogger account
 
+## jekyll commands used to get setup
+
+```shell
+sudo chown -R $(whoami) /usr/local
+
+sudo chown -R $(whoami) /Library/Ruby
+
+brew install ruby
+
+gem install bundler
+
+gem install rouge
+
+gem update --system
+
+sudo gem cleanup
+
+bundle install
+
+bundle exec jekyll serve
+
+```
+
 ## travis and github custom domain resources
 
 * http://sgoettschkes.me/p/deploying-a-jekyll-website-to-github-pages-using-travisci.html
