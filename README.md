@@ -32,6 +32,15 @@ ruby -rubygems -e 'require "jekyll-import";
     })'
 
 
+bundle exec htmlproofer ./_site
+
+bundle exec htmlproofer ./_site --check-html --disable-external --checks-to-ignore ImageCheck,LinkCheck, HtmlCheck
+
+bundle exec htmlproofer ./_site --disable-external --checks-to-ignore ImageCheck,LinkCheck,HtmlCheck
+
+htmlproofer ./_site
+
+
 ```
 
 ## travis and github custom domain resources
