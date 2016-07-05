@@ -1,0 +1,12 @@
+---
+layout: post
+title: Cross-thread operations with PostSharp
+date: '2010-01-29T23:01:00.001Z'
+author: solrevdev
+tags: 
+modified_time: '2010-01-29T23:01:16.970Z'
+blogger_id: tag:blogger.com,1999:blog-31446756.post-8280986501347764851
+blogger_orig_url: http://www.solrevdev.com/2010/01/cross-thread-operations-with-postsharp.html
+---
+
+ <div class='posterous_autopost'><div class="posterous_bookmarklet_entry"> <blockquote class="posterous_long_quote"><div class="line alt1"><table><tr><td class="number"><code>1</code></td><td class="content"><code class="csharp keyword">public</code> <code class="csharp keyword">void</code> <code class="csharp plain">ShowStatus(ApplicationStatus status)</code></td></tr></table></div><div class="line alt2"><table><tr><td class="number"><code>2</code></td><td class="content"><code class="csharp plain">{</code></td></tr></table></div><div class="line alt1"><table><tr><td class="number"><code>3</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">this</code><code class="csharp plain">._lblServiceAddress.Text = </code><code class="csharp string">"Connected to: "</code></td></tr></table></div><div class="line alt2"><table><tr><td class="number"><code>4</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">+ status.WebServiceAddress;</code></td></tr></table></div><div class="line alt1"><table><tr><td class="number"><code>5</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp keyword">this</code><code class="csharp plain">._lblUserId.Text = </code><code class="csharp string">"Working as: "</code></td></tr></table></div><div class="line alt2"><table><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="csharp plain">+ status.UserId;</code></td></tr></table></div><div class="line alt1"><table><tr><td class="number"><code>7</code></td><td class="content"><code class="csharp plain">}</code></td></tr></table></div></blockquote>    <div class="posterous_quote_citation">via <a href="http://www.lesnikowski.com/blog/index.php/cross-thread-operations-with-postsharp/">lesnikowski.com</a></div> <p></p></div> <p style="font-size: 10px;"> <a href="http://posterous.com">Posted via web</a>  from <a href="http://solrev.posterous.com/cross-thread-operations-with-postsharp">solution revolution</a> </p> </div>  
