@@ -1,15 +1,12 @@
 ---
 layout: post
-title: "My new Jekyll and Git driven static website hosted on GitHub"
+title: "New website"
 author: "John Smith"
 tags:
 - "#jekyll"
 - "#git"
 - "#github"
 ---
-
-## New website
-
 
 So, I have had a blog for quite a long time and have hosted it on various platforms such as [Posterous](https://en.wikipedia.org/wiki/Posterous), [Passle](https://home.passle.net/), [Amazon AWS S3](http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html) and finally ended up on [Blogger](https://www.blogger.com/home). 
 
