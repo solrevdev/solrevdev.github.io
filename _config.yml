@@ -1,9 +1,29 @@
-excerpt_separator: ""
+# Dependencies
 highlighter: rouge
 markdown: kramdown
-url: http://solrevdev.github.io
-title: solrevdev
-tagline: developer / devops / comedy nerd / amateur boxer
-description: A blog about things I find on the web, tools and technologies that I like.
+
+# Permalinks
+permalink:        pretty
+# relative_permalinks: true
+excerpt_separator: ""
+
+# Setup
+title:            'solrevdev'
+tagline:          'developer / devops / comedy nerd / full time carer'
+description:      'A blog about things I find on the web, tools and technologies that I like.'
+url:              'http://www.solrevdev.com'
+baseurl:          /
+
+author:
+  name:           'John Smith'
+  url:            'http://www.solrevdev.com/about/'
+
 paginate: 5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/solrevdev/solrevdev.github.io
+
 exclude: ['Rakefile', 'vendor']
