@@ -127,6 +127,9 @@ bundle install
 
 bundle exec jekyll serve
 
+bundle exec jekyll serve --drafts
+
+
 gem install jekyll-import
 
 ruby -rubygems -e 'require "jekyll-import";
