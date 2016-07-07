@@ -20,3 +20,9 @@ In fact just like this!
 ---
 
 ![alt text](http://static.solrevdev.com/blog/blogging-from-mobile-devices_2.png "Markdown")
+
+I can even embed some code snippets like this: 
+
+{% gist 548035 %}
+
+https://gist.github.com/solrevdev/548035
