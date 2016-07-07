@@ -25,4 +25,3 @@ I can even embed some code snippets like this:
 
 {% gist 548035 %}
 
-https://gist.github.com/solrevdev/548035
