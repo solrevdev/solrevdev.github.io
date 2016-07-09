@@ -5,6 +5,7 @@ author: "John Smith"
 tags:
 - "#servicestack"
 - "#gist"
+- "#orm"
 ---
 
 I am a big fan of the [ServiceStack OrmLite](https://github.com/ServiceStack/ServiceStack.OrmLite) framework. 
@@ -19,7 +20,7 @@ I have  been working on a fairly big project and have abstracted the data access
 
 So here is an example of how I have done that:
 
-{% gist solrevdev/d714238fb9b6b17a9f7a89463aa09f29 %}
+{% gist d714238fb9b6b17a9f7a89463aa09f29 %}
 
 The ServiceStack OrmLite API is very nice and maps to the `IDbConnection`   interface nicely.
 
