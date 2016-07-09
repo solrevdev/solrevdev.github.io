@@ -3,7 +3,7 @@ highlighter: rouge
 markdown: kramdown
 
 # Permalinks
-permalink:        pretty
+# permalink:        pretty
 # relative_permalinks: true
 excerpt_separator: ""
 
