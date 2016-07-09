@@ -1,7 +1,10 @@
 ---
 layout: post
 title: "Sometimes sleep is best"
-tags:sleep insomnia mac malware 
+author: "John Smith"
+tags:
+- "#sleep"
+- "#insomnia"
 ---
 
 ![alt text](http://static.solrevdev.com.s3.amazonaws.com/blog/gyroscope/2016-07-08-sleep_1.jpg "Sleep graph from Gyroscope App")
@@ -16,6 +19,5 @@ The malware was I suspect from a chrome extension and removing that and installi
 The malware was a variant of VpnApps and neither [Sophos](https://www.sophos.com/en-us.aspx) or [Malwarebytes](https://www.malwarebytes.com/) could shift it. 
 
 Oh well, today a fresh day and have sleep behind me as the image from my [Gyroscope app](https://gyrosco.pe/) shows.
-
 
 
