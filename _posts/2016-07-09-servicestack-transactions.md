@@ -22,7 +22,7 @@ So here is an example of how I have done that:
 
 {% gist d714238fb9b6b17a9f7a89463aa09f29 %}
 
-The ServiceStack OrmLite API is very nice and maps to the `IDbConnection`   interface nicely.
+The ServiceStack OrmLite API is very nice and maps to the `IDbConnection`   interface nicely. Do check it out. 
 
 ![alt text](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/ormlite/OrmLiteApi.png "ServiceStack OrmLite Interface Image")
 
