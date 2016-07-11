@@ -25,5 +25,8 @@ version:          2.1.0
 
 github:
   repo:           https://github.com/solrevdev/solrevdev.github.io
+  
+gems:
+  - jekyll-sitemap
 
 exclude: ['Rakefile', 'vendor']
