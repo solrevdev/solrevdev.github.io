@@ -4,7 +4,7 @@ title: "Blogging on mobile devices"
 tags:
 ---
 
-So, when I am at my laptop I can draft a blog post using my text editor of choice using the markdown and commit the file to git. 
+So, when I am at my laptop I can draft a blog post using my text editor of choice using the markdown markup language and `git commit` the file to git. 
 
 Then using Jekyll i can build the static pages and a `git push` will deploy the new post. 
 
