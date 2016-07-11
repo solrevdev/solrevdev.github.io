@@ -1,6 +1,6 @@
 # Plugins
 gems:
-  - 'github-pages'
+  - github-pages
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
@@ -11,9 +11,7 @@ highlighter: rouge
 markdown: kramdown
 
 # Permalinks
-# permalink:        pretty
-# relative_permalinks: true
-excerpt_separator: ""
+excerpt_separator: ''
 
 # Setup
 title:            'solrevdev'
@@ -30,7 +28,7 @@ author:
   github:         'https://github.com/solrevdev'
   facebook:       'https://www.facebook.com/solrevdevtechradar'
   instagram:      'https://www.instagram.com/solrevdev'
-  twitter         'https://www.twitter.com/solrevdev'
+  twitter:        'https://www.twitter.com/solrevdev'
 
 # Outputting
 paginate: 5
