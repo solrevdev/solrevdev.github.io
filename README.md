@@ -1,5 +1,11 @@
 # solrevdev.github.io
+
+[![Build Status](https://travis-ci.org/solrevdev/solrevdev.github.io.svg?branch=master)](https://travis-ci.org/solrevdev/solrevdev.github.io)
+
+
 Static [Jekyll](http://jekyllrb.com) driven website to replace solrevdev.com blogger account
+
+
 
 It is a brazen two-column  theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](http://getpoole.com), the Jekyll butler.
 
