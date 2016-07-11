@@ -1,9 +1,22 @@
 language: ruby
 rvm:
+- 2.0
 - 2.1
+- 2.2
+
+before_install:
+  - rvm install 2.2
+  - rvm use 2.2 --fuzzy
 
 before_script:
- - chmod +x ./script/cibuild # or do this locally and commit
+  - npm install -g gulp
+  - npm install -g bower
+  - gem install jekyll
+  - gem install jekyll-paginate
+  - gem install jekyll-sitemap
+  - gem install jekyll-feed
+  - gem install html-proofer
+  - chmod +x ./script/cibuild # or do this locally and commit
 
 # Assume bundler is being used, therefore
 # the `install` step will run `bundle install` by default.
