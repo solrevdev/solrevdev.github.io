@@ -7,7 +7,8 @@ rvm:
 before_install:
   - rvm install 2.2
   - rvm use 2.2 --fuzzy
-  - 'npm install npm -g'
+  - npm install npm -g  
+  - npm update -g npm
 
 before_script:
   - npm install -g gulp
