@@ -8,7 +8,7 @@ tags:
 - "#mono"
 ---
 
-In my [last post]({% post_url 2016-07-12-xamarin-servicestack-mono-platform-helper %}) I [tweeted](https://twitter.com/solrevdev/status/752628079776919552) out a link about me using a custom `IsRunninOnMono()` method and enjoying using the Service Stack library with Xamarin on a Mac to develop on. 
+In my [last post]({% post_url 2016-07-11-xamarin-servicestack-mono-platform-helper %}) I [tweeted](https://twitter.com/solrevdev/status/752628079776919552) out a link about me using a custom `IsRunninOnMono()` method and enjoying using the Service Stack library with Xamarin on a Mac to develop on. 
 
 
 Well, happily I got a great reply from [@demisbellot](http://mythz.servicestack.net) from Service Stack who pointed out the`ServiceStack.Text` library has an alternative to my my solution baked in. 
