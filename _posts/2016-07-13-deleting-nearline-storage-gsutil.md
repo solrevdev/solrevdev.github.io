@@ -12,7 +12,7 @@ In order to save some cash after seeing some recurring Google invoices for their
 
 Now they do have a nice [console web app](https://console.cloud.google.com/) and an [iOS app](https://itunes.apple.com/us/app/google-cloud-console/id1005120814?mt=8) to manage these but attempts at deleting my buckets of data did not work. 
 
-Probably due to the size of the storage. 
+Probably due to the size of the storage.  
 
 ---
 
