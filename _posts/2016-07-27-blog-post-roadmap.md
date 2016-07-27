@@ -19,10 +19,10 @@ To hold myself accountable I will list a roadmap of these posts in no particular
 
 * Setting up TeamCity, Octopus Deploy and FluentMigrator for CI for non static sites after a few years away from this ecosystem. 
 
-*ScriptCS and Rosyln for extending applications and an alternative to Powershell plus it's cross platform
+* ScriptCS and Rosyln for extending applications and an alternative to Powershell plus it's cross platform
 
 * Push notifications and how I hate email again. 
 
 * Another post about sleep and training and how it helps in life and helps to code.
 
-That is actually just the ones I can be bothered to copy and paste now as its late and I need my beauty sleep! 
+That is actually just the ones I can be bothered to copy and paste now as its late and I need my beauty sleep!
