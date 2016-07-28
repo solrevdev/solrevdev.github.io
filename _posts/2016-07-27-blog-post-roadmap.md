@@ -2,10 +2,8 @@
 layout: post
 title: "Upcoming blog posts road map"
 author: "John Smith"
-tags:
-- "#ssl"
-- "#scriptcs"
-- "#ci"
+categories: ['ssl', 'scriptcs', 'ci']
+tags: ['ssl', 'scriptcs', 'ci']
 ---
 I have been extremely busy recently with, well, pretty much everything, including this week's marathon training schedule on top of caring for mum and an upcoming visit to the Oxord John Radcliffe hospital with her. 
 
