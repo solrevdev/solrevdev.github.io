@@ -11,7 +11,7 @@ highlighter: rouge
 markdown: kramdown
 
 # Permalinks
-excerpt_separator: ''
+# excerpt_separator: ''
 
 # Setup
 title:            'solrevdev'
