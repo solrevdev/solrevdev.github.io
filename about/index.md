@@ -21,7 +21,7 @@ Commercially I have worked with the Amazon Web Services stack, MongoDB, Memcache
 I can be found on social media here:
 
 * [Linked In](https://www.linkedin.com/in/solrevdev)
-* [@solrevdev](https://twitter.com/solrevdev)
+* [Twitter](https://twitter.com/solrevdev)
 * [Facebook](https://www.facebook.com/solrevdevtechradar/)
 
 
