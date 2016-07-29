@@ -24,8 +24,6 @@ I can be found on social media here:
 * [Twitter](https://twitter.com/solrevdev)
 * [Facebook](https://www.facebook.com/solrevdevtechradar/)
 
-<script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script data-format="inline" data-id="http://uk.linkedin.com/in/solrevdev" data-related="false" type="IN/MemberProfile"></script>
-
 
 ## About this site
 
