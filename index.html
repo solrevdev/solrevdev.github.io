@@ -14,7 +14,7 @@ title: Home
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    <p>{{ post.content | strip_html | truncatewords:75}}</p>
+    <p>{{ post.content | truncatewords:75}}</p>
     <p><a href="{{ post.url }}">Continue Reading</a></p>
 
 
