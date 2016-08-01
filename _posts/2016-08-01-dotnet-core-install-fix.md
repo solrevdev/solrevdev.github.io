@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'Visual Studio 2015 Update 3 install issue'
-categories: ['visual studio', '.net core']
 tags: ['visual studio', '.net core']
 ---
 I am upgrading a project to use Visual Studio 2015 Community Edition and one of the updates it recommends was not installing with an error relating to the Visual Studio 2015 Update 3 update. 
@@ -23,4 +22,4 @@ After seeing that I was not the only one with this issue I decided to follow [th
 
 As the original post mentions do run the `cmd.exe` process as an `administrator`.
 
-Cheers!
+Cheers
