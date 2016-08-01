@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'Some minor tweaks with Jekyll'
-categories: ['jekyll', 'ruby', 'markdown']
 tags: ['jekyll', 'markdown']
 ---
 I do have a blog post roadmap but each post idea does involve a level of research and thought and seeing as it is 2:30am here in the UK and lets just say I wanted a quick post created on my mobile phone involving little thinking. I have made a few minor tweaks to to the website. Firstly each post when listed on the home page used ro render the entire post and not a snippet or teaser which in Jekyll speak is excerts.
