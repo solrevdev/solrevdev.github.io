@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'Locked out of Windows Server 2012'
-categories: ['windows server 2012', 'rdp']
 tags: ['windows server', 'rdp']
 ---
 An issue I had a while back was a development lab version of Microsoft Windows Server 2012 locking me out via RDP or any other mesns due to RDP licensing and a grace period expiring. 
