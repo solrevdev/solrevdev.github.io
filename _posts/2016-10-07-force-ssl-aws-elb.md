@@ -25,14 +25,13 @@ One nice thing you may want to do is to then force HTTPS/SSL on all requests.
 
 For ASP.NET websites hosted on IIS you can add some rewrite rules into the Web.Config file that will do that for you. 
 
-I will need this code snippet again so here it is for myself and others to use.  
+As I will need to use this code snippet again I will leave it here for myself and others to use.  
 
 ---
 
-Add this code snipped to your Web.Config file bearing in mind you may aleady have the System.WebServer node :
+Add this xml rewrite rule to your Web.Config file bearing in mind you may aleady have the system.webServer node in your config file.
 
 {% gist solrevdev/8e1de4ce29c4d356c43dc3e91f1d3b71 %}
-
 
 
 
