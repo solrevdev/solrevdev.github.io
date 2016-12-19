@@ -43,3 +43,5 @@ exclude: ['Rakefile', 'vendor']
 
 # Social Sharing
 facebook_app_id: '1213637668669023'
+
+theme: jekyll-theme-cayman
