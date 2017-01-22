@@ -3,7 +3,9 @@ layout: post
 title: 'Some minor tweaks with Jekyll'
 tags: ['jekyll', 'markdown']
 ---
-I do have a blog post roadmap but each post idea does involve a level of research and thought and seeing as it is 2:30am here in the UK and lets just say I wanted a quick post created on my mobile phone involving little thinking. I have made a few minor tweaks to to the website. Firstly each post when listed on the home page used ro render the entire post and not a snippet or teaser which in Jekyll speak is excerts.
+I do have a blog post roadmap but each post idea does involve a level of research and thought and seeing as it is 2:30am here in the UK and lets just say I wanted a quick post created on my mobile phone involving little thinking. 
+
+I have made a few minor tweaks to to this website. Firstly each post when listed on the home page used ro render the entire post and not a snippet or teaser which in Jekyll speak is excerts.
 
 However all being well,  This paragraph will not be on the home page. 
 
@@ -19,4 +21,4 @@ The post titles were used on the Archive page which for now lists all posts.
 
 Finally this post written just before sleep and direct in markdown and not spellchecked. 
  
-Cheers!
+Cheers
