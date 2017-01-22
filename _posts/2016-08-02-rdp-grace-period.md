@@ -7,7 +7,7 @@ An issue I had a while back was a development lab version of Microsoft Windows S
 
 It was not a server in my room but a proper rack mounted headless server. 
 
-Diagnosing what was wrong took ages but it turns out tbe fix was to delete a registry key and rebooting the server. 
+Diagnosing what was wrong took ages but it turns out the fix was to delete a registry key and rebooting the server. 
 
 Being a good devops guy I scheduled a task to delete that key again and reboot the server so this would not happen again. 
 
@@ -19,7 +19,7 @@ Then today the same thing happened. **nightmare**
 
 What happened to my my scheduled task? 
 
-Well my `reg delete` batch file which was configured to run with elevated privalages however the kicker was on rebooting, the admin account I was using lost it's full control access to the registry hive. 
+Well I had a `reg delete` batch file which was also configured to run with elevated privalages so everything was setup to run correctly, however the kicker was on rebooting, the admin account I was using lost it's full control access to the registry hive. 
 
 For now with an elevated `regedit` I gave the admin account full control to the parent node and this should be enough. 
 
