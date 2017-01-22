@@ -16,7 +16,7 @@ To quote from them directly :
 
 >This approach makes easier to reason about your data access making it obvious what SQL is getting executed at what time, whilst mitigating unexpected behaviour, implicit N+1 queries and leaky data access prevalent in Heavy ORMs.
 
-I have  been working on a fairly big project and have abstracted the data access away into a separate class library and wanted to have a `Commit()` method that allowed multiple repositories's to do their thing and to save across table in a transactional way.
+I have  been working on a fairly big project and have abstracted the data access away into a separate class library and wanted to have a `Commit()` method that allowed multiple repositories's to do their thing and to save across tables in a transactional way.
 
 So here is an example of how I have done that:
 
