@@ -10,13 +10,16 @@ title: About
 
 ## Overview
 
-I am now a full-time carer but was a software developer and DevOps engineer with a wealth of technical skills and started working as a developer in the late 1990's and am Microsoft certified.
+Edit	
+I am now a full-time carer but was a software developer and DevOps engineer with a wealth of technical skills and started working as a developer in the late 1990's and am Microsoft certified and currently working towards the full Amazon Web Services certification. 
 
-A lover of C# but not tied to exclusively the Microsoft stack. 
+A lover of C# but not tied to exclusively the Microsoft stack and am enjoying writing cloud automation code in Python. 
 
-I switch between writing code in Xamarin Studio, Sublime Text and Visual Studio. I enjoy full stack development, DevOps and cloud-based work in both hands on and head of infrastructure roles both of which I find very rewarding. 
+I switch between writing code in Xamarin Studio, Visual Studio Code Sublime Text and the full Microsoft Visual Studio IDE. 
 
-Commercially I have worked with the Amazon Web Services stack, MongoDB, Memcached, GIT, Mercurial, TeamCity, Octopus Deploy and various other technologies and thrive in providing startups with a scalable continuous deployment architecture and platform.
+I enjoy full stack development, DevOps and cloud-based work in both hands on and head of infrastructure roles both of which I find very rewarding. 
+
+Commercially I have worked with the Amazon Web Services stack, MySql, MongoDB, Memcached, GIT, Mercurial, TeamCity, Octopus Deploy and various other technologies and thrive in providing startups with a scalable continuous deployment architecture and platform.
 
 I can be found on social media here:
 
