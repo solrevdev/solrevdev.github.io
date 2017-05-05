@@ -10,7 +10,6 @@ title: About
 
 ## Overview
 
-Edit	
 I am now a full-time carer but was a software developer and DevOps engineer with a wealth of technical skills and started working as a developer in the late 1990's and am Microsoft certified and currently working towards the full Amazon Web Services certification. 
 
 A lover of C# but not tied to exclusively the Microsoft stack and am enjoying writing cloud automation code in Python. 
