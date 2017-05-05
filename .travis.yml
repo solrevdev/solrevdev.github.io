@@ -4,11 +4,11 @@ rvm:
 - 2.1
 - 2.2
 - 2.2.2
-- 2.4.1
+- 2.4.0
 
 before_install:
-  - rvm install 2.4.1
-  - rvm use 2.4.1 --fuzzy
+  - rvm install 2.4.0
+  - rvm use 2.4.0 --fuzzy
   - npm install npm -g  
   - npm update -g npm
 
