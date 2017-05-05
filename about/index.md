@@ -23,6 +23,7 @@ I can be found on social media here:
 * [Linked In](https://www.linkedin.com/in/solrevdev)
 * [Twitter](https://twitter.com/solrevdev)
 * [Facebook](https://www.facebook.com/solrevdevtechradar/)
+* [https://21.co/solrevdev/](https://21.co/solrevdev/)
 
 
 ## About this site
