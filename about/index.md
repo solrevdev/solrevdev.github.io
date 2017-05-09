@@ -3,9 +3,8 @@ layout: page
 title: About
 ---
 
-<p class="message">
-	Note for recruiters, I appreaciate any interest in me and by all means add me as a contact on
-	<a href="https://www.linkedin.com/in/solrevdev">Linked In</a> but do note I am now a full-time carer and am not in a position to take on any roles at the moment. I am keeping as busy in terms of side projects in order to keep fresh so feel free to check out my GitHub account or profiles.
+<p class="message">	
+Note for recruiters, I appreciate any interest in me and by all means, add me as a contact on <a href="https://www.linkedin.com/in/solrevdev">Linked In</a> but do note I am now a full-time carer and am not in a position to take on any roles at the moment. I am keeping as busy in terms of side projects in order to keep fresh so feel free to check out my GitHub account or profiles.
 </p>
 
 ## Overview
