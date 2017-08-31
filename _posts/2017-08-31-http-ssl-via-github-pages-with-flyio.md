@@ -12,7 +12,7 @@ tags:
 
 HTTP/SSL via this GitHub Pages site with Fly.io
 
-For a while now anything I host on Amazon Web Services I use Amazon's fantastic certificate manager to generate an SSL certificate on my behalf for free then associate that with an Elastic Load Balancer ensuring that all traffic to sites I host on AWS are being HTTPS and SSL. 
+For a while now anything I host on Amazon Web Services I use Amazon's fantastic certificate manager to generate an SSL certificate on my behalf for free then associate that with an Elastic Load Balancer ensuring that all traffic to sites I host on AWS are being served from HTTPS and SSL. 
 
 I also host a site on Firebase and that also comes with a free SSL/HTTPS certificate even for custom domains. 
 
