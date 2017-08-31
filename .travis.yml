@@ -1,14 +1,13 @@
 language: ruby
+
 rvm:
-- 2.0
-- 2.1
-- 2.2
-- 2.2.2
-- 2.4.0
+  - 2.3.1
+  - ruby
 
 before_install:
-  - rvm install 2.4.0
-  - rvm use 2.4.0 --fuzzy
+  - rvm install 2.3.1
+  - rvm use 2.3.1
+  - nvm install node
   - npm install npm -g  
   - npm update -g npm
 
