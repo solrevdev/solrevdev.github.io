@@ -17,13 +17,13 @@ markdown: kramdown
 title:            'solrevdev'
 tagline:          'developer / devops / comedy nerd / full time carer'
 description:      'A blog about things I find on the web, tools and technologies that I like.'
-url:              'http://www.solrevdev.com'
+url:              'https://www.solrevdev.com'
 baseurl:          /
 
 # Contacts
 author:
   name:           'John Smith'
-  url:            'http://www.solrevdev.com/about/'
+  url:            'https://www.solrevdev.com/about/'
   email:          "john@solrevdev.com"
   github:         'https://github.com/solrevdev'
   facebook:       'https://www.facebook.com/solrevdevtechradar'
