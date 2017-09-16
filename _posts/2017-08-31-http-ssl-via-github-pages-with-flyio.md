@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HTTP/SSL via this GitHub Pages site with Fly.io"
+title: "HTTPS/SSL via this GitHub Pages site with Fly.io"
 author: "John Smith"
 tags:
 - "#https"
@@ -10,7 +10,7 @@ tags:
 - "#adm"
 ---
 
-HTTP/SSL via this GitHub Pages site with Fly.io
+HTTPS/SSL via this GitHub Pages site with Fly.io
 
 For a while now anything I host on Amazon Web Services I use Amazon's fantastic certificate manager to generate an SSL certificate on my behalf for free then associate that with an Elastic Load Balancer ensuring that all traffic to sites I host on AWS are being served from HTTPS and SSL. 
 
@@ -28,7 +28,7 @@ Unfortunately, this has not only been nagging me as I do not practise why I prea
 
 But yesterday while waiting for an engineer to come I came across a site called [https://fly.io/](https://fly.io/) which I think works like CloudFlare but seemed way easier to use as within 5 minutes on my phone I had pointed an ALIAS record to this GitHub hosted blog and it was done!
 
-I then added some middle-where to enforce HTTP/SSL (redirect HTTP to HTTPS) and then added my Google Analytics code for tracking and by then DNS had propagated and each page was secure. 
+I then added some middle-where to enforce HTTPS/SSL (redirect HTTP to HTTPS) and then added my Google Analytics code for tracking and by then DNS had propagated and each page was secure. 
 
 Very impressed! 
 
