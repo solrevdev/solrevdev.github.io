@@ -9,11 +9,14 @@ Note for recruiters, I appreciate any interest in me and by all means, add me as
 
 ## Overview
 
+
 I am now a full-time carer but was a software developer and DevOps engineer with a wealth of technical skills and started working as a developer in the late 1990's and am Microsoft certified and currently working towards the full Amazon Web Services certification. 
 
-A lover of C# but not tied to exclusively the Microsoft stack and am enjoying writing cloud automation code in Python. 
+A lover of C# but not tied to exclusively the Microsoft stack and have enjoyed writing some cloud automation code in Python. 
 
-I switch between writing code in Xamarin Studio, Visual Studio Code Sublime Text and the full Microsoft Visual Studio IDE. 
+Currently, I am a big fan of the .NET Core cross-platform development platform and take an interest in docker and serverless architectures. 
+
+I write code in Visual Studio Code, Sublime Text and the full Microsoft Visual Studio IDE.  Likewise, I switch between macOS, windows and Linux. 
 
 I enjoy full stack development, DevOps and cloud-based work in both hands on and head of infrastructure roles both of which I find very rewarding. 
 
