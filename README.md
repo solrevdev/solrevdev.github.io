@@ -6,6 +6,17 @@
 Static [Jekyll](http://jekyllrb.com) driven website to replace solrevdev.com blogger account
 
 
+## testing the site locally
+
+
+```shell
+gem install github-pages
+gem update github-pages
+jekyll build
+jekyll serve
+```
+Now open your browser and go to <http://localhost:4000>
+
 
 It is a brazen two-column  theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](http://getpoole.com), the Jekyll butler.
 
