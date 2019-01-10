@@ -1,0 +1,47 @@
+# Plugins
+gems:
+  - github-pages
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+
+
+# Dependencies
+highlighter: rouge
+markdown: kramdown
+
+# Permalinks
+# excerpt_separator: ''
+
+# Setup
+title:            'solrevdev'
+tagline:          'developer / devops / comedy nerd / full time carer'
+description:      'A blog about things I find on the web, tools and technologies that I like.'
+url:              'https://www.solrevdev.com'
+baseurl:          '/'
+
+# Contacts
+author:
+  name:           'John Smith'
+  url:            'https://www.solrevdev.com/about/'
+  email:          "john@solrevdev.com"
+  github:         'https://github.com/solrevdev'
+  facebook:       'https://www.facebook.com/solrevdevtechradar'
+  instagram:      'https://www.instagram.com/solrevdev'
+  twitter:        'https://www.twitter.com/solrevdev'
+
+# Outputting
+paginate: 5
+
+# Custom vars
+version:          '2.1.0'
+
+github:
+  repo:           'https://github.com/solrevdev/solrevdev.github.io'
+
+exclude: ['Rakefile', 'vendor']
+
+# Social Sharing
+facebook_app_id: '1213637668669023'
+
+theme: jekyll-theme-cayman 
