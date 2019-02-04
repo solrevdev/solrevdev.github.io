@@ -28,7 +28,7 @@ Later I will look at setting the permissions via the batch script before running
 So for those looking for the key to delete here it is: 
 
 ```
-HKLM\System\CurrentControlSet\Control\Terminal Server\RCM
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\RCM\GracePeriod" /f
 ```
 
 It is a [known bug](https://support.software.dell.com/vworkspace/kb/113932) it seems. 
