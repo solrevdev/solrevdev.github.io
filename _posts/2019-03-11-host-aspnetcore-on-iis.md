@@ -25,7 +25,7 @@ git reset e64c51bf1c3bdde753ff2d8fd8b18d4d902b8b5b --hard
 
 Then digging around the changes between branches in git I noticed that either Visual Studio and/or my MSBuild based deployment script had added a property pointing to ```hostingModel="InProcess"```  and also a .csproj property referencing ```AspNetCoreModuleV2```. 
 
-So a long story short and some time on StackOverflow this application is running on a windows box and in order to have the more performant InProcess hosting model I needed the combination of the following .csproj and web.config files as well as downloading and installing the [.NET Core 2.2 Runtime & Hosting Bundle for Windows (v2.2.2)](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.2-windows-hosting-bundle-installer).
+So a long story short and some time on StackOverflow and the [ASP.NET Core documentation](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/aspnet-core-module?view=aspnetcore-2.2) this application is running on a windows box and in order to have the more performant InProcess hosting model I needed the combination of the following .csproj and web.config files as well as downloading and installing the [.NET Core 2.2 Runtime & Hosting Bundle for Windows (v2.2.2)](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.2-windows-hosting-bundle-installer).
 
 After many combinations and deployments I ended up with this successful combination of settings.
 
