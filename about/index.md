@@ -10,7 +10,7 @@ Note for recruiters, I appreciate any interest in me and by all means, add me as
 ## Overview
 
 
-I am now a full-time carer and but up until not too long ago have been head of infrastructure and operations, a full stack software engineer and devops engineer with a wealth of technical skills and am Microsoft certified.
+I am now a full-time carer but up until recently have been head of infrastructure and operations, a full stack software engineer and devops engineer with a wealth of technical skills and am Microsoft certified.
 
 A lover of C# but not tied to exclusively the Microsoft stack and have enjoyed writing some cloud automation code in Python. 
 
