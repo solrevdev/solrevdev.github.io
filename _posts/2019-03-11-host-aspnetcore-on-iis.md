@@ -11,9 +11,9 @@ tags:
 
 Host ASP.NET Core on Windows with IIS
 
-A recent push to production broke an ASP.NET Core application I have running and it took me a while to fix the underlying problem. 
+A recent push to production broke an ASP.NET Core application I have running and it took me a while to find out the underlying problem. 
 
-The error was ```502 - Web server received an invalid response while acting as a gateway or proxy server```  with nothing obvious in the logs that helped me.
+The error was ```502 - Web server received an invalid response while acting as a gateway or proxy server``` with nothing obvious in the logs that helped me.
 
 First I published a last known good version of my application by creating a new branch in git and resetting it to the last known good commit I had. 
 
@@ -23,11 +23,11 @@ The idea being I can deploy from this branch while I investigated and once fixed
 git reset e64c51bf1c3bdde753ff2d8fd8b18d4d902b8b5b --hard
 ```
 
-Then digging around the changes between branches in git I noticed that either Visual Studio and/or my MSBuild based deployment script had added a property pointing to ```hostingModel="InProcess"```  and also a .csproj property referencing ```AspNetCoreModuleV2```. 
+Then digging around the changes between branches in git I noticed that either Visual Studio and/or my MSBuild based deployment script had added a property pointing to ```hostingModel="InProcess"``` to my web.config and a property referencing ```AspNetCoreModuleV2``` to my .csproj file. 
 
-So a long story short and some time on StackOverflow and the [ASP.NET Core documentation](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/aspnet-core-module?view=aspnetcore-2.2) this application is running on a windows box and in order to have the more performant InProcess hosting model I needed the combination of the following .csproj and web.config files as well as downloading and installing the [.NET Core 2.2 Runtime & Hosting Bundle for Windows (v2.2.2)](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.2-windows-hosting-bundle-installer).
+So with some time spent on both StackOverflow and the [ASP.NET Core documentation](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/aspnet-core-module?view=aspnetcore-2.2) sites it was apparent that in order to have the more performant```InProcess``` hosting model via the ```AspNetCoreModuleV2``` module the [.NET Core 2.2 Runtime & Hosting Bundle for Windows (v2.2.2)](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.2-windows-hosting-bundle-installer) needs to be installed.
 
-After many combinations and deployments I ended up with this successful combination of settings.
+After many combinations and deployments, I ended up with this successful combination of settings.
 
 **Project File**
 
@@ -73,5 +73,4 @@ After many combinations and deployments I ended up with this successful combinat
 </configuration>
 ```
 
-However I also needed to download the aforementioned [.NET Core 2.2 Runtime & Hosting Bundle for Windows (v2.2.2)](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.2-windows-hosting-bundle-installer) and after the install and a reboot, all was well again.  🙌
-
+So after the install of [.NET Core 2.2 Runtime & Hosting Bundle for Windows (v2.2.2)](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.2-windows-hosting-bundle-installer) and one reboot later all was well again.  🙌
