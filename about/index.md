@@ -10,17 +10,19 @@ Note for recruiters, I appreciate any interest in me and by all means, add me as
 ## Overview
 
 
-I am now a full-time carer but up until recently have been head of infrastructure and operations, a full stack software engineer and devops engineer with a wealth of technical skills and am Microsoft certified.
+I am now a full-time carer but until recently have been head of infrastructure and operations, a full stack software engineer and a devops engineer. 
+
+With a wealth of technical skills I am also Microsoft certified.
 
 A lover of C# but not tied to exclusively the Microsoft stack and have enjoyed writing some cloud automation code in Python. 
 
 Currently, I am a big fan of the .NET Core cross-platform development platform and take an interest in docker and serverless architectures. 
 
-I write code in Visual Studio Code, Sublime Text and the full Microsoft Visual Studio IDE. Likewise, I switch between macOS, windows and Linux. 
+I write code in Visual Studio Code, Sublime Text and the full Microsoft Visual Studio IDE. Likewise, I also like to switch between macOS, Windows and Linux. 
 
 I enjoy full stack development, devops and cloud-based work and am enjoying writing front end code in VueJS and ReactJS.
 
-Commercially I have worked with the Amazon Web Services stack, MySql, MongoDB, Memcached, GIT, Mercurial, TeamCity, Octopus Deploy and various other technologies and thrive in providing startups with a scalable continuous deployment architecture and platform.
+Commercially I have recently worked with the Amazon Web Services stack, MySql, MongoDB, Memcached, GIT, Mercurial, TeamCity, Octopus Deploy and various other technologies and thrive in providing startups with a scalable continuous deployment architecture and platform.
 
 I can be found on social media here:
 
