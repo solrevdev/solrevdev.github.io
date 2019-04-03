@@ -17,8 +17,8 @@ markdown: kramdown
 title:            'solrevdev'
 tagline:          'developer / devops / comedy nerd / full time carer'
 description:      'A blog about things I find on the web, tools and technologies that I like.'
-url:              'https://solrevdev.com/'
-baseurl:          /
+url:              'https://solrevdev.com'
+baseurl:          '/'
 
 # Contacts
 author:
