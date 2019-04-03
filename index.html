@@ -25,7 +25,8 @@ title: Home
 <div class="pagination">
   {% if paginator.next_page %}
     <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {{paginator.next_page}} - parp
+  {{paginator.next_page}} - parp<br>
+  {{ site.baseurl }} - baseurl
   {% else %}
     <span class="pagination-item older">Older</span>
   {% endif %}
