@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 author: John Smith
 tags:
@@ -64,4 +64,4 @@ The documentation for fetch does point to the issue somewhat
 Why this was only needed for certain browsers I am unsure but my fix seems to work.
   
 
-Success 🎉 
+Success 🎉
