@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+published: true
 ---
 
 <p class="message">	
@@ -20,7 +21,7 @@ Currently, I am a big fan of the .NET Core cross-platform development platform a
 
 I write code in Visual Studio Code, Sublime Text and the full Microsoft Visual Studio IDE. Likewise, I also like to switch between macOS, Windows and Linux. 
 
-I enjoy full stack development, devops and cloud-based work and am enjoying writing front end code in VueJS and ReactJS.
+I enjoy full stack development, devops and cloud-based work and am enjoying writing front end code in VueJS while also reading about ReactJS.
 
 Commercially I have recently worked with the Amazon Web Services stack, MySql, MongoDB, Memcached, GIT, Mercurial, TeamCity, Octopus Deploy and various other technologies and thrive in providing startups with a scalable continuous deployment architecture and platform.
 
