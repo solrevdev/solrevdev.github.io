@@ -190,6 +190,16 @@ htmlproofer ./_site
 * https://gist.github.com/razor-x/8166421
 * https://github.com/mfenner/jekyll-travis
 
+## Prose
+
+I am using the following [Prose](http://prose.io/) config
+
+```yaml
+prose: 
+  siteurl: 'https://solrevdev.com' 
+  media: 'media' 
+```
+
 
 ## Author
 
@@ -207,10 +217,3 @@ htmlproofer ./_site
 Open sourced under the [MIT license](LICENSE.md).
 
 <3
-
-
-
-
-
-
-
