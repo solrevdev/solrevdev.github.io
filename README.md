@@ -25,17 +25,21 @@ It is a brazen two-column  theme that pairs a prominent sidebar with uncomplicat
 
 ## Contents
 
-- [Usage](#usage)
-- [Options](#options)
-  - [Sidebar menu](#sidebar-menu)
-  - [Sticky sidebar content](#sticky-sidebar-content)
-  - [Themes](#themes)
-  - [Reverse layout](#reverse-layout)
-- [Development](#development)
-- [Jekyll commands used to get setup](#Jekyll-commands-used-to-get-setup)
-- [Travis and Github custom domain resources](#Travis-and-Github-custom-domain-resources)
-- [Author](#author)
-- [License](#license)
+- [solrevdev.github.io](#solrevdevgithubio)
+  - [testing the site locally](#testing-the-site-locally)
+  - [Contents](#contents)
+  - [Usage](#usage)
+  - [Options](#options)
+    - [Sidebar menu](#sidebar-menu)
+    - [Sticky sidebar content](#sticky-sidebar-content)
+    - [Themes](#themes)
+    - [Reverse layout](#reverse-layout)
+  - [Development](#development)
+  - [Jekyll commands used to get setup](#jekyll-commands-used-to-get-setup)
+  - [Travis and Github custom domain resources](#travis-and-github-custom-domain-resources)
+  - [Prose](#prose)
+  - [Author](#author)
+  - [License](#license)
 
 
 ## Usage
