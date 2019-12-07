@@ -14,9 +14,9 @@ tags:
 
 Every time there is a new release of [dotnetcore](https://dotnet.microsoft.com/download) I need to get it updated on the three environments where I develop and deploy code. 
 
-I develop and deploy on macOS, Windows and Linux (Ubuntu) and homebrew and chocolatey will update the version of dotnetcore for me, sometimes there is a delay but they will update them.
+I develop and deploy on macOS, Windows and Linux (Ubuntu) and on macOS and Windows homebrew and chocolatey will update the version of dotnetcore for me, sometimes there is a delay but they will eventually update them.
 
-However, each release of dotnetcore I always have to manually intervene and install it manually.
+However,for Linux each release of dotnetcore I always have to manually intervene and install it manually.
 
 If you follow the instructions over at [https://docs.microsoft.com/en-gb/dotnet/core/install/linux-package-manager-ubuntu-1904](https://docs.microsoft.com/en-gb/dotnet/core/install/linux-package-manager-ubuntu-1904]) you will get the following error message:
 
