@@ -12,21 +12,21 @@ tags:
 ---
 ## Unable to locate package dotnet-sdk-3.1
 
-Every time there is a new release of [dotnetcore](https://dotnet.microsoft.com/download) I need to get it updated on the three environments where I develop and deploy code. 
+Every time there is a new release of [dotnetcore](https://dotnet.microsoft.com/download) I need to get it updated on the three environments where I develop and deploy code: macOS, Windows and Linux (Ubuntu).
 
-I develop and deploy on macOS, Windows and Linux (Ubuntu) and on macOS and Windows homebrew and chocolatey will update the version of dotnetcore for me, sometimes there is a delay but they will eventually update them.
+[Homebrew](https://brew.sh/) and [Chocolatey](https://chocolatey.org/) update the version of dotnetcore for me automatically, sometimes there is a delay but they will eventually update them.
 
-However,for Linux each release of dotnetcore I always have to manually intervene and install it manually.
+However, for Linux each release of dotnetcore I always have to manually intervene and install it manually.
 
-If you follow the instructions over at [https://docs.microsoft.com/en-gb/dotnet/core/install/linux-package-manager-ubuntu-1904](https://docs.microsoft.com/en-gb/dotnet/core/install/linux-package-manager-ubuntu-1904]) you will get the following error message:
+If you follow the [instructions](https://docs.microsoft.com/en-gb/dotnet/core/install/linux-package-manager-ubuntu-1904]) from Microsoft  you will get the following error message:
 
+```text
+Unable to locate package dotnet-sdk-3.1
+```
 
-*Unable to locate package dotnet-sdk-3.1*
+The issue is that page targets Ubuntu version19.04 and I am running Ubuntu 19.10 (Eoan Ermine).
 
-The issue that page targets 19.04 and I am running 19.10
-
-So, If you are me from the future wanting to know how to get the latest version installed and not want the waffle here is what you need to do 
-
+So, If you are me from the future wanting to know how to get the latest version installed  here is what you need to do:
 
 ```bash
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
