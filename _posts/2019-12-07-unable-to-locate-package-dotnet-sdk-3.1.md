@@ -16,7 +16,7 @@ Every time there is a new release of [dotnetcore](https://dotnet.microsoft.com/d
 
 [Homebrew](https://brew.sh/) and [Chocolatey](https://chocolatey.org/) update the version of dotnetcore for me automatically, sometimes there is a delay but they will eventually update them.
 
-However, for Linux each release of dotnetcore I always have to manually intervene and install it manually.
+However, for Linux each release of [dotnetcore](https://dotnet.microsoft.com/download) I always have to manually intervene and install it manually.
 
 If you follow the [instructions](https://docs.microsoft.com/en-gb/dotnet/core/install/linux-package-manager-ubuntu-1904]) from Microsoft  you will get the following error message:
 
@@ -24,7 +24,7 @@ If you follow the [instructions](https://docs.microsoft.com/en-gb/dotnet/core/in
 Unable to locate package dotnet-sdk-3.1
 ```
 
-The issue is that page targets Ubuntu version19.04 and I am running Ubuntu 19.10 (Eoan Ermine).
+The issue is that page targets Ubuntu version 19.04 and I am running Ubuntu version 19.10 (Eoan Ermine).
 
 So, If you are me from the future wanting to know how to get the latest version installed  here is what you need to do:
 
