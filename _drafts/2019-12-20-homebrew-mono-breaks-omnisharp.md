@@ -27,7 +27,7 @@ I had not changed anything in the .csproj file. It was fresh from running `dotne
 
 ---
 
-So,  I have raised an issue over on [GitHub](https://github.com/OmniSharp/omnisharp-vscode/issues/3477).
+So, I raised an issue over on [GitHub](https://github.com/OmniSharp/omnisharp-vscode/issues/3477).
 
 ---
 
