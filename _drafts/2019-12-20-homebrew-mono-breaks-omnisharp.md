@@ -23,22 +23,24 @@ And the very latest version of [VSCode](https://code.visualstudio.com/)
 
 I had not changed anything in the .csproj file. It was fresh from running `dotnet new mvc` from the terminal.
 
+
 ![](https://pbs.twimg.com/media/EMOFqFlX0AA2KFt.jpg)
 
 ---
 
 So, I raised an issue over on [GitHub](https://github.com/OmniSharp/omnisharp-vscode/issues/3477).
 
+![github-issue-3477.png]({{site.baseurl}}/media/github-issue-3477.png)
+
 ---
 
-So it turns out it was the [homebrew](https://brew.sh/) [cellar](https://docs.brew.sh/Formula-Cookbook) version of mono that was the issue. 
-
-Installing the [stable version of mono](https://www.mono-project.com/download/stable/) fixed it. 
-
-Big thanks to the rapid response and answer from [@filipw](https://github.com/filipw)! 
-
+Big thanks to the rapid response and answer from [@filipw](https://github.com/filipw), who discovered that it was the [homebrew](https://brew.sh/) [cellar](https://docs.brew.sh/Formula-Cookbook) version of mono that was the issue and that intstalling the [stable version of mono](https://www.mono-project.com/download/stable/) was the fix. 
 
 ![](https://pbs.twimg.com/media/EMOMjtmXkAA6BG7.png)
 
 
 ![](https://pbs.twimg.com/media/EMOMjtiW4AAKpZ2.png)
+
+---
+
+Success 🎉
