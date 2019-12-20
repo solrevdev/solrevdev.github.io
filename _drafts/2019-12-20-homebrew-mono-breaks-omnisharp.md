@@ -3,11 +3,42 @@ published: false
 ---
 ## homebrew's cellar version of mono breaks omnisharp
 
-So today, I raised a [github issue](https://github.com/OmniSharp/omnisharp-vscode/issues/3477) when opening the result of  `dotnet new mvc` in VSCode would leave the problems window full of approximatley 120 issues and the code windows full of red squiggles. 
+So today, I raised a [GitHub issue](https://github.com/OmniSharp/omnisharp-vscode/issues/3477) because after I had opened the result of `dotnet new mvc` in VSCode the problems window would have approximately 120 issues and the code editor window would be full of red squiggles.
 
-Long story short installing the stable version of mono from the official website fixed the problem. Big thanks to the rapid response and answer from [@filipw](https://github.com/filipw)! 
+![](https://pbs.twimg.com/media/EMJhNcRXkAEgE_-.jpg)
 
-For the full timeline, infomation and screenshots see this twitter thread.
+---
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">who can fix this <a href="https://twitter.com/hashtag/dotnetcore?src=hash&amp;ref_src=twsrc%5Etfw">#dotnetcore</a> <a href="https://twitter.com/hashtag/aspnetcore?src=hash&amp;ref_src=twsrc%5Etfw">#aspnetcore</a> <a href="https://twitter.com/hashtag/vscode?src=hash&amp;ref_src=twsrc%5Etfw">#vscode</a> <a href="https://twitter.com/hashtag/intellisense?src=hash&amp;ref_src=twsrc%5Etfw">#intellisense</a> issue on <a href="https://twitter.com/hashtag/macos?src=hash&amp;ref_src=twsrc%5Etfw">#macos</a>. This is a horrible <a href="https://twitter.com/hashtag/dotnet?src=hash&amp;ref_src=twsrc%5Etfw">#dotnet</a> new mvc experience <a href="https://t.co/cDcIcDJvAi">pic.twitter.com/cDcIcDJvAi</a></p>&mdash; john smith (@solrevdev) <a href="https://twitter.com/solrevdev/status/1207634539469819904?ref_src=twsrc%5Etfw">December 19, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+I was running the very [latest version of dotnetcore](https://dotnet.microsoft.com/download/dotnet-core/3.0)
 
+![](https://pbs.twimg.com/media/EMJhyLSWwAIxryE.png)
+
+---
+
+And the very latest version of [VSCode](https://code.visualstudio.com/)
+
+![](https://pbs.twimg.com/media/EMJiAp1WoAA5Y6-.png)
+
+---
+
+I had not changed anything in the .csproj file. It was fresh from running `dotnet new mvc` from the terminal.
+
+![](https://pbs.twimg.com/media/EMOFqFlX0AA2KFt.jpg)
+
+---
+
+So,  I have raised an issue over on [GitHub](https://github.com/OmniSharp/omnisharp-vscode/issues/3477).
+
+---
+
+So it turns out it was the [homebrew](https://brew.sh/) [cellar](https://docs.brew.sh/Formula-Cookbook) version of mono that was the issue. 
+
+Installing the [stable version of mono](https://www.mono-project.com/download/stable/) fixed it. 
+
+Big thanks to the rapid response and answer from [@filipw](https://github.com/filipw)! 
+
+
+![](https://pbs.twimg.com/media/EMOMjtmXkAA6BG7.png)
+
+
+![](https://pbs.twimg.com/media/EMOMjtiW4AAKpZ2.png)
