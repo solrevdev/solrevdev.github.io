@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## homebrew's cellar version of mono breaks omnisharp
 
