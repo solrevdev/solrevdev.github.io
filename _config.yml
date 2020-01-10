@@ -4,6 +4,8 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-github-metadata
+
 
 
 # Dependencies
