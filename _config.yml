@@ -1,5 +1,5 @@
 # Plugins
-gems:
+plugins:
   - github-pages
   - jekyll-paginate
   - jekyll-sitemap
