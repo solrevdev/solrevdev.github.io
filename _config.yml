@@ -1,3 +1,5 @@
+github: [metadata]
+
 # Plugins
 plugins:
   - github-pages
