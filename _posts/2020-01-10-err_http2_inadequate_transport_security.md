@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 author: John Smith
 tags:
@@ -12,24 +12,24 @@ tags:
 ---
 ## ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY error on down-level windows operating systems
 
-The other day I was went to test debug some code on a Windows Server 2012RC machine and encountered `ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY` when running my asp.net core 3.1 razor pages website. 
+The other day I was going to test and debug some code on a Windows Server 2012RC machine when I encountered the exception `ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY` when running my asp.net core 3.1 razor pages website. 
 
-This site worked fine elsewhere so in order to try and narrow down the problem I created a brand new asp.net core website to see if it was something in my code that was the issue but I had the same error showing up in google chrome. 
+This site worked fine elsewhere so to try and narrow down the problem I created a brand new asp.net core website to see if it was something in my code that was the issue but I had the same error showing up in google chrome. 
 
-After some googling I tried to reset the servers self-signed ssl certificate by using the following closing the browser inbetween but with little success: 
+After some googling, I tried to reset the servers self-signed SSL certificate by using the following closing the browser in between but that had no effect: 
 
 ```shell
 dotnet dev-certs https --clean
 dotnet dev-certs https --trust
 ```
 
-I created a [github issue](https://github.com/aspnet/AspNetCore.Docs/issues/16434) and the ever helpful [@guardrex](https://github.com/guardrex) came to my rescue again and pointed me in the right direction. 
+I created a [github issue](https://github.com/aspnet/AspNetCore.Docs/issues/16434) and the ever-helpful [@guardrex](https://github.com/guardrex) came to my rescue again and pointed me in the right direction. 
 
-It is a [known bug](https://github.com/dotnet/aspnetcore/issues/16811) and there is an open github issue for it.
+It is a [known bug](https://github.com/dotnet/aspnetcore/issues/16811) and there is an open Github issue for it.
 
 *Workaround**
 
-So here for others and for me if this happens again is my workaround:
+So here for others and me if this happens again is my workaround:
 
 A specific down-level machine (Windows Server 2012R2) was causing the exception and because I knew which machine, I had access to its `Environment.MachineName` which I use later to programmatically decide which `ListenOptions.Protocols` Kestrel should load. 
 
