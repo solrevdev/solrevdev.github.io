@@ -1,5 +1,13 @@
 ---
 published: true
+layout: post
+author: John Smith
+tags:
+  - '#dotnetcore'
+  - '#aspnetcore'
+  - '#homebrew'
+  - '#omnisharp'
+  - '#mono'
 ---
 ## homebrew's cellar version of mono breaks omnisharp
 
