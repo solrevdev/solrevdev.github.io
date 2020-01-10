@@ -51,3 +51,6 @@ theme: jekyll-theme-cayman
 prose: 
   siteurl: 'https://solrevdev.com' 
   media: 'media'
+  
+github: [metadata]
+
