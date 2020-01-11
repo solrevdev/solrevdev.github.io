@@ -24,7 +24,7 @@ The idea is that all that is left is to think about upgrading the website to a R
 
 While I was doing this a build script was failing. 
 
-![2020-01-11-15.00.04.png]({{site.baseurl}}/_posts/media/2020-01-11-15.00.04.png)
+![2020-01-11-15.00.04.png]({{site.baseurl}}/media/2020-01-11-15.00.04.png)
 
 The error was *error MSB4236 The SDK Microsoft.NET.Sdk specified could not be found* and is because the project now includes dotnetcore projects that need building.
 
@@ -32,11 +32,11 @@ The error was *error MSB4236 The SDK Microsoft.NET.Sdk specified could not be fo
 
 After some googling the answer was to upgrade the `Microsoft Visual Studio 2019 Build Tools` installed on that server. 
 
-![2020-01-11-14.57.39.png]({{site.baseurl}}/_posts/media/2020-01-11-14.57.39.png)
+![2020-01-11-14.57.39.png]({{site.baseurl}}/media/2020-01-11-14.57.39.png)
 
 Select `.NET Core Build Tools` and/or `Web development build tools` and install
 
-![2020-01-11-14.59.06.png]({{site.baseurl}}/_posts/media/2020-01-11-14.59.06.png)
+![2020-01-11-14.59.06.png]({{site.baseurl}}/media/2020-01-11-14.59.06.png)
 
 Once this was done the build worked.
 
