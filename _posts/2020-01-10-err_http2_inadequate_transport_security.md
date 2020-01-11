@@ -12,7 +12,9 @@ tags:
 ---
 ## ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY error on down-level windows operating systems
 
-The other day I was going to test and debug some code on a Windows Server 2012RC machine when running my asp.net core 3.1 razor pages website when I encountered the exception:
+The other day I was going to test and debug some code on a Windows Server 2012RC machine. 
+
+When running my asp.net core 3.1 razor pages website I encountered the exception:
 
 `ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY`  
 
