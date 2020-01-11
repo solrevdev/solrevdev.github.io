@@ -12,7 +12,7 @@ tags:
 
 ### Background
 
-Recently I was working on a website built before dotnetcore was even a thing It was targeting an older version of the original .NET Framework. 
+Recently I was working on a website built before dotnetcore was even a thing. It was targeting an older version of the original .NET Framework. 
 
 I am slowly modernising it. Firstly I upgraded the nuget packages and re-targeted it to .NET Framework version 4.8.
 
