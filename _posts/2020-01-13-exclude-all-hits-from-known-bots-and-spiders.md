@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## Exclude all hits from known bots and spiders
 
@@ -12,6 +12,8 @@ Google Analytics does have a setting thought to filter those out.
 Login to your analytics and go to View Settings where there will be a `Exclude all hits from known bots and spiders` checkbox. 
 
 Make sure that is checked.
+
+![2020-01-13_exclude-bots-and-spiders.png]({{site.baseurl}}/media/2020-01-13_exclude-bots-and-spiders.png)
 
 
 Success 🎉
