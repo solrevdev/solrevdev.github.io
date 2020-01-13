@@ -38,7 +38,7 @@ paginate: 5
 # Custom vars
 version:          '2.1.0'
 
-github:
+github:           [metadata]
   repo:           'https://github.com/solrevdev/solrevdev.github.io'
 
 exclude: ['Rakefile', 'vendor']
