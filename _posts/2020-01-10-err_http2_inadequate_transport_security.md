@@ -31,7 +31,7 @@ I created a [github issue](https://github.com/aspnet/AspNetCore.Docs/issues/1643
 
 It is a [known bug](https://github.com/dotnet/aspnetcore/issues/16811) and there is an open Github issue for it.
 
-*Workaround**
+**Workaround**
 
 So here for others and me if this happens again is my workaround:
 
