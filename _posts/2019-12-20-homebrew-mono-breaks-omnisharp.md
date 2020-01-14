@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'homebrew's cellar version of mono breaks omnisharp'
+title: 'homebrews cellar version of mono breaks omnisharp'
 author: John Smith
 tags:
   - '#dotnetcore'

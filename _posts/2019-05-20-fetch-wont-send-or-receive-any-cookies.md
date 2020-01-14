@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'Fetch won't send or receive any cookies 🍪'
+title: 'Fetch wont send or receive any cookies 🍪'
 author: John Smith
 tags:
   - '#dotnetcore'
