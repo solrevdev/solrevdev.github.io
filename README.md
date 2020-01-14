@@ -8,6 +8,20 @@ Static [Jekyll](http://jekyllrb.com) driven website to replace solrevdev.com blo
 
 ## testing the site locally
 
+To test locally, You may need to change `_config.yml` from
+
+```yaml
+baseurl:          'https://solrevdev.com/'
+```
+
+to...
+
+```yaml
+baseurl:          ''
+```
+
+**But** do not check that in. just while you `bundle exec jekyll serve`
+
 ```shell
 bundle update github-pages
 bundle exec jekyll serve
