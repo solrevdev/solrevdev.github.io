@@ -13,7 +13,7 @@ Static [Jekyll](http://jekyllrb.com) driven website to replace solrevdev.com blo
 
 bundle install
 bundle update github-pages
-bundle exec jekyll serve --baseurl ''
+  bundle exec jekyll serve --baseurl ''
 
 ```
 
