@@ -1,6 +1,7 @@
 ---
 published: true
 layout: post
+title: 'homebrew's cellar version of mono breaks omnisharp'
 author: John Smith
 tags:
   - '#dotnetcore'
@@ -9,7 +10,6 @@ tags:
   - '#omnisharp'
   - '#mono'
 ---
-## homebrew's cellar version of mono breaks omnisharp
 
 So today, I raised a [GitHub issue](https://github.com/OmniSharp/omnisharp-vscode/issues/3477) because after I had opened the result of `dotnet new mvc` in VSCode the problems window would have approximately 120 issues and the code editor window would be full of red squiggles.
 
@@ -42,7 +42,7 @@ So, I raised an issue over on [GitHub](https://github.com/OmniSharp/omnisharp-vs
 
 ---
 
-Big thanks to the rapid response and answer from [@filipw](https://github.com/filipw), who discovered that it was the [homebrew](https://brew.sh/) [cellar](https://docs.brew.sh/Formula-Cookbook) version of mono that was the issue and that intstalling the [stable version of mono](https://www.mono-project.com/download/stable/) was the fix. 
+Big thanks to the rapid response and answer from [@filipw](https://github.com/filipw), who discovered that it was the [homebrew](https://brew.sh/) [cellar](https://docs.brew.sh/Formula-Cookbook) version of mono that was the issue and that intstalling the [stable version of mono](https://www.mono-project.com/download/stable/) was the fix.
 
 ![](https://pbs.twimg.com/media/EMOMjtmXkAA6BG7.png)
 

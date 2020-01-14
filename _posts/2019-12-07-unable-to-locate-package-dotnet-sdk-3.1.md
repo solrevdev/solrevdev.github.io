@@ -1,6 +1,7 @@
 ---
 published: true
 layout: post
+title : 'Unable to locate package dotnet-sdk-3.1'
 author: John Smith
 tags:
   - '#dotnetcore'
@@ -10,7 +11,6 @@ tags:
   - '#apt'
   - '#unabletolocatepackge'
 ---
-## Unable to locate package dotnet-sdk-3.1
 
 Every time there is a new release of [dotnetcore](https://dotnet.microsoft.com/download) I need to get it updated on the three environments where I develop and deploy code: macOS, Windows and Linux (Ubuntu).
 

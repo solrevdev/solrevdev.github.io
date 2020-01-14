@@ -8,6 +8,13 @@ Static [Jekyll](http://jekyllrb.com) driven website to replace solrevdev.com blo
 
 ## testing the site locally
 
+```shell
+bundle update github-pages
+bundle exec jekyll serve
+```
+
+Now open your browser and go to : `http://localhost:4000` <http://localhost:4000>
+
 
 ```shell
 gem install github-pages
@@ -199,9 +206,9 @@ htmlproofer ./_site
 I am using the following [Prose](http://prose.io/) config
 
 ```yaml
-prose: 
-  siteurl: 'https://solrevdev.com' 
-  media: 'media' 
+prose:
+  siteurl: 'https://solrevdev.com'
+  media: 'media'
 ```
 
 

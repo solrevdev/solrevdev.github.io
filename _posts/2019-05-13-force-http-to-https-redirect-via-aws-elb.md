@@ -1,6 +1,7 @@
 ---
 published: true
 layout: post
+title: 'Forcing HTTP to HTTPS redirect on IIS via Amazon Elastic Load Balancers'
 author: John Smith
 tags:
   - '#iis'
@@ -9,13 +10,12 @@ tags:
   - '#urlredirect'
   - '#webconfig'
 ---
-## Forcing HTTP to HTTPS redirect on IIS via Amazon Elastic Load Balancers
 
 Today I replaced an ageing asp.net web forms web application with a new static site which for now is just a landing page with a contact form and in doing so needed to force any insecure HTTP requests to HTTPS.
 
 A bit of a gotcha was an error on the redirect and the issue was the `HTTP_X_FORWARDED_PROTO` header also needed to be forwarded along with the redirect.
 
-For example : 
+For example :
 
 ```xml
 <conditions logicalGrouping="MatchAny">
@@ -24,7 +24,7 @@ For example :
 </conditions>
 ```
 
-Next up, I needed to redirect any users who were going to `.aspx` pages that no longer existed to a custom 404 HTML page not found page. 
+Next up, I needed to redirect any users who were going to `.aspx` pages that no longer existed to a custom 404 HTML page not found page.
 
 This just needed adding to `web.config` like so :
 
