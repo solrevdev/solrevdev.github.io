@@ -1,7 +1,9 @@
 ---
 published: true
 layout: post
-title: 'ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY error on down-level windows operating systems'
+title: >-
+  ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY error on down-level windows operating
+  systems
 author: John Smith
 tags:
   - '#dotnetcore'
@@ -55,32 +57,20 @@ So, I created an `appsettings.{the-environment.machinename-value-here}.json` fil
 
 Then in Program.cs I modified `CreateHostBuilder` to read the above custom appsettings.json file.
 
-Note the line containing: ` config.AddJsonFile($"appsettings.{Environment.MachineName}.json", optional: true);`
+Note the line containing: `config.AddJsonFile($"appsettings.{Environment.MachineName}.json", optional: true);`
 
 
 **Program.cs**
 
 ```cs
 
-namespace mynamespace
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
-
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration((hostingContext, config) =>
-            {
-                config.AddJsonFile($"appsettings.{Environment.MachineName}.json", optional: true);
-                config.AddCommandLine(args);
-            })
-            .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
-    }
-}
+public static IHostBuilder CreateHostBuilder(string[] args) =>
+   Host.CreateDefaultBuilder(args)
+   .ConfigureAppConfiguration((hostingContext, config) => {
+    config.AddJsonFile($ "appsettings.{Environment.MachineName}.json", optional: true);
+    config.AddCommandLine(args);
+   })
+   .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup < Startup > ());
 ```
 
 Success 🎉
