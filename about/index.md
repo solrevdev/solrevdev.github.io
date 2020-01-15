@@ -30,7 +30,7 @@ I can be found on social media here:
 * [Linked In](https://www.linkedin.com/in/solrevdev)
 * [Twitter](https://twitter.com/solrevdev)
 * [Facebook](https://www.facebook.com/solrevdevtechradar/)
-* [https://21.co/solrevdev/](https://21.co/solrevdev/)
+* [Stack Overflow](https://stackoverflow.com/users/2041/solrevdev)
 
 
 ## About this site
