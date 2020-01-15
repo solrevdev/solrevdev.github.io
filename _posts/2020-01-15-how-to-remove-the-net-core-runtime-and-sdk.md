@@ -9,11 +9,11 @@ tags:
   - '#sdk'
   - '#dotnet-core-uninstall'
 ---
-Today I noticed a windows machine I look after had absolutely loads of version of the dotnetcore framework installed on it. 
+Today I noticed a windows machine that I look after had absolutely loads of versions of the dotnetcore framework installed on it. 
 
-As in every major and minor version from 1.0 to the latest 3.1 and many previews in-between.
+It seemed like every major and minor version from 1.0 to the latest 3.1 and many previews in-between had been installed.
 
-To see if your machine has the same try this command in your terminal:
+To see if your machine is the same try this command in your terminal:
 
 ```powershell
 dotnet --list-sdks
@@ -21,7 +21,7 @@ dotnet --list-sdks
 
 Microsoft has a page titled [How to remove the .NET Core Runtime and SDK](https://docs.microsoft.com/en-us/dotnet/core/versions/remove-runtime-sdk-versions?tabs=windows) which explains how to remove older versions.
 
-There is also a [tool to help uninstall these](https://docs.microsoft.com/en-us/dotnet/core/additional-tools/uninstall-tool?tabs=windows) for you.
+There is also a [tool to help uninstall these](https://docs.microsoft.com/en-us/dotnet/core/additional-tools/uninstall-tool?tabs=windows) versions available that is worth a look.
 
 So I downloaded and installed the tool and ran the command to see list what could be uninstalled for me.
 
@@ -33,7 +33,9 @@ dotnet-core-uninstall list
 
 The tool is smart in that it knows which versions are required by Visual Studio.
 
-So I began to uninstall the undeeded dotnetcore SDK's on the system, I started by removing all preview versions of the dotnetcore sdk.
+So I began to uninstall the undeeded dotnetcore SDK's on the system.
+
+I started by removing all preview versions of the dotnetcore sdk.
 
 ```powershell
 dotnet-core-uninstall --sdk --all-previews
@@ -48,7 +50,7 @@ I then re-ran the tool to check these were uninstalled and to see what was left
 dotnet-core-uninstall list
 ```
 
-Then I built my final command to remove the older versions that were not needed by Visual Studio.
+Then I built and ran my final command to remove the older versions that were not needed by Visual Studio.
 
 ```powershell
 dotnet-core-uninstall remove --sdk 2.2.300 2.2.102 2.2.100 2.1.801 2.1.701 2.1.700 2.1.604 2.1.602 2.1.601 2.1.600 2.1.511 2.1.509 2.1.508 2.1.507 2.1.505 2.1.504 2.1.503 2.1.502 2.1.500 2.1.403 2.1.402 2.1.401 2.1.400 2.1.302 2.1.301 2.1.300 2.1.201 2.1.200 2.1.104 2.1.103 2.1.102 2.1.101 2.1.100 2.1.4 2.1.3 2.1.2 1.1.7
