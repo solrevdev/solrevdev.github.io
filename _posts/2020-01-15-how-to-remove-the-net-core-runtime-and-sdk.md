@@ -21,9 +21,9 @@ dotnet --list-sdks
 
 Microsoft has a page titled [How to remove the .NET Core Runtime and SDK](https://docs.microsoft.com/en-us/dotnet/core/versions/remove-runtime-sdk-versions?tabs=windows) which explains how to remove older versions.
 
-There is also a [tool to help uninstall these](https://docs.microsoft.com/en-us/dotnet/core/additional-tools/uninstall-tool?tabs=windows) versions available that is worth a look.
+There is also a [tool to help uninstall these versions](https://docs.microsoft.com/en-us/dotnet/core/additional-tools/uninstall-tool?tabs=windows)  available that is worth a look.
 
-So I downloaded and installed the tool and ran the command to see list what could be uninstalled for me.
+So I downloaded and installed the tool and ran a command to see list what could be uninstalled for me.
 
 ```powershell
 dotnet-core-uninstall list
@@ -33,7 +33,7 @@ dotnet-core-uninstall list
 
 The tool is smart in that it knows which versions are required by Visual Studio.
 
-So I began to uninstall the undeeded dotnetcore SDK's on the system.
+So I began to uninstall the undeeded and safe to remove dotnetcore SDK's on the system.
 
 I started by removing all preview versions of the dotnetcore sdk.
 
@@ -44,7 +44,7 @@ dotnet-core-uninstall --sdk --all-previews
 ![2020-01-15_12_27_48.png]({{site.baseurl}}/media/2020-01-15_12_27_48.png)
 
 
-I then re-ran the tool to check these were uninstalled and to see what was left
+I then re-ran the tool to ensure that these were uninstalled and to see what versions were left.
 
 ```powershell
 dotnet-core-uninstall list
