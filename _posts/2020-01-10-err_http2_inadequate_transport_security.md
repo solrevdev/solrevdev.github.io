@@ -64,13 +64,18 @@ Note the line containing: `config.AddJsonFile($"appsettings.{Environment.Machine
 
 ```cs
 
-public static IHostBuilder CreateHostBuilder(string[] args) =>
-   Host.CreateDefaultBuilder(args)
-   .ConfigureAppConfiguration((hostingContext, config) => {
-    config.AddJsonFile($ "appsettings.{Environment.MachineName}.json", optional: true);
-    config.AddCommandLine(args);
-   })
-   .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup < Startup > ());
+public static IHostBuilder CreateHostBuilder(string[] args)
+{
+    return Host
+        .CreateDefaultBuilder(args)
+        .ConfigureAppConfiguration((hostingContext, config) =>
+        {
+            config.AddJsonFile($"appsettings.{Environment.MachineName}.json", optional: true);
+            config.AddCommandLine(args);
+        })
+        .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
+}
+
 ```
 
 Success 🎉
