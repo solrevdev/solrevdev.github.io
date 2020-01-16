@@ -7,12 +7,12 @@ published: true
   <h1 class="post-title">{{ page.title }}</h1>
   <span class="post-date">{{ page.date | date_to_string }}</span>
   {{ content }}
-  
+
   <hr>
   {% if post.tags.size > 0 %}
-  Tag{% if post.tags.size > 1 %}s{% endif %}:
-  {{ post.tags | sort | join: ", " }}
-{% endif %}
+    Tag{% if post.tags.size > 1 %}s{% endif %}:
+    {{ post.tags | sort | join: ", " }}
+  {% endif %}
 </div>
 
 <div class="related">
