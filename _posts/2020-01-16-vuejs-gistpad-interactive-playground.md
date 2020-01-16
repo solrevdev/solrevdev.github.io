@@ -10,7 +10,7 @@ tags:
   - '#api'
   - '#policedata'
 ---
-Recently I installed a VS Code extension called [GistPad](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs) about which the marketplace docs says:
+Recently I installed a VS Code extension called [GistPad](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs) about which the marketplace docs go on to say:
 
 	GistPad is a Visual Studio Code extension that allows you to manage GitHub Gists entirely within the editor. You can open, create, delete, fork, star and clone gists, and then seamlessly begin editing files as if they were local.
 
