@@ -164,6 +164,13 @@ new Vue({
 
 The GistPad toolbar has an icon that allows you to open a console to view the output of your `console.log` statements and I soon had a working version.
 
+If you would like to see my Police Data sample try this link:
+
+[https://gist.github.com/solrevdev/ffeea859dc82ebb95636cb13833c050b](https://gist.github.com/solrevdev/ffeea859dc82ebb95636cb13833c050b)
+
+{% gist ffeea859dc82ebb95636cb13833c050b %}
+
+
 All in all, it's an excellent experience.
 
 If VueJS isn't your thing then react and typescript versions of these are available and it's open for more templates to be submitted to them.
