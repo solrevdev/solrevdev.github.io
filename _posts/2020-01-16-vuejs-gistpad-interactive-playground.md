@@ -10,7 +10,7 @@ tags:
   - '#api'
   - '#policedata'
 ---
-Recently I installed a VS Code extension called [GistPad](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs) which from the marketplace docs says:
+Recently I installed a VS Code extension called [GistPad](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs) about which the marketplace docs says:
 
 	GistPad is a Visual Studio Code extension that allows you to manage GitHub Gists entirely within the editor. You can open, create, delete, fork, star and clone gists, and then seamlessly begin editing files as if they were local.
 
@@ -18,25 +18,25 @@ It is a great extension and I am using Gists way more now.
 
 **Install**
 
-To install launch VS Code Quick Open (<kbd>Ctrl</kbd>+<kbd>P</kbd>), paste the following command, and press enter.
+To install the extension launch VS Code Quick Open (<kbd>Ctrl</kbd>+<kbd>P</kbd>), paste the following command, and press enter.
 
 `ext install vsls-contrib.gistfs`
 
-The [marketplace docs](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs) are a great place to start reading up about it.
+The [marketplace docs](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs) are a great place to start learning about what it can do.
 
 **GistPad Interactive Playgrounds**
 
-Another neat feature is the interactive playgrounds which again from the marketplace docs explain :
+Another neat feature is interactive playgrounds which again the marketplace docs explain :
 
 	If you're building web applications, and want to create a quick playground environment in order to experiment with HTML, CSS or JavaScript (or Sass/SCSS, Less, Pug and TypeScript), you can right-click the Your Gists node and select New Playground or New Secret Playground. This will create a new gist, seeded with an HTML, CSS and JavaScript file, and then provide you with a live preview Webview, so that you can iterate on the code and visually see how it behaves.
 
-I am a big fan of VueJS so I decided to spin up a new interactive playground choosing VueJS from the menu that appears.
+I am a big fan of [VueJS](https://vuejs.com) so I decided to spin up a new interactive playground choosing VueJS from the menu that appears.
 
-There is a nice hello world style template that you can use to get started with.
+That produces a nice hello world style template that you can use to get started with.
 
 **UK Police Data**
 
-Rather than displaying weather data or random data, I decided to use crime data for Oxfordshire from [Data.Police.UK](https://data.police.uk/docs/) which seemed an interesting dataset to play around with.
+Rather than displaying weather data or some random dummy data in my playground, I decided to use crime data for Oxfordshire from [Data.Police.UK](https://data.police.uk/docs/) which seemed an interesting dataset to play around with.
 
 I started by reading the docs and looking the example request which takes pairs of lat/long coordinates to describe an area:
 
@@ -92,7 +92,7 @@ Then looking at the sample JSON response back from the API I then had enough to 
 
 Right-clicking in the GistPad tab in VSCode showed me a menu allowing me to create either a public or private interactive playground.
 
-The template is plenty to get started with.
+The generated template is plenty to get started with.
 
 It gives you 3 files to edit and a preview pane that refreshes whenever you make a change which is an excellent developer inner loop.
 
