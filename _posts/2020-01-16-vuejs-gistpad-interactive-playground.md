@@ -94,7 +94,7 @@ Right-clicking in the GistPad tab in VSCode showed me a menu allowing me to crea
 
 The template is plenty to get started with.
 
-It gives you 3 files to edit and preview pane that refreshes whenever you make a change which is an excellent developer inner loop.
+It gives you 3 files to edit and a preview pane that refreshes whenever you make a change which is an excellent developer inner loop.
 
 ![2020-01-16_11-23-46_gistpad.png]({{site.baseurl}}/media/2020-01-16_11-23-46_gistpad.png)
 
