@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: VueJS GistPad Interactive Playground
 author: John Smith
