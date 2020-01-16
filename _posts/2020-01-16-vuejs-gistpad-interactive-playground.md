@@ -168,7 +168,7 @@ If you would like to see my Police Data sample try this link:
 
 [https://gist.github.com/solrevdev/ffeea859dc82ebb95636cb13833c050b](https://gist.github.com/solrevdev/ffeea859dc82ebb95636cb13833c050b)
 
-{% gist ffeea859dc82ebb95636cb13833c050b %}
+{% gist ffeea859dc82ebb95636cb13833c050b script.js %}
 
 
 All in all, it's an excellent experience.
