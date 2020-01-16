@@ -115,8 +115,10 @@ If you would like to see my Police Data sample try this link:
 [https://gist.github.com/solrevdev/41a7adb028bb10c741153f58b36d01fe](https://gist.github.com/solrevdev/41a7adb028bb10c741153f58b36d01fe)
 
 
-All in all, it's an excellent experience.
+If VueJS isn't your thing then react.js is an option and typescript versions of these two are also available.  
 
-If VueJS isn't your thing then react and typescript versions of these are available and it's open for more templates to be submitted to them.
+The extension is open for more templates to be added to it and can be submitted to them.
+
+All in all, it's an excellent experience.
 
 Success 🎉
