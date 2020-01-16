@@ -16,6 +16,9 @@ Recently I installed a VS Code extension called [GistPad](https://marketplace.vi
 
 It is a great extension and I am using Gists way more now. 
 
+![2020-01-16_11-23-46_gistpad.png]({{site.baseurl}}/media/2020-01-16_11-23-46_gistpad.png)
+
+
 **Install**
 
 To install the extension launch VS Code Quick Open (<kbd>Ctrl</kbd>+<kbd>P</kbd>), paste the following command, and press enter.
@@ -33,6 +36,8 @@ Another neat feature is interactive playgrounds which again the marketplace docs
 I am a big fan of [VueJS](https://vuejs.org) so I decided to spin up a new interactive playground choosing VueJS from the menu that appears.
 
 That produces a nice hello world style template that you can use to get started with.
+
+![2020-01-16_11-24-59_gistpad_playground.png]({{site.baseurl}}/media/2020-01-16_11-24-59_gistpad_playground.png)
 
 **UK Police Data**
 
@@ -95,10 +100,6 @@ Right-clicking in the GistPad tab in VSCode showed me a menu allowing me to crea
 The generated template is plenty to get started with.
 
 It gives you 3 files to edit and a preview pane that refreshes whenever you make a change which is an excellent developer inner loop.
-
-![2020-01-16_11-23-46_gistpad.png]({{site.baseurl}}/media/2020-01-16_11-23-46_gistpad.png)
-
-![2020-01-16_11-24-59_gistpad_playground.png]({{site.baseurl}}/media/2020-01-16_11-24-59_gistpad_playground.png)
 
 So after some trial and error, these were my 3 files all [associated with a GitHub Gist](https://gist.github.com/solrevdev/41a7adb028bb10c741153f58b36d01fe)
 
