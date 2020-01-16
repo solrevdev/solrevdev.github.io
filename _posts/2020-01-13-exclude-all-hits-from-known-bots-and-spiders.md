@@ -3,7 +3,11 @@ published: true
 layout: post
 title: Exclude all hits from known bots and spiders
 author: John Smith
-tags: [ '#googleanalytics', '#google',  '#seo', '#analytics' ]
+tags:
+  - '#googleanalytics'
+  - '#google'
+  - '#seo'
+  - '#analytics'
 ---
 
 Today I decided to take a look at my [Google Analytics](https://analytics.google.com/) for this website and I had way more traffic than a site like mine ought to have.
