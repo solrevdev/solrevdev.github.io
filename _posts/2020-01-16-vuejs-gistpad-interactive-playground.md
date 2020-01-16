@@ -30,7 +30,7 @@ Another neat feature is interactive playgrounds which again the marketplace docs
 
 	If you're building web applications, and want to create a quick playground environment in order to experiment with HTML, CSS or JavaScript (or Sass/SCSS, Less, Pug and TypeScript), you can right-click the Your Gists node and select New Playground or New Secret Playground. This will create a new gist, seeded with an HTML, CSS and JavaScript file, and then provide you with a live preview Webview, so that you can iterate on the code and visually see how it behaves.
 
-I am a big fan of [VueJS](https://vuejs.com) so I decided to spin up a new interactive playground choosing VueJS from the menu that appears.
+I am a big fan of [VueJS](https://vuejs.org) so I decided to spin up a new interactive playground choosing VueJS from the menu that appears.
 
 That produces a nice hello world style template that you can use to get started with.
 
