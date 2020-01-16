@@ -8,7 +8,7 @@ published: true
   <span class="post-date">{{ page.date | date_to_string }}</span>
   {{ content }}
   
-  <hr>Tags
+  <hr>
   {% if post.tags.size > 0 %}
   Tag{% if post.tags.size > 1 %}s{% endif %}:
   {{ post.tags | sort | join: ", " }}
