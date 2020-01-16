@@ -102,63 +102,8 @@ It gives you 3 files to edit and preview pane that refreshes whenever you make a
 
 So after some trial and error, these were my 3 files all [associated with a GitHub Gist](https://gist.github.com/solrevdev/41a7adb028bb10c741153f58b36d01fe)
 
-**index.html**
+{% gist 41a7adb028bb10c741153f58b36d01fe %}
 
-```html
-<div id="app">
-    <h2>Police data for Oxfordshire</h2>
-    <p>Using data from <a href="https://data.police.uk/docs/method/crime-street/">https://data.police.uk/docs/method/crime-street/</a></p>
-    <p>Built using <a href="https://vuejs.org/">vue.js</a> and <a href="https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs">gistpad</a></p>
-    <p>Dataset source <a href="https://data.police.uk/api/crimes-street/all-crime?poly=51.85110973276099,%20-1.4057047320491165:51.86298424914946,%20-1.1282999468928665:51.71262569681858,%20-1.1241800738459915:51.70241375059155,%20-1.3905985308772415:51.850261433101906,%20-1.4043314410334915">https://data.police.uk/api/crimes-street/all-crime?poly=51.85110973276099,%20-1.4057047320491165:51.86298424914946,%20-1.1282999468928665:51.71262569681858,%20-1.1241800738459915:51.70241375059155,%20-1.3905985308772415:51.850261433101906,%20-1.4043314410334915</a></p>
-    <p>Sample data: <a href="sample.json">sample.json</a></p>
-    <button @click="clearData">Clear data</button>
-    <button @click="loadData">Fetch data</button>
-    <hr>
-    <div id="records" v-for="record in records" key="record.id">
-        <p>[{{record.month}}] | {{record.category}} | {{record.location.street.name}}<span v-if="record.outcome_status != null">| {{record.outcome_status}}</span> </p>
-    </div>
-</div>
-```
-
-**style.css**
-
-```css
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #eee
-}
-```
-
-**script.js**
-
-```javascript
-new Vue({
-    el: "#app",
-    data: {
-        records : []
-    },
-    methods: {
-        async loadData() {
-            console.clear();
-            const json = await this.fetchData();
-            this.records = json;
-            console.log(this.records[0]);
-        },
-        async fetchData() {
-            const response = await fetch("https://data.police.uk/api/crimes-street/all-crime?poly=51.85110973276099,%20-1.4057047320491165:51.86298424914946,%20-1.1282999468928665:51.71262569681858,%20-1.1241800738459915:51.70241375059155,%20-1.3905985308772415:51.850261433101906,%20-1.4043314410334915");
-            const json = response.json();
-            return json;
-        },
-        clearData() {
-            console.clear();
-            const records = document.getElementById("records");
-            if(records) {
-                records.innerHTML = "";
-            }
-        }
-    }
-});
-```
 
 **The end result**
 
@@ -167,8 +112,6 @@ The GistPad toolbar has an icon that allows you to open a console to view the ou
 If you would like to see my Police Data sample try this link:
 
 [https://gist.github.com/solrevdev/41a7adb028bb10c741153f58b36d01fe](https://gist.github.com/solrevdev/41a7adb028bb10c741153f58b36d01fe)
-
-{% gist 41a7adb028bb10c741153f58b36d01fe %}
 
 
 All in all, it's an excellent experience.
