@@ -11,6 +11,8 @@ tags:
 ---
 Tonight a desktop notification popped up on my Ubuntu 19.10 desktop to remind me that my [Arc Menu](https://extensions.gnome.org/extension/1228/arc-menu/) [Gnome Extension](https://extensions.gnome.org/) had an update.
 
+Here is the [Arc Menu](https://extensions.gnome.org/extension/1228/arc-menu/) in action:
+
 ![2020-01-19_22-03-15_arc_menu.png]({{site.baseurl}}/media/2020-01-19_22-03-15_arc_menu.png)
 
 Normally I update it via either Google Chrome or Firefox using the Gnome Extensions website](https://extensions.gnome.org/) however tonight when I tried the update an error occurred. 
