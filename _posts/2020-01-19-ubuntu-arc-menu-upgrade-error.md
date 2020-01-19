@@ -22,7 +22,7 @@ Literrally an `Error`!
 
 ![2020-01-19_20-52-06_arc_error.png]({{site.baseurl}}/media/2020-01-19_20-52-06_arc_error.png)
 
-The menu was missing and I tried to reinstall, reboot and all the usual turn it off and back on again tricks but to no avail. 
+The menu was also missing and I tried to reinstall, reboot and all the usual turn it off and back on again tricks but to no avail. 
 
 After some duckduckgo'ing (I am trying [duckduckgo](https://duckduckgo.com/) as my default search these days over the evil Google), I came across the solution of restarting Gnome. 
 
