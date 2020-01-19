@@ -22,17 +22,21 @@ Literrally an `Error`!
 
 ![2020-01-19_20-52-06_arc_error.png]({{site.baseurl}}/media/2020-01-19_20-52-06_arc_error.png)
 
+**Missing Menu**
+
 The menu was also missing and I tried to reinstall, reboot and all the usual turn it off and back on again tricks but to no avail. 
 
 After some duckduckgo'ing (I am trying [duckduckgo](https://duckduckgo.com/) as my default search these days over the evil Google), I came across the solution of restarting Gnome. 
 
+**Solution** 
+
 So for anyone else that needs this solution or for me if/when this happens again here is what to do when you see the error. 
 
-Press <kbd><kbd>Alt</kbd>+<kbd>F2</kbd></kbd> to bring up a dialog then type <kbd>r</kbd>
+Press <kbd><kbd>Alt</kbd>+<kbd>F2</kbd></kbd> to bring up a dialog then type <kbd>r</kbd> to restart the Gnome process.
 
 ![2020-01-19_22-03-14_restart_gnome.png]({{site.baseurl}}/media/2020-01-19_22-03-14_restart_gnome.png)
 
-After a refresh, the menu should be working and the error was gone.
+After a refresh, the menu should be working and the error will be gone.
 
 ![2020-01-19_20-53-27_arc_success.png]({{site.baseurl}}/media/2020-01-19_20-53-27_arc_success.png)
 
