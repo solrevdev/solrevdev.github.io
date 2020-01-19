@@ -32,7 +32,7 @@ After some duckduckgo'ing (I am trying [duckduckgo](https://duckduckgo.com/) as 
 
 So for anyone else that needs this solution or for me if/when this happens again here is what to do when you see the error. 
 
-Press <kbd><kbd>Alt</kbd>+<kbd>F2</kbd></kbd> to bring up a dialog then type <kbd>r</kbd> to restart the Gnome process.
+Press <kbd>Alt</kbd>+<kbd>F2</kbd> to bring up a dialog then type <kbd>r</kbd> to restart the Gnome process.
 
 ![2020-01-19_22-03-14_restart_gnome.png]({{site.baseurl}}/media/2020-01-19_22-03-14_restart_gnome.png)
 
