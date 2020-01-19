@@ -15,9 +15,10 @@ Here is the [Arc Menu](https://extensions.gnome.org/extension/1228/arc-menu/) in
 
 ![2020-01-19_22-03-15_arc_menu.png]({{site.baseurl}}/media/2020-01-19_22-03-15_arc_menu.png)
 
-Normally I update it via either Google Chrome or Firefox using the Gnome Extensions website](https://extensions.gnome.org/) however tonight when I tried the update an error occurred. 
 
-Literrally `Error`!
+Normally I can update it via either Google Chrome or Firefox using the Gnome Extensions website](https://extensions.gnome.org/) however tonight when I tried the update an error occurred. 
+
+Literrally an `Error`!
 
 ![2020-01-19_20-52-06_arc_error.png]({{site.baseurl}}/media/2020-01-19_20-52-06_arc_error.png)
 
