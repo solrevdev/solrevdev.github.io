@@ -20,7 +20,9 @@ Tonight has all been about trying to get rid of some ASP.Net MVC yellow screens 
 
 **Background**
 
-My application is a fairly old ASP.Net MVC 5 web application that used to talk to a local instance of MySQL and now has been ported the cloud (AWS) with the MySQL database migrated to use Amazon's Aurora Serverless MySQL database service. I have a few of these now. They suit certain workloads and my dev environments very well.
+My application is a fairly old ASP.Net MVC 5 web application that used to talk to a local instance of MySQL and now has been ported the cloud (AWS) with the MySQL database migrated to use Amazon's [Aurora Serverless MySQL database service](https://aws.amazon.com/rds/aurora/serverless/). 
+
+I have a few of these now. They suit certain workloads and my dev environments very well.
 
 **Timeouts**
 
@@ -73,13 +75,13 @@ or:
 
 **Solution**
 
-After a quick google I was able to improve the situation with the `0x80004005): The Command Timeout` exception by telling the `MySQLConnector.NET` driver to increase the timeout by appending this to the connection string where the timeout is in seconds:
+After a quick google I was able to improve the situation with the *(0x80004005): The Command Timeout* exception by telling the [MySQLConnector.NET](https://mysqlconnector.net/) driver to increase the timeout by appending this to the connection string where the timeout is in seconds:
 
 `default command timeout=120`
 
-As I use `ServiceStack.OrmLite` I could also have added `OrmLiteConfig.CommandTimeout = 120;` in code but apending to the web.config seemed neater.
+As I also use [ServiceStack.OrmLite](https://github.com/ServiceStack/ServiceStack.OrmLite) to talk to my data layer I could also have added `OrmLiteConfig.CommandTimeout = 120;` in my code but apending to the web.config seemed a neater solution.
 
-That left the rare but repeatable `A connection attempt failed because the connected party...` timeout error, that is when looking at some other code that talks to AWS Aurora MySQL Serverless databases I noticed a connection string that appended this:
+That left the rare but repeatable *A connection attempt failed because the connected party...* timeout error, that is when looking at some other code that talks to AWS Aurora MySQL Serverless databases I noticed the connection strings had this appended:
 
 `SslMode=none`
 
@@ -96,5 +98,3 @@ This is the connection string I ended up using
 ```
 
 Success 🎉
-
-
