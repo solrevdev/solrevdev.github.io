@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Uses
-published: false
+published: true
 author: John Smith
 tags:
   - '#uses'
