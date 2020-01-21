@@ -7,6 +7,7 @@ tags:
   - '#uses'
   - '#me'
 ---
+
 Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to do what I do; 
 
 **Hardware**
@@ -40,8 +41,7 @@ I vary but this is my current list, sometimes I will swap the order of these for
 
 **Code**
 
-- aspnetcore
-- dotnetcore 
-- blazor
-- vuejs
-- bootstrap
+- [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1)
+- [.NET Core](https://dotnet.microsoft.com)
+- [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
+- [Vue.js](https://vuejs.org)
