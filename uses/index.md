@@ -7,8 +7,6 @@ tags:
   - '#uses'
   - '#me'
 ---
-## Uses
-
 Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to do what I do; 
 
 **Hardware**
@@ -47,5 +45,3 @@ I vary but this is my current list, sometimes I will swap the order of these for
 - blazor
 - vuejs
 - bootstrap
-
-
