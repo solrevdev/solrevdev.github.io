@@ -75,23 +75,23 @@ or:
 
 **Solution**
 
-After a quick google I was able to improve the situation with the *(0x80004005): The Command Timeout* exception by telling the [MySQLConnector.NET](https://mysqlconnector.net/) driver to increase the timeout by appending this to the connection string where the timeout is in seconds:
+After a quick google I was able to improve the situation for the *(0x80004005): The Command Timeout* exception by telling the [MySQLConnector.NET](https://mysqlconnector.net/) driver to increase the timeout by appending this to the connection string where the timeout is in seconds:
 
 `default command timeout=120`
 
-As I also use [ServiceStack.OrmLite](https://github.com/ServiceStack/ServiceStack.OrmLite) to talk to my data layer I could also have added `OrmLiteConfig.CommandTimeout = 120;` in my code but apending to the web.config seemed a neater solution.
+As I also use [ServiceStack.OrmLite](https://github.com/ServiceStack/ServiceStack.OrmLite) to talk to my data layer I could instead have added `OrmLiteConfig.CommandTimeout = 120;` in my code but apending to the web.config seemed a neater solution.
 
-That left the rare but repeatable *A connection attempt failed because the connected party...* timeout error, that is when looking at some other code that talks to AWS Aurora MySQL Serverless databases I noticed the connection strings had this appended:
+That left the rare but repeatable *A connection attempt failed because the connected party...* timeout error, then when looking at some other code that talks to AWS Aurora MySQL Serverless databases I noticed the connection strings had this little gem:
 
 `SslMode=none`
 
-So I decided to try that and it seems to have worked!
+So I decided to try that by appending that to my connection string and it seems to have worked!
 
 **Success?!**
 
-Perhaps its an Amazon Aurora Serverless database oddity or perhaps the bug will still re-appear but for now it does seem to have worked.
+Perhaps its an Amazon Aurora Serverless database oddity or perhaps the bug will still re-appear but for now adding `SslMode=none` to my connection string seems to have worked.
 
-So, this for others and for me in the future is the connection string I ended up using
+So, this for others and for me in the future is the full connection string I ended up using when connecting to an [AWS Aurora Serverless MySQL database service](https://aws.amazon.com/rds/aurora/serverless/):
 
 ```xml
 <add key="MYSQL_CONNECTION_STRING_RDS" value="Uid=userid;Password=pass;Server=auroa-mysql-rds.cluster-random.eu-west-1.rds.amazonaws.com;Port=3306;Database=dbname;default command timeout=120;SslMode=none" />
