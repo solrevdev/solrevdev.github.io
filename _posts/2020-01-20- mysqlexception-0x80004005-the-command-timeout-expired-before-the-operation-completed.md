@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: >-
   MySqlException (0x80004005): The Command Timeout expired before the operation
@@ -87,11 +87,11 @@ That left the rare but repeatable *A connection attempt failed because the conne
 
 So I decided to try that and it seems to have worked!
 
-**Sucess?!**
+**Success?!**
 
-Perhaps its AWS database thing or perhaps the bug will still re-appear but for now success.
+Perhaps its an Amazon Aurora Serverless database oddity or perhaps the bug will still re-appear but for now it does seem to have worked.
 
-This is the connection string I ended up using
+So, this for others and for me in the future is the connection string I ended up using
 
 ```xml
 <add key="MYSQL_CONNECTION_STRING_RDS" value="Uid=userid;Password=pass;Server=auroa-mysql-rds.cluster-random.eu-west-1.rds.amazonaws.com;Port=3306;Database=dbname;default command timeout=120;SslMode=none" />
