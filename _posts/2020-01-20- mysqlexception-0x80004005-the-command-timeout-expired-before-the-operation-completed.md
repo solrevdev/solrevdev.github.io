@@ -11,7 +11,6 @@ tags:
   - '#mysqlconnector.net'
   - '#mysqlexception'
 ---
-**MySqlException (0x80004005): The Command Timeout expired before the operation completed**
 
 Tonight has all been about trying to get rid of some ASP.Net MVC yellow screens of death (YSOD) caused by MySQL timing out.
 
