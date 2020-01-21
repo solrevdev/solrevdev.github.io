@@ -36,7 +36,7 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 I vary but this is my current list, sometimes I will swap the order of these for when I want a change.
 
 ```json
-"editor.fontFamily": "'Anonymous Pro','Cascadia Code','Liberation Mono', 'Anonymous Pro', SFMono-Regular, Consolas, 'Dank Mono','Fira Code','Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
+"editor.fontFamily": "'Anonymous Pro','Cascadia Code','Liberation Mono', 'Anonymous Pro', SFMono-Regular, Consolas, 'Dank Mono','Fira Code','Source Code Pro', Menlo, Monaco, 'Courier New', monospace"
 ```
 
 **Code**
@@ -45,3 +45,13 @@ I vary but this is my current list, sometimes I will swap the order of these for
 - [.NET Core](https://dotnet.microsoft.com)
 - [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)
 - [Vue.js](https://vuejs.org)
+
+**About**
+
+More information [about me is here](https://solrevdev.com/about) and I can be found on social media here:
+
+* [Linked In](https://www.linkedin.com/in/solrevdev)
+* [Twitter](https://twitter.com/solrevdev)
+* [Facebook](https://www.facebook.com/solrevdevtechradar/)
+* [Stack Overflow](https://stackoverflow.com/users/2041/solrevdev)
+
