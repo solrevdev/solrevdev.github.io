@@ -1,7 +1,7 @@
 ---
-published: false
+published: true
 layout: post
-title: Links do not open Google Chrome
+title: Links do not open in Google Chrome
 author: John Smith
 tags:
   - '#googlechrome'
@@ -22,6 +22,6 @@ In Chrome's URL bar enter this...
 
 	`chrome://restart`
 
-This will restart all the Google Chrome processes and will generally fix this issue.
+This will restart all the Google Chrome processes and will generally fix this issue for a while.
 
 Success 🎉.
