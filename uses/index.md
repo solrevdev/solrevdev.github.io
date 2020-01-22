@@ -20,6 +20,18 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 ![2020-01-21_11_15_15_macos.png]({{site.baseurl}}/media/2020-01-21_11_15_15_macos.png)
 
 
+**macOS apps**
+
+- Alfred
+- Copied
+- MacUpdater
+- Magnet
+- Parallels / Parallels Access
+- Dropbox 
+- Bartender
+- LastPass
+- Homebrew
+
 **Editor and Terminal**
 
 - [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/) / [Visual Studio Code](https://code.visualstudio.com)
@@ -39,6 +51,31 @@ I vary but this is my current list, sometimes I will swap the order of these for
 "editor.fontFamily": "'Anonymous Pro','Cascadia Code','Liberation Mono', 'Anonymous Pro', SFMono-Regular, Consolas, 'Dank Mono','Fira Code','Source Code Pro', Menlo, Monaco, 'Courier New', monospace"
 ```
 
+**Visual Studio Code Extensions**
+
+I use a lot of these but here are some of my favourites:
+
+- Settings Sync
+- C#
+- C# Extensions
+- Cobalt2 Theme Official
+- Code Spell Checker
+- Debugger for Chrome/Firefox
+- EditorConfig for VS Code
+- GistPad
+- GitLens
+- LiveServer
+- Live Share
+- Markdown All in One
+- Nuget Package Manager 
+- Paste JSON as Code
+- Polacode
+- Roslynator for Visual Studio Code
+- Todo+ 
+- Trello Viewer
+- Visual Studio Intellicode
+- WakaTime
+
 **Code**
 
 - [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1)
@@ -54,4 +91,3 @@ More information [about me is here](https://solrevdev.com/about) and I can be fo
 * [Twitter](https://twitter.com/solrevdev)
 * [Facebook](https://www.facebook.com/solrevdevtechradar/)
 * [Stack Overflow](https://stackoverflow.com/users/2041/solrevdev)
-
