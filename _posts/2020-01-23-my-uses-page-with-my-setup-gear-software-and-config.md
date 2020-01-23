@@ -15,7 +15,7 @@ Another quick one today.
 
 I was recently listening to an [episode of syntax.fm](https://syntax.fm/show/215/hasty-treat-picking-the-stack-for-uses-tech-gatsby-react-context-styled-components) where wes bos was talking about a new site [uses.tech](https://uses.tech/). 
 
-![uses.tech]({{site.baseurl}}/https://i.imgur.com/rBdR6B6.gif)
+![uses.tech](https://i.imgur.com/rBdR6B6.gif)
 
 This inspired me to create my own [/uses](https://solrevdev.com/uses/) page.
 
