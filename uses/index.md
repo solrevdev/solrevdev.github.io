@@ -22,15 +22,15 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 
 **macOS apps**
 
-- Alfred
-- Copied
-- MacUpdater
-- Magnet
-- Parallels / Parallels Access
-- Dropbox 
-- Bartender
-- LastPass
-- Homebrew
+- [Alfred](https://www.alfredapp.com/)
+- [Copied](https://copiedapp.com/)
+- [MacUpdater](https://www.corecode.io/macupdater/)
+- [Magnet](https://magnet.crowdcafe.com/)
+- [Parallels](https://www.parallels.com/) / [Parallels Access](https://www.parallels.com/products/access/)
+- [Dropbox](https://www.dropbox.com/desktop) 
+- [Bartender](https://www.macbartender.com/)
+- [LastPass](http://lastpass.com/)
+- [Homebrew](https://brew.sh/)
 
 **Editor and Terminal**
 
@@ -47,34 +47,32 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 
 I vary but this is my current list, sometimes I will swap the order of these for when I want a change.
 
-```json
-"editor.fontFamily": "'Anonymous Pro','Cascadia Code','Liberation Mono', 'Anonymous Pro', SFMono-Regular, Consolas, 'Dank Mono','Fira Code','Source Code Pro', Menlo, Monaco, 'Courier New', monospace"
-```
+{% gist 734c22ad0010a5643f0cb29f425f396b %}
+
 
 **Visual Studio Code Extensions**
 
 I use a lot of these but here are some of my favourites:
 
-- Settings Sync
-- C#
-- C# Extensions
-- Cobalt2 Theme Official
-- Code Spell Checker
-- Debugger for Chrome/Firefox
-- EditorConfig for VS Code
-- GistPad
-- GitLens
-- LiveServer
-- Live Share
-- Markdown All in One
-- Nuget Package Manager 
-- Paste JSON as Code
-- Polacode
-- Roslynator for Visual Studio Code
-- Todo+ 
-- Trello Viewer
-- Visual Studio Intellicode
-- WakaTime
+- [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
+- [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
+- [C# Extensions](https://marketplace.visualstudio.com/items?itemName=jchannon.csharpextensions)
+- [Cobalt2 Theme Official](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2)
+- [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)/[Firefox](https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug)
+- [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+- [GistPad](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs)
+- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+- [LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+- [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+- [Nuget Package Manager](https://marketplace.visualstudio.com/items?itemName=jmrog.vscode-nuget-package-manager)
+- [Paste JSON as Code](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Roslynator for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.roslynator)
+- [Todo+](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-todo-plus)
+- [Trello Viewer](https://marketplace.visualstudio.com/items?itemName=Ho-Wan.vscode-trello-viewer)
+- [Visual Studio Intellicode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
+- [WakaTime](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime)
 
 **Code**
 
