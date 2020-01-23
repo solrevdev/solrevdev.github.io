@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: 'My uses page with my setup, gear, software and config'
 author: John Smith
