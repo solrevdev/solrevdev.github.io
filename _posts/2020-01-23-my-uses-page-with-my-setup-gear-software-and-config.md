@@ -17,6 +17,8 @@ I was recently listening to an [episode of syntax.fm](https://syntax.fm/show/215
 
 ![uses.tech](https://i.imgur.com/rBdR6B6.gif)
 
+This is a site that lists /uses pages detailing developer setups, gear, software and configs.
+
 This inspired me to create my own [/uses](https://solrevdev.com/uses/) page.
 
 Success 🎉
