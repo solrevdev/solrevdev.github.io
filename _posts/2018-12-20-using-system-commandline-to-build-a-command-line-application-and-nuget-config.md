@@ -40,7 +40,7 @@ So here is the sample Nuget.Config file I had to create alongside the solution f
 
 Borrowing from the [wiki](https://github.com/dotnet/command-line-api/wiki) this is really how simple this is to use.
 
-```c#
+```cs
 class Program
 {
     /// <param name="intOption">An option whose argument is parsed as an int</param>
