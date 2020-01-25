@@ -65,4 +65,4 @@ The value for --file-option is: null
 
 The dotnet team have done some really great work this year 🙌
 
-Success 
+Success 🎉
