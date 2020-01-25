@@ -1,25 +1,23 @@
 ---
 layout: post
-title: "Using System.CommandLine to build a command line application. Nuget.Config"
-author: "John Smith"
+title: Using System.CommandLine to build a command line application.
+author: John Smith
 tags:
-- "#dotnetcore"
-- "#nuget"
-- "#myget"
-- "#system.commandline"
-- "#bitbucketpiplines"
+  - '#dotnetcore'
+  - '#nuget'
+  - '#myget'
+  - '#system.commandline'
+  - '#bitbucketpiplines'
+published: true
 ---
 
-Using System.CommandLine to build a command line application. Nuget.Config
+Using System.CommandLine to build a command line application.
 
-I am writing a command line application and in order to parse arguments and display output to the console I found an
-experimental library called [System.Commandline](https://github.com/dotnet/command-line-api) written by the dotnet team that works really well. 
+I am writing a command line application and in order to parse arguments and display output to the console I found an experimental library called [System.Commandline](https://github.com/dotnet/command-line-api) written by the dotnet team that works really well. 
 
-The point for this post was that while this worked great locally I had a brain freeze when it came to getting 
-[bitbucket pipelines](https://bitbucket.org/product/features/pipelines) to build this properly due to it having a custom MyGet feed for the as yet unreleased library.
+The point for this post was that while this worked great locally I had a brain freeze when it came to getting [bitbucket pipelines](https://bitbucket.org/product/features/pipelines) to build this properly due to it having a custom MyGet feed for the as yet unreleased library.
 
-So here is the sample Nuget.Config file I had to create alongside the solution file to get bitbucket pipelines to build 
-this correctly.
+So here is the sample Nuget.Config file I had to create alongside the solution file to get bitbucket pipelines to build this correctly.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -66,3 +64,5 @@ The value for --file-option is: null
 ```
 
 The dotnet team have done some really great work this year 🙌
+
+Success 
