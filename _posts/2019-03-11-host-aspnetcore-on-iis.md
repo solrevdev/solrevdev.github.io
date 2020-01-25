@@ -1,15 +1,14 @@
 ---
 layout: post
-title: "Host ASP.NET Core on Windows with IIS"
-author: "John Smith"
+title: Host ASP.NET Core on Windows with IIS
+author: John Smith
 tags:
-- "#dotnetcore"
-- "#aspnetcore"
-- "#iis"
-- "#windows"
+  - '#dotnetcore'
+  - '#aspnetcore'
+  - '#iis'
+  - '#windows'
+published: true
 ---
-
-Host ASP.NET Core on Windows with IIS
 
 A recent push to production broke an ASP.NET Core application I have running and it took me a while to find out the underlying problem. 
 
@@ -74,3 +73,5 @@ After many combinations and deployments, I ended up with this successful combina
 ```
 
 So after the install of [.NET Core 2.2 Runtime & Hosting Bundle for Windows (v2.2.2)](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-2.2.2-windows-hosting-bundle-installer) and one reboot later all was well again.  🙌
+
+Success 
