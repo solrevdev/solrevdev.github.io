@@ -39,15 +39,15 @@ My Dispose method looks like the first method below and I suspect it is because 
 public void Dispose()
 { 
 	// conditional access shortcut
-    _timer?.Dispose(); 
+	_timer?.Dispose(); 
 } 
 
 public void Dispose()
 { 
-    	// null check
+	// null check
 	if(_timer != null)
 	{
-    	_timer.Dispose(); 
+		_timer.Dispose(); 
 	}
 } 
 ```
@@ -70,8 +70,8 @@ if (Monitor.TryEnter(_locker))
 {
 	try
 	{
-    	// do long running work here
-	 	DoWork();
+		// do long running work here
+		DoWork();
 	}
 	finally
 	{
