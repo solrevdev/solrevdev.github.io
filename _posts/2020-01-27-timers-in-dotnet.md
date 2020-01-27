@@ -81,6 +81,8 @@ if (Monitor.TryEnter(_locker))
 ```
 And so with these two fixes in place, my timer work was behaving as expected. 
 
+**Solution**
+
 Here is a sample class with the above code all in context for future reference
 
 {% gist 60f58cc72b3576617486162470c50280 %}
