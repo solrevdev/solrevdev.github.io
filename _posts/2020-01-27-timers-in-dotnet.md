@@ -1,7 +1,7 @@
 ---
 published: false
 layout: post
-title: Timers in .NET
+title: Timers in dotnet
 author: John Smith
 tags:
   - .net
