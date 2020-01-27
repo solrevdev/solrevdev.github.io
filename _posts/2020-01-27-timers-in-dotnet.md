@@ -29,6 +29,8 @@ Generates an event after a set interval, with an option to generate recurring ev
 
 Provides a mechanism for [executing a method on a thread pool thread](https://docs.microsoft.com/en-us/dotnet/api/system.threading.timer?redirectedfrom=MSDN&view=netcore-3.1) at specified intervals and is the one I decided to go with. 
 
+**Issues**
+
 I came across a couple of minor issues the first being that even though I held a reference to my Timer object in my class and disposed of it in a Dispose method the timer would stop ticking after a while suggesting that the garbage collector was sweeping up and removing it. 
 
 My Dispose method looks like the first method below and I suspect it is because I am using the [conditional access shortcut](https://www.c-sharpcorner.com/code/275/conditional-access-in-C-Sharp-6-0.aspx) feature from C# 6 rather than explicitly checking for null first.
@@ -84,5 +86,3 @@ Here is a sample class with the above code all in context for future reference
 {% gist 60f58cc72b3576617486162470c50280 %}
 
 Success 🎉
-
-
