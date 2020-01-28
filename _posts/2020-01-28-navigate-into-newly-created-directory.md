@@ -26,7 +26,7 @@ Well that can be shortened to a one liner!
 mkdir tempy && cd $_
 ```
 
-勞
+🤯
 
 This is why I love software development. 
 
