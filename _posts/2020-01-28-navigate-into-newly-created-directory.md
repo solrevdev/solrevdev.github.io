@@ -11,7 +11,7 @@ tags:
 ---
 Today I came across a fantastic command line trick.
 
-Normally when I want to create a directory in the command line it tales multiple commands to start working in that directory. 
+Normally when I want to create a directory in the command line it takes multiple commands to start working in that directory. 
 
 For example: 
 
@@ -26,6 +26,10 @@ Well that can be shortened to a one liner!
 mkdir tempy && cd $_
 ```
 
-This is why I love software development it does not matter how long you have been doing it you are always learning something new!
+勞
+
+This is why I love software development. 
+
+It does not matter how long you have been doing it you are always learning something new!
 
 Success 🎉
