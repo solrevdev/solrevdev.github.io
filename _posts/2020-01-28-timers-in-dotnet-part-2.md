@@ -13,7 +13,7 @@ I have started to cross post to the [Dev Community](https://dev.to/) website as 
 
 My previous post about [Timers in .NET](https://dev.to/solrevdev/timers-in-net-omd) recevied an interesting reply from [Katie Nelson](https://dev.to/katnel20) who asked about what do do with Cancellation Tokens. 
 
-I span up a new `dotnet new worker` project which have async StartAsync and StopAsync methods that take in a CancellationToken in the method signature.
+So, I span up a new `dotnet new worker` project which have async StartAsync and StopAsync methods that take in a CancellationToken in the method signature.
 
 After some tinkering with my original class and some research on stackoverflow I came across [this post](https://stackoverflow.com/a/56666084/2041) which I used as the basis as a new improved Timer 
 
