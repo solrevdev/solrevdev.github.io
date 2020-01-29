@@ -27,7 +27,9 @@ After some tinkering with my original class and some research on StackOverflow, 
 
 Firstly I was able to improve on my [original TimerTest class](https://gist.github.com/solrevdev/60f58cc72b3576617486162470c50280) by replacing the field level locking object combined with calls to `Monitor.TryEnter(_locker)` by using the Timer's built-in  [Change](https://docs.microsoft.com/en-us/dotnet/api/system.threading.timer.change?view=netcore-3.1) method. 
 
-Next up I created a  ` private async Task DoWorkAsync(CancellationToken stoppingToken)` method that could check for `stoppingToken.IsCancellationRequested` and then call this method from the original `DoWork` TimerCallBack method. 
+Next up I modified the original TimerCallback DoWork method so that it called a new `DoWorkAsync(CancellationToken token)` method that as it takes a CancellationToken as a parameter does check for `IsCancellationRequested` before doing my long-running work.
+
+The class is a little more complicated than the original but it does handle <kbd>ctrl</kbd><kbd>c</kbd> gracefully.
 
 ** Source ** 
 
