@@ -19,7 +19,7 @@ The [System.Threading.Timer](https://docs.microsoft.com/en-us/dotnet/api/system.
 
 **Trial and error**
 
-So, I span up a new `dotnet new worker` project which has async StartAsync and StopAsync methods that take in a CancellationToken in their method signatures and seemed like a good place to start.
+So, I span up a new `dotnet new worker` project which has StartAsync and StopAsync methods that take in a CancellationToken in their method signatures and seemed like a good place to start.
 
 After some tinkering with my original class and some research on StackOverflow, I came across [this post](https://stackoverflow.com/a/56666084/2041) which I used as the basis as a new improved Timer.
 
