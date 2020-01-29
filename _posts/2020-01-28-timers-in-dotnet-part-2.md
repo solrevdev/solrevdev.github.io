@@ -9,19 +9,33 @@ tags:
   - dotnetcore
   - timers
 ---
-I have started to cross post to the [Dev Community](https://dev.to/) website as well as on my [solrevdev blog](https://solrevdev.com).
+I have started to cross-post to the [Dev Community](https://dev.to/) website as well as on my [solrevdev blog](https://solrevdev.com).
 
-My previous post about [Timers in .NET](https://dev.to/solrevdev/timers-in-net-omd) recevied an interesting reply from [Katie Nelson](https://dev.to/katnel20) who asked about what do do with Cancellation Tokens. 
+A previous post about [Timers in .NET](https://dev.to/solrevdev/timers-in-net-omd) received an interesting reply from [Katie Nelson](https://dev.to/katnel20) who asked about what do do with [Cancellation Tokens](https://docs.microsoft.com/en-us/dotnet/api/system.threading.cancellationtoken?view=netcore-3.1). 
 
-So, I span up a new `dotnet new worker` project which have async StartAsync and StopAsync methods that take in a CancellationToken in the method signature.
+**TimerCallBack**
 
-After some tinkering with my original class and some research on stackoverflow I came across [this post](https://stackoverflow.com/a/56666084/2041) which I used as the basis as a new improved Timer 
+The [System.Threading.Timer](https://docs.microsoft.com/en-us/dotnet/api/system.threading.timer?view=netcore-3.1) class has been in the original .NET Framework almost from the very beginning and the [TimerCallback](https://docs.microsoft.com/en-us/dotnet/api/system.threading.timercallback?view=netcore-3.1) delegate has a method signature that does not handle CancellationTokens nativly.
 
-Here is a .NET Core background service that makes uses of a CancellationToken within the a DoWork method. 
+**Trial and error**
+
+So, I span up a new `dotnet new worker` project which has async StartAsync and StopAsync methods that take in a CancellationToken in their method signatures and seemed like a good place to start.
+
+After some tinkering with my original class and some research on StackOverflow, I came across [this post](https://stackoverflow.com/a/56666084/2041) which I used as the basis as a new improved Timer.
+
+**Improvements** 
+
+Firstly I was able to improve on my [original TimerTest class](https://gist.github.com/solrevdev/60f58cc72b3576617486162470c50280) by replacing the field level locking object combined with calls to `Monitor.TryEnter(_locker)` by using the Timer's built-in  [Change](https://docs.microsoft.com/en-us/dotnet/api/system.threading.timer.change?view=netcore-3.1) method. 
+
+Next up I created a  ` private async Task DoWorkAsync(CancellationToken stoppingToken)` method that could check for `stoppingToken.IsCancellationRequested` and then call this method from the original `DoWork` TimerCallBack method. 
+
+** Source ** 
+
+So, here is the new and improved Timer class. 
 
 {% gist 60f58cc72b3576617486162470c50280 Worker.cs%}
 
-Here is the full gist with the rest of the project for future referencefuture reference
+And here is the full gist with the rest of the project files for future reference.
 
 {% gist 60f58cc72b3576617486162470c50280 %}
 
