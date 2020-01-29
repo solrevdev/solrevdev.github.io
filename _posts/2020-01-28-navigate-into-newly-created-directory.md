@@ -11,18 +11,18 @@ tags:
 ---
 Today I came across a fantastic command line trick.
 
-Normally when I want to create a directory in the command line it takes multiple commands to start working in that directory. 
+Normally when I want to create a directory in the command line it takes multiple commands to start working in that directory.
 
-For example: 
+For example:
 
-```powershell
+```powershell 
 mkdir tempy
 cd tempy
 ```
 
-Well that can be shortened to a one liner!
+Well, that can be shortened to a one-liner!
 
-```powershell
+```powershell 
 mkdir tempy && cd $_
 ```
 
