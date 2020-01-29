@@ -33,7 +33,7 @@ The class is a little more complicated than the original but it does handle <kbd
 
 **Source** 
 
-So, here is the new and improved Timer class. 
+So, here is the new and improved Timer in a new dotnet core background worker class. 
 
 {% gist f28ab81363e9875d25b3f3453339a556 Worker.cs%}
 
