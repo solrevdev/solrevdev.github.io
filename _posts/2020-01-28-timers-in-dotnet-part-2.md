@@ -31,14 +31,14 @@ Next up I modified the original TimerCallback DoWork method so that it called my
 
 The class is a little more complicated than the original but it does handle <kbd>ctrl</kbd><kbd>c</kbd> gracefully.
 
-** Source ** 
+**Source** 
 
 So, here is the new and improved Timer class. 
 
-{% gist 60f58cc72b3576617486162470c50280 Worker.cs%}
+{% gist f28ab81363e9875d25b3f3453339a556 Worker.cs%}
 
 And here is the full gist with the rest of the project files for future reference.
 
-{% gist 60f58cc72b3576617486162470c50280 %}
+{% gist f28ab81363e9875d25b3f3453339a556 %}
 
 Success 🎉
