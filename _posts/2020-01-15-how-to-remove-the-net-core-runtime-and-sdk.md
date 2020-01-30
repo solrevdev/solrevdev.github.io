@@ -38,7 +38,7 @@ So I began to uninstall the undeeded and safe to remove dotnetcore SDK's on the 
 I started by removing all preview versions of the dotnetcore sdk.
 
 ```powershell
-dotnet-core-uninstall --sdk --all-previews
+dotnet-core-uninstall remove --sdk --all-previews
 ```
 
 ![2020-01-15_12_27_48.png]({{site.baseurl}}/media/2020-01-15_12_27_48.png)
