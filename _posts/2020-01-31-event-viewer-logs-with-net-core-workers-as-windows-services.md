@@ -130,7 +130,7 @@ sc delete "your service name"
 
 Once I saw that all was well I was able to dial back the logging to the Event Viewer by making a change to appsettings.json, In the `EventLog` section I changed the levels back up to `Warning` level.
 
-This means that anything important will indeed get logged to the Windows Event Viewer.
+This means that anything important will indeed get logged to the Windows Event Viewer but most `Information` level noise will not.
 
 
 Success 🎉
