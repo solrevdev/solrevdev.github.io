@@ -9,13 +9,13 @@ tags:
   - dotnet
   - csharp
 ---
-I mostly code in [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/) on either macOS or linux but on the occasion that I develop on windows I do like to use the old faithful Visual Studio.
+I mostly code in [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/) on either macOS or Linux but on the occasion that I develop on windows, I do like to use the old faithful Visual Studio.
 
-And today I fixed an slight annoyance that I have with Visual Studio 2019.
+And today I fixed a slight annoyance that I have with Visual Studio 2019.
 
-If you cut or copy on a blank line accidently which does happen you will lose your clipboard contents.
+If you cut or copy on a blank line accidentally which does happen you will lose your clipboard contents.
 
-To fix this in the search bar at the top enter `Apply Cut or Copy to blank lines when there is no selection` and open its's dialog.
+To fix this in the search bar at the top enter `Apply Cut or Copy to blank lines when there is no selection` and open its’s dialog.
 
 Uncheck that box for your language (or all languages as I did).
 
