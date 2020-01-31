@@ -25,6 +25,7 @@ dotnet new worker
 Then I added some references:
 
 ```powershell
+dotnet add package Microsoft.Extensions.Hosting
 dotnet add package Microsoft.Extensions.Hosting.WindowsServices
 dotnet add package Microsoft.Extensions.Logging.EventLog
 ```
