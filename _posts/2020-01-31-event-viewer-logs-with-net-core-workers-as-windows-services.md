@@ -11,7 +11,7 @@ tags:
 ---
 Back in the older classic windows only .NET Framework days, I would use a cool framework called [TopShelf](http://topshelf-project.com/) to help turn a console application during development into a running windows service in production.
 
-Today instead I was able to install and run a windows service by modifying a .NET Core Worker project by just using .NET Core natively.
+Today instead I was able to install and run a windows service by modifying a [.NET Core Worker project](https://devblogs.microsoft.com/aspnet/net-core-workers-as-windows-services/) by just using .NET Core natively.
 
 Also, I was able to add some logging to the Windows Event Viewer Application Log.
 
@@ -132,5 +132,3 @@ This means that anything important will indeed get logged to the Windows Event V
 
 
 Success 🎉
-
-
