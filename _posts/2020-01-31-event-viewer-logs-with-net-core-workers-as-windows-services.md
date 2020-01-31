@@ -95,6 +95,8 @@ To fix this make this change to appsettings.json, note the `EventLog` section wh
 
 So with this done, I then needed to first publish, then install, start and have means to stop and uninstall the service.
 
+I was able to manage all of this from the command line, using the [SC tool](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc754599(v=ws.11)) (Sc.exe) that should already be installed on windows for you and be in your path already.
+
 Publish:
 
 ```powershell
