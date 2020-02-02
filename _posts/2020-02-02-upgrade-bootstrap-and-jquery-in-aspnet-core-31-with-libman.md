@@ -14,7 +14,9 @@ Building server-rendered HTML websites is a nice experience these days with ASP.
 
 The new [Razor Pages](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-3.1) paradigm is a wonderful addition and improvement over MVC in that it tends to keep all your feature logic grouped rather than having your logic split over many folders.
 
-The standard `dotnet new` template does a good job of giving you what you need to get started. It bundles in bootstrap and jquery for you which is great but it's not obvious how you manage to add new client-side dependencies or indeed how to upgrade existing ones such as bootstrap and jquery.
+The standard `dotnet new` template does a good job of giving you what you need to get started. 
+
+It bundles in bootstrap and jquery for you which is great but it's not obvious how you manage to add new client-side dependencies or indeed how to upgrade existing ones such as bootstrap and jquery.
 
 In the dark old days, Bower used to be the recommended way but that has since been [depreacted](https://devblogs.microsoft.com/aspnet/what-happened-to-bower/) in favour of a new tool called [LibMan](https://docs.microsoft.com/en-us/aspnet/core/client-side/libman/?view=aspnetcore-3.1).
 
