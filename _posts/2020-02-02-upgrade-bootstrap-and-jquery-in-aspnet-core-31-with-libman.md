@@ -30,7 +30,8 @@ The magic is done via a file in your project root called `libman.json` which des
 
 I needed to upgrade the version of jquery and bootstrap in a new `dotnet new` project so here for any others or me in the future is the libman.json file I ended up up with.
 
-{% gist https://gist.github.com/solrevdev/59023acd7cce43f96ae2a3b9da826a8b %}
+{% gist 59023acd7cce43f96ae2a3b9da826a8b %}
+
 
 I was using Visual Studio at the time and this will manage this for you but if like me who mostly codes in Visual Studio Code on macOS or Linux then you can achieve the same result by installing and using the [LibMan Cli](https://docs.microsoft.com/en-us/aspnet/core/client-side/libman/libman-cli?view=aspnetcore-3.1).
 
