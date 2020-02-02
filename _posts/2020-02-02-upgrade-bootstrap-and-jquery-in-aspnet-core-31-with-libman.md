@@ -12,7 +12,7 @@ tags:
 ---
 Building server-rendered HTML websites is a nice experience these days with ASP.NET Core. 
 
-The new [Razor Pages](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-3.1) paradigm is a wonderful addition and improvement over MVC in that it tends to keep all you feature logic grouped rather than having your logic split over many folders.
+The new [Razor Pages](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-3.1) paradigm is a wonderful addition and improvement over MVC in that it tends to keep all your feature logic grouped rather than having your logic split over many folders.
 
 The standard `dotnet new` template does a good job of giving you what you need to get started. It bundles in bootstrap and jquery for you which is great but it's not obvious how you manage to add new client-side dependencies or indeed how to upgrade existing ones such as bootstrap and jquery.
 
