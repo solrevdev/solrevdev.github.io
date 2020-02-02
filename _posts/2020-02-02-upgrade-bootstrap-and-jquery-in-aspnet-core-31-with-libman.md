@@ -30,7 +30,7 @@ There are tutorials for how to [use LibMan with ASP.NET Core in Visual Studio](h
 
 The magic is done via a file in your project root called `libman.json` which describes what files, from where and to where they need to go basically.
 
-I needed to upgrade the version of jquery and bootstrap in a new `dotnet new` project so here for any others or me in the future is the libman.json file I ended up up with.
+I needed to upgrade the version of jquery and bootstrap in a new `dotnet new` project so here for any others or me in the future is the libman.json file I ended up up with that will replace the versions of bootstrap and jquery bundled with ASP.NET core with the latest ones.
 
 {% gist 59023acd7cce43f96ae2a3b9da826a8b %}
 
