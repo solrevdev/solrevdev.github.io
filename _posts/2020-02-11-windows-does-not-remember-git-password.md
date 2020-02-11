@@ -35,7 +35,7 @@ Enter your passphrase when asked during a `git pull` command.
 
 **Add an environment variable for GIT_SSH**
 
-```bash
+```powershell
 setx GIT_SSH C:\Windows\System32\OpenSSH\ssh.exe
 ```
 
