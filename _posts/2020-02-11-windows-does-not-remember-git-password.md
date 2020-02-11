@@ -19,7 +19,7 @@ When I ran the script it paused and displayed the message:
 
 No matter how many times I entered the passphrase windows would not remember it and the prompt would appear again.
 
-So, after some time on google and some trial and error, this is what worked for me.
+So, after some time on google and trial and error, these are the steps that fixed the issue for me.
 
 **Enable the OpenSSH Authentication Agent service and make it start automatically.**
 
