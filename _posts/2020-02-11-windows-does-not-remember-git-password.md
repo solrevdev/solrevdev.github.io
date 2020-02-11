@@ -9,7 +9,9 @@ tags:
   - ssh
   - cli
 ---
-Today I was writing a script that would at some stage run `git pull` when I ran this from the command line everything was ok but when I ran the script it would pause with the message :
+Today I was writing a script that would at some stage run `git pull`. 
+
+When I ran the script it paused and displayed the message:
 
 `Enter passphrase for key: 'c/Users/Administrator/.ssh/id_rsa'`
 
