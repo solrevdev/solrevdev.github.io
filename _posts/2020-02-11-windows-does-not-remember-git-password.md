@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Windows does not remember git password
 author: John Smith
@@ -19,7 +19,7 @@ When I ran the script it paused and displayed the message:
 
 No matter how many times I entered the passphrase Windows would not remember it and the prompt would appear again.
 
-So, after some time on Google and some trial and error, these are the steps that fixed the issue for me.
+So, after some time on Google and some trial and error, I was able to fix the issue and so for anyone else that has the same issue or indeed for me from the future here are those steps.
 
 **Enable the OpenSSH Authentication Agent service and make it start automatically.**
 
