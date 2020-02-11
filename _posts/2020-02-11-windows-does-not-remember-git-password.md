@@ -33,7 +33,11 @@ So, after some time on google and trial and error, these are the steps that fixe
 
 Enter your passphrase when asked during a `git pull` command.
 
-**Add an environment variable `setx GIT_SSH C:\Windows\System32\OpenSSH\ssh.exe`**
+**Add an environment variable for GIT_SSH**
+
+```bash
+`setx GIT_SSH C:\Windows\System32\OpenSSH\ssh.exe`
+```
 
 ![2020-02-11_09_41_45.png]({{site.baseurl}}/media/2020-02-11_09_41_45.png)
 
