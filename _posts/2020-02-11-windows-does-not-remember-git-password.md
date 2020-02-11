@@ -25,7 +25,6 @@ So, after some time on google and trial and error, these are the steps that fixe
 
 ![2020-02-11_09_36_02.png]({{site.baseurl}}/media/2020-02-11_09_36_02.png)
 
-
 **Add your SSH key to the agent with `ssh-add` at `C:\Users\Administrator\.ssh`.**
 
 ![2020-02-11_09_37_39.png]({{site.baseurl}}/media/2020-02-11_09_37_39.png)
