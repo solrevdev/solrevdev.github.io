@@ -9,7 +9,7 @@ tags:
   - ssh
   - cli
 ---
-Today I was writing a script that would at some stage run `git pull`. 
+Today I was writing a Windows batch script that would at some stage run `git pull`. 
 
 When I ran the script it paused and displayed the message:
 
@@ -17,7 +17,7 @@ When I ran the script it paused and displayed the message:
 
 ![2020-02-11_09_22_25.png]({{site.baseurl}}/media/2020-02-11_09_22_25.png)
 
-No matter how many times I entered the passphrase windows would not remember it and the prompt would appear again.
+No matter how many times I entered the passphrase Windows would not remember it and the prompt would appear again.
 
 So, after some time on google and trial and error, these are the steps that fixed the issue for me.
 
