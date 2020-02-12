@@ -19,6 +19,8 @@ There is a keyboard shortcut to toggle the visibility of these files.
 
 ![cmd+shift+.](https://i.imgur.com/PUXmIjP.jpg)
 
+<small>(thanks to [osx daily](http://osxdaily.com/2018/02/12/show-hidden-files-mac-keyboard-shortcut/) for the tip and image.</small>
+
 This keyboard shortcut will show hidden files or hide them if shown...
 
 Success 🎉
