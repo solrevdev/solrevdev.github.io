@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Assembly with same name is already loaded
 author: John Smith
