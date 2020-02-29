@@ -43,7 +43,7 @@ That produces a nice hello world style template that you can use to get started 
 
 Rather than displaying weather data or some random dummy data in my playground, I decided to use crime data for Oxfordshire from [Data.Police.UK](https://data.police.uk/docs/) which seemed an interesting dataset to play around with.
 
-I started by reading the docs and looking the example request which takes pairs of lat/long coordinates to describe an area:
+I started by reading the docs and looking at the example request which takes pairs of lat/long coordinates to describe an area:
 
 `https://data.police.uk/api/crimes-street/all-crime?poly=52.268,0.543:52.794,0.238:52.130,0.478&date=2017-01`
 
