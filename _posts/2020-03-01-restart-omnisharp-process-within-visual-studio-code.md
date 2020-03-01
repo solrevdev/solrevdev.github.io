@@ -20,6 +20,6 @@ Then type:
 
 `>omnisharp:restart omnisharp`
 
-Everything was then back to normal.
+Everything should then go back to normal.
 
 Success 🎉
