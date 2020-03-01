@@ -7,8 +7,9 @@ tags:
   - dotnet
   - vscode
   - omnisharp
+  - csharp
 ---
-Another quick one for today, Every now and again my intellisense get's confused in Visual Studio Code displaying errors and warnings that should not exist.
+Another quick one for today, Every now and again my intellisense gets confused in Visual Studio Code displaying errors and warnings that should not exist.
 
 The fix for this is to restart the Omnisharp process.
 
