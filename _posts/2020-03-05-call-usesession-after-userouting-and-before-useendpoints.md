@@ -15,8 +15,7 @@ The answer was in the [documentation](https://docs.microsoft.com/en-us/aspnet/co
 
 To quote that page:
 
-    The order of middleware is important. Call `UseSession` after `UseRouting` and before `UseEndpoints`
-
+> The order of middleware is important. Call `UseSession` after `UseRouting` and before `UseEndpoints`
 
 So my code which did work in the past, but probably before [endpoint routing] was introduced was this:
 
