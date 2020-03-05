@@ -17,7 +17,7 @@ To quote that page:
 
 > The order of middleware is important. Call `UseSession` after `UseRouting` and before `UseEndpoints`
 
-So my code which did work in the past, but probably before [endpoint routing] was introduced was this:
+So my code which did work in the past, but probably before [endpoint routing](https://wildermuth.com/2019/09/09/Endpoint-Routing-in-ASP-NET-Core-3-0) was introduced was this:
 
 ```csharp
 app.UseSession();
