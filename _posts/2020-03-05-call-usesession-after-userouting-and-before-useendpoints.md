@@ -1,5 +1,13 @@
 ---
 published: true
+layout: post
+title: Call UseSession after UseRouting and before UseEndpoints
+author: John Smith
+tags:
+  - dotnet
+  - session
+  - cookie
+  - razor-pages
 ---
 Today, I fixed a bug where session cookies were not being persisted in an ASP.Net Core Razor Pages application.
 
