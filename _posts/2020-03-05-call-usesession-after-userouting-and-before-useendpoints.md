@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 Today, I fixed a bug where session cookies were not being persisted in an ASP.Net Core Razor Pages application.
 
@@ -35,5 +35,3 @@ app.UseEndpoints(endpoints =>
 ```
 
 Success 🎉
-
-
