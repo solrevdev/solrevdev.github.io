@@ -43,7 +43,7 @@ Yesterday I posted on [twitter asking for help](https://twitter.com/solrevdev/st
 
 The answer is to use some software called [mkcert](https://github.com/FiloSottile/mkcert) to generate a `.pfx` certificate and configure kestrel to use this certificate when in development.
 
-**Firstly off install mkcert**
+**First install mkcert**
 
 ```powershell
 #macOS
