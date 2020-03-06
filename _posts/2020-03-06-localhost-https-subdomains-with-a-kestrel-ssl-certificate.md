@@ -11,13 +11,13 @@ tags:
   - kestrel
 ---
 
-When you build ASP.NET Core websites locally, you can view your local site under https/ssl, go read [this article](https://www.hanselman.com/blog/DevelopingLocallyWithASPNETCoreUnderHTTPSSSLAndSelfSignedCerts.aspx) by Scott Hanselman for more information.
+When you build ASP.NET Core websites locally, you can view your local site under HTTPS/SSL, go read [this article](https://www.hanselman.com/blog/DevelopingLocallyWithASPNETCoreUnderHTTPSSSLAndSelfSignedCerts.aspx) by Scott Hanselman for more information.
 
-For the most part this works great out of the box. 
+For the most part, this works great out of the box. 
 
 However, I am building a multi-tenant application as in I make use of subdomains such as <https://www.mywebsite.com> and <https://customer1.mywebsite.com>. 
 
-So naturally when I develop locally I want to visit <https://www.localhost:5001/> and <https://customer1.localhost:5001/>
+So naturally, when I develop locally I want to visit <https://www.localhost:5001/> and <https://customer1.localhost:5001/>
 
 Now you can do this out of the box you just need to add this to your hosts file.
 
@@ -139,6 +139,6 @@ You have two `appsettings` files, one for development and one for every other en
 
 ```
 
-And with that I was done. If you need to add more subdomains you will need to add them to your hosts file and recreate your pfx file by [redoing the instructions](#create-pfx-certificate) above.
+And with that, I was done. If you need to add more subdomains you will need to add them to your hosts file and recreate your pfx file by [redoing the instructions](#create-pfx-certificate) above.
 
 Success 🎉
