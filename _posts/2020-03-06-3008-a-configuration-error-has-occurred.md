@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: 3008 A configuration error has occurred
 author: John Smith
@@ -62,5 +62,3 @@ So, open **IIS**, choose **Application Pools** from the left-hand navigation, Ch
 Once this was done the errors stopped and the site stopped crashing
 
 Success 🎉
-
-
