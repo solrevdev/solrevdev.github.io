@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: localhost HTTPS subdomains with a Kestrel SSL certificate
 author: John Smith
