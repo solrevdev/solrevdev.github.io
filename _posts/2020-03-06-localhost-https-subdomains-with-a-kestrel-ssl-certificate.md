@@ -1,7 +1,7 @@
 ---
 published: false
 layout: post
-title: localhost https subdomains with a kestrel ssl certificate
+title: localhost HTTPS subdomains with a Kestrel SSL certificate
 author: John Smith
 tags:
   - dotnet
