@@ -20,7 +20,7 @@ However, for Linux each release of [dotnetcore](https://dotnet.microsoft.com/dow
 
 If you follow the [instructions](https://docs.microsoft.com/en-gb/dotnet/core/install/linux-package-manager-ubuntu-1904]) from Microsoft  you will get the following error message:
 
-```text
+```powershell
 Unable to locate package dotnet-sdk-3.1
 ```
 

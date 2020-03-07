@@ -15,7 +15,7 @@ After a little while developing on and against Windows, I am back developing on 
 I have a local install of MySQL and when I connected to it via my terminal using `mysql -u root` I would connect ok but as soon as I tried to do anything I would get the following error.
 
 
-```text
+```powershell
 ERROR 2006 (HY000): MySQL server has gone away
 No connection. Trying to reconnect...
 ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initial communication packet', system error: 102

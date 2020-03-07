@@ -19,7 +19,7 @@ Tonight has all been about trying to get rid of some ASP.Net MVC yellow screens 
 
 **Background**
 
-My application is a fairly old ASP.Net MVC 5 web application that used to talk to a local instance of MySQL and now has been ported the cloud (AWS) with the MySQL database migrated to use Amazon's [Aurora Serverless MySQL database service](https://aws.amazon.com/rds/aurora/serverless/). 
+My application is a fairly old ASP.Net MVC 5 web application that used to talk to a local instance of MySQL and now has been ported the cloud (AWS) with the MySQL database migrated to use Amazon's [Aurora Serverless MySQL database service](https://aws.amazon.com/rds/aurora/serverless/).
 
 I have a few of these now. They suit certain workloads and my dev environments very well.
 
@@ -31,7 +31,7 @@ I would get either:
 
 `MySqlException (0x80004005): The Command Timeout expired before the operation completed`
 
-```text
+```powershell
 [MySqlException (0x80004005): The Command Timeout expired before the operation completed.]
  System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task) +102
  System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task) +64
@@ -55,7 +55,7 @@ or:
 
 `A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond`
 
-```text
+```powershell
 [SocketException (0x274c): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond]
  System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags) +94
  System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size) +130
