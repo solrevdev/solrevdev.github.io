@@ -20,7 +20,10 @@ The fix before was to re-install Google Chrome but today I found this quick solu
 
 In Chrome's URL bar enter this...
 
-	`chrome://restart`
+```powershell
+chrome://restart
+```
+
 
 This will restart all the Google Chrome processes and will generally fix this issue for a while.
 
