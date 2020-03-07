@@ -12,7 +12,7 @@ tags:
 ---
 Recently I installed a VS Code extension called [GistPad](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs) about which the marketplace docs go on to say:
 
-	GistPad is a Visual Studio Code extension that allows you to manage GitHub Gists entirely within the editor. You can open, create, delete, fork, star and clone gists, and then seamlessly begin editing files as if they were local.
+> GistPad is a Visual Studio Code extension that allows you to manage GitHub Gists entirely within the editor. You can open, create, delete, fork, star and clone gists, and then seamlessly begin editing files as if they were local.
 
 It is a great extension and I am using Gists way more now. 
 
@@ -31,7 +31,7 @@ The [marketplace docs](https://marketplace.visualstudio.com/items?itemName=vsls-
 
 Another neat feature is interactive playgrounds which again the marketplace docs explain :
 
-	If you're building web applications, and want to create a quick playground environment in order to experiment with HTML, CSS or JavaScript (or Sass/SCSS, Less, Pug and TypeScript), you can right-click the Your Gists node and select New Playground or New Secret Playground. This will create a new gist, seeded with an HTML, CSS and JavaScript file, and then provide you with a live preview Webview, so that you can iterate on the code and visually see how it behaves.
+> If you're building web applications, and want to create a quick playground environment in order to experiment with HTML, CSS or JavaScript (or Sass/SCSS, Less, Pug and TypeScript), you can right-click the Your Gists node and select New Playground or New Secret Playground. This will create a new gist, seeded with an HTML, CSS and JavaScript file, and then provide you with a live preview Webview, so that you can iterate on the code and visually see how it behaves.
 
 I am a big fan of [VueJS](https://vuejs.org) so I decided to spin up a new interactive playground choosing VueJS from the menu that appears.
 
