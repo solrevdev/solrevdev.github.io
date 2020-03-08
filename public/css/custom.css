@@ -14,14 +14,6 @@ kbd {
 
 /* pygments code syntax code no wrap and scroll */
 
-.highlight pre code * {
-  white-space: nowrap;
-}
-
 .highlight pre {
-  overflow-x: auto;
-}
-
-.highlight pre code {
-  white-space: pre;  
+  display: inline-block;
 }
