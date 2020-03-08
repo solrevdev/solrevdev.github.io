@@ -14,6 +14,11 @@ kbd {
 
 /* pygments code syntax code no wrap and scroll */
 
+
 .highlight pre {
-  display: inline-block;
+    word-wrap: normal;
+}
+
+.highlight pre code {
+    white-space: pre;
 }
