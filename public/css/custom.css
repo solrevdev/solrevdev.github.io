@@ -12,13 +12,3 @@ kbd {
     white-space: nowrap;
 }
 
-/* pygments code syntax code no wrap and scroll */
-
-
-.highlight pre {
-    word-wrap: normal;
-}
-
-.highlight pre code {
-    white-space: pre;
-}
