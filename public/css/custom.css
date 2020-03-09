@@ -12,3 +12,10 @@ kbd {
     white-space: nowrap;
 }
 
+/* custom css for rouge highlighter code syntax - add scroll bars etc */
+.highlight pre {
+    white-space: pre;
+    overflow-x: auto;
+    word-break: inherit;
+    word-wrap: inherit;
+}
