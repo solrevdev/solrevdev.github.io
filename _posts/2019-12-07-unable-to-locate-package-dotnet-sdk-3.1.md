@@ -9,7 +9,6 @@ tags:
   - '#linux'
   - '#ubuntu'
   - '#apt'
-  - '#unabletolocatepackge'
 ---
 
 Every time there is a new release of [dotnetcore](https://dotnet.microsoft.com/download) I need to get it updated on the three environments where I develop and deploy code: macOS, Windows and Linux (Ubuntu).
@@ -28,7 +27,7 @@ The issue is that page targets Ubuntu version 19.04 and I am running Ubuntu vers
 
 So, If you are me from the future wanting to know how to get the latest version installed  here is what you need to do:
 
-```bash
+```powershell
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 sudo apt-add-repository https://packages.microsoft.com/ubuntu/19.10/prod
 sudo apt-get update

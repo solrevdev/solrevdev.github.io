@@ -9,18 +9,16 @@ Static [Jekyll](http://jekyllrb.com) driven website to replace solrevdev.com blo
 ## testing the site locally
 
 
-```shell
-
+```powershell
 bundle install
 bundle update github-pages
-  bundle exec jekyll serve --baseurl ''
-
+bundle exec jekyll serve --baseurl ''
 ```
 
 Now open your browser and go to : `http://localhost:4000` <http://localhost:4000>
 
 
-```shell
+```powershell
 gem install github-pages
 gem update github-pages
 jekyll build
@@ -140,7 +138,7 @@ Hyde has two branches, but only one is used for active development.
 
 ## Jekyll commands used to get setup
 
-```shell
+```powershell
 sudo chown -R $(whoami) /usr/local
 
 sudo chown -R $(whoami) /Library/Ruby

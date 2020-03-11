@@ -8,12 +8,12 @@ tags:
   - '#me'
 ---
 
-Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to do what I do; 
+Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to do what I do;
 
 **Hardware**
 
 - macmini running macOS mojave
-- hp laptop running ubuntu 19.10 
+- hp laptop running ubuntu 19.10
 - various windows virtual machines
 - iPhone 6S
 
@@ -27,7 +27,7 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 - [MacUpdater](https://www.corecode.io/macupdater/)
 - [Magnet](https://magnet.crowdcafe.com/)
 - [Parallels](https://www.parallels.com/) / [Parallels Access](https://www.parallels.com/products/access/)
-- [Dropbox](https://www.dropbox.com/desktop) 
+- [Dropbox](https://www.dropbox.com/desktop)
 - [Bartender](https://www.macbartender.com/)
 - [LastPass](http://lastpass.com/)
 - [Homebrew](https://brew.sh/)
@@ -43,7 +43,7 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 ![2020-01-21_11_10_40_zeit_terminal.png]({{site.baseurl}}/media/2020-01-21_11_10_40_zeit_terminal.png)
 
 
-**Fonts** 
+**Fonts**
 
 I vary but this is my current list, sometimes I will swap the order of these for when I want a change.
 
@@ -52,7 +52,7 @@ I vary but this is my current list, sometimes I will swap the order of these for
 
 **Visual Studio Code Extensions**
 
-I use a lot of these but here are some of my favourites:
+I use a lot of these but here are some of my favorites:
 
 - [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
 - [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)

@@ -13,7 +13,7 @@ published: true
 
 Using System.CommandLine to build a command line application.
 
-I am writing a command line application and in order to parse arguments and display output to the console I found an experimental library called [System.Commandline](https://github.com/dotnet/command-line-api) written by the dotnet team that works really well. 
+I am writing a command line application and in order to parse arguments and display output to the console I found an experimental library called [System.Commandline](https://github.com/dotnet/command-line-api) written by the dotnet team that works really well.
 
 The point for this post was that while this worked great locally I had a brain freeze when it came to getting [bitbucket pipelines](https://bitbucket.org/product/features/pipelines) to build this properly due to it having a custom MyGet feed for the as yet unreleased library.
 
@@ -40,7 +40,7 @@ So here is the sample Nuget.Config file I had to create alongside the solution f
 
 Borrowing from the [wiki](https://github.com/dotnet/command-line-api/wiki) this is really how simple this is to use.
 
-```cs
+```csharp
 class Program
 {
     /// <param name="intOption">An option whose argument is parsed as an int</param>
@@ -56,8 +56,8 @@ class Program
 ```
 
 
-```shell
-> dotnet run -- --int-option 123
+```powershell
+dotnet run -- --int-option 123
 The value for --int-option is: 0
 The value for --bool-option is: False
 The value for --file-option is: null

@@ -18,13 +18,13 @@ The other day I was going to test and debug some code on a Windows Server 2012RC
 
 When running my asp.net core 3.1 razor pages website I encountered the exception:
 
-`ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY`
+> ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY
 
 This site worked fine elsewhere so to try and narrow down the problem I created a brand new asp.net core website to see if it was something in my code that was the issue but I had the same error showing up in google chrome.
 
 After some googling, I tried to reset the servers self-signed SSL certificate by using the following closing the browser in between but that had no effect:
 
-```shell
+```powershell
 dotnet dev-certs https --clean
 dotnet dev-certs https --trust
 ```
@@ -62,18 +62,18 @@ Note the line containing: `config.AddJsonFile($"appsettings.{Environment.Machine
 
 **Program.cs**
 
-```cs
+```csharp
 
-public static IHostBuilder CreateHostBuilder(string[] args)
+public static IHostBuilder CreateHostBuilder (string[] args)
 {
     return Host
-        .CreateDefaultBuilder(args)
-        .ConfigureAppConfiguration((hostingContext, config) =>
+        .CreateDefaultBuilder (args)
+        .ConfigureAppConfiguration ((hostingContext, config) =>
         {
-            config.AddJsonFile($"appsettings.{Environment.MachineName}.json", optional: true);
-            config.AddCommandLine(args);
+            config.AddJsonFile ($"appsettings.{Environment.MachineName}.json", optional : true);
+            config.AddCommandLine (args);
         })
-        .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
+        .ConfigureWebHostDefaults (webBuilder => webBuilder.UseStartup<Startup> ());
 }
 
 ```
