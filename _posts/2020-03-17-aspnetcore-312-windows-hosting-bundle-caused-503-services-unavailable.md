@@ -26,7 +26,7 @@ Event Viewer had entries such as this:
 
 ![](https://i.imgur.com/KoDAVk2.png)
 
-I tried IISRESET and uninstalling the hosting bundle but that did not help.
+I tried `IISRESET` and uninstalling the hosting bundle but that did not help.
 
 I noticed that the application pool was stopped for my website, Restarting it would result in the same unhandled exception as above.
 
