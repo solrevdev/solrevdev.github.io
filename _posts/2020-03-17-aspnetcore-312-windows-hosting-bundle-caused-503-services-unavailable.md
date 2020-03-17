@@ -14,7 +14,7 @@ With a new release, I tend to also install the Windows hosting bundle associated
 
 However, on installing it, the next request to the website showed a 503 Service Unavailable error:
 
-![](https://i.imgur.com/yqh8IS3.png)
+![](https://i.imgur.com/le8MZAZ.png)
 
 Debugging the w3 process in Visual Studio showed this error:
 
@@ -32,7 +32,7 @@ I noticed that the application pool was stopped for my website, Restarting it wo
 
 As a troubleshooting exercise, I created a new application pool and pointed my website to that one and deleted the old one.
 
-![](https://i.imgur.com/le8MZAZ.png)
+![](https://i.imgur.com/yqh8IS3.png)
 
 This seems to fixed things for now.
 
