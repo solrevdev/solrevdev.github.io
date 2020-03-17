@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: aspnetcore 3.1.2 windows hosting bundle caused 503 services unavailable
 author: John Smith
