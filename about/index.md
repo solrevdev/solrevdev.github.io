@@ -15,7 +15,7 @@ I am now a full-time carer but until recently have been head of infrastructure a
 
 With a wealth of technical skills and natural passion for technology I am also Microsoft certified.
 
-A lover of C# but not tied to exclusively the Microsoft stack and have enjoyed writing some cloud automation code in both Python and Node.js.
+A lover of C# but not tied exclusively to the Microsoft stack and have enjoyed writing some cloud automation code in both Python and Node.js.
 
 Currently, I am a big fan of the .NET Core cross-platform development platform and am taking an interest in Blazor WebAssembly.
 
