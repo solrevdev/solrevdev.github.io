@@ -9,7 +9,7 @@ tags:
   - linux
   - focalfossa
 ---
-A couple of days ago Canonical the custodians of the Ubuntu linux distribution released the latest long term support version of their desktop linux operating system.
+A couple of days ago Canonical the custodians of the Ubuntu Linux distribution released the latest long term support version of their desktop Linux operating system.
 
 Codenamed *Focal Fossa* the 20.04 LTS release is the latest and greatest version. For more information about its new features head over to their [blog](https://ubuntu.com/blog/ubuntu-20-04-lts-arrives).
 
