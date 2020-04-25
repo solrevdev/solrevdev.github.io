@@ -15,6 +15,11 @@ bundle update github-pages
 bundle exec jekyll serve --baseurl ''
 ```
 
+To get rid of warnings you can use this
+```powershell
+bundle exec jekyll serve --baseurl '' 2>/dev/null
+```
+
 Now open your browser and go to : `http://localhost:4000` <http://localhost:4000>
 
 
