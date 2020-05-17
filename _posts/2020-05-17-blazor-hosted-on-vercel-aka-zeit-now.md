@@ -106,6 +106,8 @@ And with that I can deploy Blazor WebAssembly to vercel's now.sh platform at [ht
 
 ![](https://i.imgur.com/rZ0wCta.png)
 
-Next up I am thinking of deploying a Web API backend for it to talk to. Maybe a docker based deployment over at [fly.io](https://fly.io/docs/)?
+Next up I am thinking of deploying a Web API backend for it to talk to.
+
+Maybe a docker based deployment over at [fly.io](https://fly.io/docs/)?
 
 Success 🎉
