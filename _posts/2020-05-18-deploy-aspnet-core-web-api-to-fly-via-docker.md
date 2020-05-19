@@ -10,7 +10,7 @@ tags:
   - docker
   - cors
 ---
-In my [last post](2020-05-17-blazor-hosted-on-vercel-aka-zeit-now.md) I deployed the standard [Blazor template](https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.1) over to [vercel static site hosting](https://vercel.com/).
+In my [last post]([2020-05-17-blazor-hosted-on-vercel-aka-zeit-now.md](https://solrevdev.com/2020/05/17/blazor-hosted-on-vercel-aka-zeit-now.html)) I deployed the standard [Blazor template](https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.1) over to [vercel static site hosting](https://vercel.com/).
 
 In the standard template, the `FetchData` component gets its data from a local `sample-data/weather.json` file via an `HttpClient`.
 

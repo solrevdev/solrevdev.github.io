@@ -10,7 +10,7 @@ tags:
   - zeit
   - now
 ---
-**Update** - I did [deploy an ASP.NET Core Web API backend via Docker](2020-05-18-deploy-aspnet-core-web-api-to-fly-via-docker.md) to [fly.io](https://fly.io/docs/)
+**Update** - I did [deploy an ASP.NET Core Web API backend via Docker](https://solrevdev.com/2020/05/18/deploy-aspnet-core-web-api-to-fly-via-docker.html) to [fly.io](https://fly.io/docs/)
 
 So, I decided it was time to play with Blazor WebAssembly which is in preview for ASP.NET Core 3.1.
 
@@ -114,6 +114,6 @@ Next up I am thinking of deploying a Web API backend for it to talk to.
 
 Maybe a docker based deployment over at [fly.io](https://fly.io/docs/)?
 
-**Update** - I did [deploy an ASP.NET Core Web API backend via Docker](2020-05-18-deploy-aspnet-core-web-api-to-fly-via-docker.md) to [fly.io](https://fly.io/docs/)
+**Update** - I did [deploy an ASP.NET Core Web API backend via Docker]() to [fly.io](https://fly.io/docs/)
 
 Success 🎉
