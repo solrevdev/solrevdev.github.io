@@ -14,7 +14,7 @@ In my [last post](2020-05-17-blazor-hosted-on-vercel-aka-zeit-now.md) I deployed
 
 In the standard template the `FetchData` component gets it's data from a local `sample-data/weather.json` file via an `HttpClient`.
 
-```cshtml
+```csharp
 forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
 ```
 
