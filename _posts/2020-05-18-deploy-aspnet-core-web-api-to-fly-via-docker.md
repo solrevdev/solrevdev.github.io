@@ -22,7 +22,9 @@ I wanted to upgrade this by replacing that call to the local json file with a ca
 
 Unfortunately unlike in the version 1 days of zeit where you could deploy Docker based apps to them vercel now offer [serverless functions](https://vercel.com/docs/v2/serverless-functions/introduction) instead but [do not support .NET](https://vercel.com/docs/v2/serverless-functions/supported-languages).
 
-So, as an alternative I looked at [fly.io](https://fly.io/docs/). I first used them in 2017 before GitHub supported HTTPS/SSL for custom domains by [using them as middleware](2017-08-31-http-ssl-via-github-pages-with-flyio.md) to provide this service.
+So, as an alternative I looked at [fly.io](https://fly.io/docs/).
+
+I first used them in 2017 before GitHub supported HTTPS/SSL for custom domains by [using them as middleware](2017-08-31-http-ssl-via-github-pages-with-flyio.md) to provide this service.
 
 Since then they now support [deploying Docker based app servers](https://fly.io/docs/hands-on/start/) which works in pretty much the same way as zeit used to.
 
@@ -32,7 +34,9 @@ Perfect!
 
 So, the plan was create a backend to replace the weather.json file, deploy and host it via Docker on fly.io and point my vercel hosted blazor website to that!
 
-First up I created a backend web api using the `dotnet new` template and added that to my solution. Fortunately the .NET Core Web API template comes out of the box with a `/weatherforecast` endpoint that returns the same shape data as the `sample_data/weather.json` file in the frontend.
+First up I created a backend web api using the `dotnet new` template and added that to my solution.
+
+Fortunately the .NET Core Web API template comes out of the box with a `/weatherforecast` endpoint that returns the same shape data as the `sample_data/weather.json` file in the frontend.
 
 ```powershell
 dotnet new webapi -n backend
@@ -154,7 +158,9 @@ obj/
 
 I had already installed and authenticated the `flyctl` command line tool, head over to [https://fly.io/docs/speedrun/](https://fly.io/docs/speedrun/) for a simple tutorial on how to get started.
 
-After some trial and error I worked out that I needed to override the port that fly used so that it matched my .NET Core Web API project so I created an app using port 5000 by first navigating into the backend project so that I was in the same location as the csproj file.
+After some trial and error and some fantastic help from support I worked out that I needed to override the port that fly used so that it matched my .NET Core Web API project.
+
+I created an app using port 5000 by first navigating into the backend project so that I was in the same location as the csproj file.
 
 ```powershell
 cd backend
@@ -196,7 +202,7 @@ Now to deploy the app...
 flyctl deploy
 ```
 
-And get my deployed endpoint url back to use in the front end...
+And get the deployed endpoint url back to use in the front end...
 
 ```powershell
 flyctl info
@@ -225,9 +231,15 @@ IP Addresses
 
 ```
 
-Now that the app is deployed you can view it by taking the hostname `blue-dust-2805.fly.dev` and appending the weather forecast endpoint at the end for example [https://blue-dust-2805.fly.dev/weatherforecast](https://blue-dust-2805.fly.dev/weatherforecast)
+Now that the app is deployed you can view it by taking the hostname `blue-dust-2805.fly.dev` and appending the weather forecast endpoint at the end.
+
+For example [https://blue-dust-2805.fly.dev/weatherforecast](https://blue-dust-2805.fly.dev/weatherforecast)
 
 If all has gone well you should see some random weather!
+
+Login to you fly.io control panel to see some stats
+
+![](https://i.imgur.com/1MyvTwn.png)
 
 **Frontend**
 
@@ -235,6 +247,15 @@ Next up it was just a case of replacing the frontend's call to the local json fi
 
 ```csharp
 builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri("https://blue-dust-2805.fly.dev") });
+```
+
+A small change to the `FetchData.razor` page.
+
+```csharp
+protected override async Task OnInitializedAsync()
+{
+    _forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("weatherforecast");
+}
 ```
 
 Re-deploy that to vercel by navigating to the root of our solution and running the deploy.sh script or manually via
@@ -246,6 +267,8 @@ now --prod frontend/bin/Release/netstandard2.1/publish/wwwroot/
 ```
 
 Test that everything has worked by navigating to the `FetchData` endpoint of our frontend. In my case [https://blazor.now.sh/fetchdata](https://blazor.now.sh/fetchdata)
+
+![](https://i.imgur.com/OMSih22.png)
 
 **GitHub Actions**
 
@@ -287,15 +310,21 @@ jobs:
             args: "deploy"
 ```
 
-Notice in that file we have told the GitHub action to use the `FLY_API_TOKEN` we just setup, also because my `fly.toml` is not in the solution root I can tell fly to look for it in the backend folder by setting the environment variable `FLY_PROJECT_PATH`
+Notice that in that file we have told the GitHub action to use the `FLY_API_TOKEN` we just setup.
+
+Also because my `fly.toml` is not in the solution root but in the backend folder I can tell fly to look for it there by setting the environment variable `FLY_PROJECT_PATH`
 
 ```yml
 FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 FLY_PROJECT_PATH: backend
 ```
 
-Also  sure the `fly.toml` is not in your .gitignore file.
+Also make sure the `fly.toml` is not in your .gitignore file.
 
-The code is up on GitHub at [https://github.com/solrevdev/blazor-on-vercel](https://github.com/solrevdev/blazor-on-vercel)
+And so with that every time I accept a pull request or I push to master my backend will get deployed to fly.io!
+
+![](https://i.imgur.com/LqxEeQ2.png)
+
+The new code is up on GitHub at [https://github.com/solrevdev/blazor-on-vercel](https://github.com/solrevdev/blazor-on-vercel)
 
 Success 🎉
