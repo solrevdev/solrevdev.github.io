@@ -12,7 +12,7 @@ tags:
 ---
 In my [last post](2020-05-17-blazor-hosted-on-vercel-aka-zeit-now.md) I deployed the standard [Blazor template](https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.1) over to [vercel static site hosting](https://vercel.com/).
 
-In the standard template the `FetchData` component gets it's data from a local `sample-data/weather.json` file via an `HttpClient`.
+In the standard template, the `FetchData` component gets its data from a local `sample-data/weather.json` file via an `HttpClient`.
 
 ```csharp
 forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
@@ -22,7 +22,7 @@ I wanted to upgrade this by replacing that call to the local json file with a ca
 
 Unfortunately unlike in the version 1 days of zeit where you could deploy Docker based apps to them vercel now offer [serverless functions](https://vercel.com/docs/v2/serverless-functions/introduction) instead but [do not support .NET](https://vercel.com/docs/v2/serverless-functions/supported-languages).
 
-So, as an alternative I looked at [fly.io](https://fly.io/docs/).
+So, as an alternative, I looked at [fly.io](https://fly.io/docs/).
 
 I first used them in 2017 before GitHub supported HTTPS/SSL for custom domains by [using them as middleware](2017-08-31-http-ssl-via-github-pages-with-flyio.md) to provide this service.
 
@@ -32,18 +32,18 @@ Perfect!
 
 **Backend**
 
-So, the plan was create a backend to replace the weather.json file, deploy and host it via Docker on fly.io and point my vercel hosted blazor website to that!
+So, the plan was to create a backend to replace the weather.json file, deploy and host it via Docker on fly.io and point my vercel hosted blazor website to that!
 
-First up I created a backend web api using the `dotnet new` template and added that to my solution.
+First up I created a backend web API using the `dotnet new` template and added that to my solution.
 
-Fortunately the .NET Core Web API template comes out of the box with a `/weatherforecast` endpoint that returns the same shape data as the `sample_data/weather.json` file in the frontend.
+Fortunately, the .NET Core Web API template comes out of the box with a `/weatherforecast` endpoint that returns the same shape data as the `sample_data/weather.json` file in the frontend.
 
 ```powershell
 dotnet new webapi -n backend
 dotnet sln add backend/backend.csproj
 ```
 
-Next, I needed to tell my web api backend that another domain (my vercel hosted blazor app) would be connecting to it. This would fix any [CORS](https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-3.1) related error messages.
+Next, I needed to tell my web API backend that another domain (my vercel hosted blazor app) would be connecting to it. This would fix any [CORS](https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-3.1) related error messages.
 
 So in `backend/Program.cs`
 
@@ -92,14 +92,13 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 
     app.UseEndpoints(endpoints => endpoints.MapControllers());
 }
-
 ```
 
 **Docker**
 
 Now that the backend project is ready it was time to deploy it to [https://fly.io/](fly.io).
 
-From a previous project I already had a handy dandy working Dockerfile I could re-use so making sure I replaced the name of dotnet dll and ensured I was pulling a recent version of .NET Core SDK
+From a previous project, I already had a handy dandy working Dockerfile I could re-use so making sure I replaced the name of dotnet dll and ensured I was pulling a recent version of .NET Core SDK
 
 `Dockerfile`
 
@@ -156,9 +155,9 @@ bin/
 obj/
 ```
 
-I had already installed and authenticated the `flyctl` command line tool, head over to [https://fly.io/docs/speedrun/](https://fly.io/docs/speedrun/) for a simple tutorial on how to get started.
+I had already installed and authenticated the `flyctl` command-line tool, head over to [https://fly.io/docs/speedrun/](https://fly.io/docs/speedrun/) for a simple tutorial on how to get started.
 
-After some trial and error and some fantastic help from support I worked out that I needed to override the port that fly used so that it matched my .NET Core Web API project.
+After some trial and error and some fantastic help from support, I worked out that I needed to override the port that fly.io used so that it matched my .NET Core Web API project.
 
 I created an app using port 5000 by first navigating into the backend project so that I was in the same location as the csproj file.
 
@@ -169,9 +168,8 @@ flyctl apps create -p 5000
 
 You should find a new `fly.toml` file has been added to your project folder
 
-```yaml
+```yml
 app = "blue-dust-2805"
-
 
 [[services]]
   internal_port = 5000
@@ -196,13 +194,13 @@ app = "blue-dust-2805"
 
 Make a mental note of the app name you will see it again in the final hostname, also note the port number that we overrode in the previous step.
 
-Now to deploy the app...
+Now to deploy the app…
 
 ```powershell
 flyctl deploy
 ```
 
-And get the deployed endpoint url back to use in the front end...
+And get the deployed endpoint URL back to use in the front end…
 
 ```powershell
 flyctl info
@@ -213,22 +211,21 @@ The `flyctl info` command will return a deployed endpoint along with a random ho
 ```powershell
 flyctl info
 App
-  Name     = blue-dust-2805
-  Owner    = your fly username
-  Version  = 10
-  Status   = running
+  Name = blue-dust-2805
+  Owner = your fly username
+  Version = 10
+  Status = running
   Hostname = blue-dust-2805.fly.dev
 
 Services
-  PROTOCOL   PORTS
-  TCP        80 => 5000 [HTTP]
+  PROTOCOL PORTS
+  TCP 80 => 5000 [HTTP]
              443 => 5000 [TLS, HTTP]
 
 IP Addresses
-  TYPE   ADDRESS                               CREATED AT
-  v4     77.83.141.66                          2020-05-17T20:49:30Z
-  v6     2a09:8280:1:c3b:5352:d1d5:9afd:fb65   2020-05-17T20:49:31Z
-
+  TYPE ADDRESS CREATED AT
+  v4 77.83.141.66 2020-05-17T20:49:30Z
+  v6 2a09:8280:1:c3b:5352:d1d5:9afd:fb65 2020-05-17T20:49:31Z
 ```
 
 Now that the app is deployed you can view it by taking the hostname `blue-dust-2805.fly.dev` and appending the weather forecast endpoint at the end.
@@ -243,7 +240,7 @@ Login to you fly.io control panel to see some stats
 
 **Frontend**
 
-Next up it was just a case of replacing the frontend's call to the local json file with the backend endpoint.
+Next up it was just a case of replacing the frontend’s call to the local json file with the backend endpoint.
 
 ```csharp
 builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri("https://blue-dust-2805.fly.dev") });
@@ -281,9 +278,9 @@ cd backend
 flyctl auth token
 ```
 
-Go to your repository on GitHub and select Setting then to Secrets and create a secret called FLY_API_TOKEN with the value of the token we just created.
+Go to your repository on GitHub and select Setting then to Secrets and create a secret called FLY\_API\_TOKEN with the value of the token we just created.
 
-Next create the file `.github/workflows/fly.yml`
+Next, create the file `.github/workflows/fly.yml`
 
 ```yml
 name: Fly Deploy
@@ -312,16 +309,16 @@ jobs:
 
 Notice that in that file we have told the GitHub action to use the `FLY_API_TOKEN` we just setup.
 
-Also because my `fly.toml` is not in the solution root but in the backend folder I can tell fly to look for it there by setting the environment variable `FLY_PROJECT_PATH`
+Also because my `fly.toml` is not in the solution root but in the backend folder I can tell fly to look for it by setting the environment variable `FLY_PROJECT_PATH`
 
 ```yml
 FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 FLY_PROJECT_PATH: backend
 ```
 
-Also make sure the `fly.toml` is not in your .gitignore file.
+Also, make sure the `fly.toml` is not in your .gitignore file.
 
-And so with that every time I accept a pull request or I push to master my backend will get deployed to fly.io!
+And so with that, every time I accept a pull request or I push to master my backend will get deployed to fly.io!
 
 ![](https://i.imgur.com/LqxEeQ2.png)
 
