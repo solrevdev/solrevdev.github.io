@@ -10,6 +10,8 @@ tags:
   - zeit
   - now
 ---
+**Update** - I did [deploy an ASP.NET Core Web API backend via Docker](2020-05-18-deploy-aspnet-core-web-api-to-fly-via-docker.md) to [fly.io](https://fly.io/docs/)
+
 So, I decided it was time to play with Blazor WebAssembly which is in preview for ASP.NET Core 3.1.
 
 I decided I wanted to publish the sample on Zeit's now.sh platform which has now been [rebranded Vercel](https://vercel.com/blog/zeit-is-now-vercel)
@@ -111,5 +113,7 @@ The code is now up on GitHub at [https://github.com/solrevdev/blazor-on-vercel](
 Next up I am thinking of deploying a Web API backend for it to talk to.
 
 Maybe a docker based deployment over at [fly.io](https://fly.io/docs/)?
+
+**Update** - I did [deploy an ASP.NET Core Web API backend via Docker](2020-05-18-deploy-aspnet-core-web-api-to-fly-via-docker.md) to [fly.io](https://fly.io/docs/)
 
 Success 🎉
