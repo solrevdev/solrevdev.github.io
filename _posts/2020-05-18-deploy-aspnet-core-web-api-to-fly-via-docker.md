@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Deploy ASP.NET Core Web API to Fly via Docker
 tags:
