@@ -13,11 +13,12 @@ Static [Jekyll](http://jekyllrb.com) driven website to replace solrevdev.com blo
 bundle install
 bundle update github-pages
 bundle exec jekyll serve --baseurl ''
+bundle exec jekyll serve --drafts --baseurl ''
 ```
 
 To get rid of warnings you can use this
 ```powershell
-bundle exec jekyll serve --baseurl '' 2>/dev/null
+bundle exec jekyll serve --drafts --baseurl '' 2>/dev/null
 ```
 
 Now open your browser and go to : `http://localhost:4000` <http://localhost:4000>
