@@ -26,7 +26,7 @@ The replacements to the [Instagram Legacy API Platform](https://www.instagram.co
 
 So, If my project was to continue to work I needed to migrate over to the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api) before the deadline. 
 
-I decided to build and release an open source library, A  wrapper around the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api) in the same was as [InstaSharp](http://instasharp.github.io/InstaSharp/) did for the original.
+I decided to build and release an open source library, A  wrapper around the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api) in the same way as [InstaSharp](http://instasharp.github.io/InstaSharp/) did for the original.
 
 **Solrevdev.InstagramBasicDisplay** 
 
