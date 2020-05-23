@@ -14,6 +14,8 @@ bundle install
 bundle update github-pages
 bundle exec jekyll serve --baseurl ''
 bundle exec jekyll serve --drafts --baseurl ''
+bundle exec jekyll serve --drafts --baseurl '' 2>/dev/null
+
 ```
 
 To get rid of warnings you can use this
