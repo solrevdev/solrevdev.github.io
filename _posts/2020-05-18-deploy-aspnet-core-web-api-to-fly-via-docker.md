@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: Deploy ASP.NET Core Web API to Fly via Docker
+description: How to deploy an ASP.NET Core Web API site to fly.io via Docker
 tags:
   - dotnetcore
   - dotnet

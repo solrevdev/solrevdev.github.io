@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: Instagram Basic Display API
+description: How to consume the Instagram Basic Display API using a dotnetcore netstandard2.0 library which is also on nuget
 tags:
   - aspnetcore
   - dotnet
@@ -12,11 +13,11 @@ tags:
 
 **Background**
 
-A while ago I was working on a project that consumed the [Instagram Legacy API Platform](https://www.instagram.com/developer/). 
+A while ago I was working on a project that consumed the [Instagram Legacy API Platform](https://www.instagram.com/developer/).
 
 ![](https://i.imgur.com/PHCXZXK.png)
 
-To make things easier there was fantastic libray called [InstaSharp](http://instasharp.github.io/InstaSharp/) which wrapped the HTTP calls to the Instagram API endpoints.
+To make things easier there was fantastic library called [InstaSharp](http://instasharp.github.io/InstaSharp/) which wrapped the HTTP calls to the Instagram API endpoints.
 
 ![](https://i.imgur.com/YgLkx4K.png)
 
@@ -24,11 +25,11 @@ However, Instagram began disabling the [Instagram Legacy API Platform](https://w
 
 The replacements to the [Instagram Legacy API Platform](https://www.instagram.com/developer/) are the [Instagram Graph API](https://developers.facebook.com/docs/instagram-graph-api) and the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api).
 
-So, If my project was to continue to work I needed to migrate over to the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api) before the deadline. 
+So, If my project was to continue to work I needed to migrate over to the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api) before the deadline.
 
 I decided to build and release an open source library, A  wrapper around the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api) in the same way as [InstaSharp](http://instasharp.github.io/InstaSharp/) did for the original.
 
-**Solrevdev.InstagramBasicDisplay** 
+**Solrevdev.InstagramBasicDisplay**
 
 And so began [Solrevdev.InstagramBasicDisplay](https://github.com/solrevdev/instagram-basic-display),  a [netstandard2.0](https://docs.microsoft.com/en-us/dotnet/standard/net-standard) library that consumes the new [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api/).
 
@@ -40,6 +41,6 @@ It is also available on [nuget](https://www.nuget.org/packages/Solrevdev.Instagr
 
 **Getting Started**
 
-todo:// 
+todo://
 
 Success 🎉

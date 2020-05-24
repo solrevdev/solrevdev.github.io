@@ -6,6 +6,7 @@ plugins:
     - jekyll-feed
     - jekyll-github-metadata
     - jemoji
+    - jekyll-seo-tag
 
 # Dependencies
 highlighter: rouge
@@ -15,37 +16,37 @@ markdown: kramdown
 # excerpt_separator: ''
 
 # Setup
-title: 'solrevdev'
-tagline: 'developer / devops / comedy nerd / full time carer'
-description: 'A blog about things I find on the web, tools and technologies that I like.'
-url: 'https://solrevdev.com'
-baseurl: 'https://solrevdev.com/'
+title: "solrevdev"
+tagline: "developer / devops / comedy nerd / full time carer"
+description: "A blog about things I find on the web, tools and technologies that I like."
+url: "https://solrevdev.com"
+baseurl: "https://solrevdev.com/"
 
 # Contacts
 author:
-    name: 'John Smith'
-    url: 'https://solrevdev.com/about/'
-    email: 'john@solrevdev.com'
-    github: 'https://github.com/solrevdev'
-    facebook: 'https://www.facebook.com/solrevdevtechradar'
-    instagram: 'https://www.instagram.com/solrevdev'
-    twitter: 'https://www.twitter.com/solrevdev'
+    name: "John Smith"
+    url: "https://solrevdev.com/about/"
+    email: "john@solrevdev.com"
+    github: "https://github.com/solrevdev"
+    facebook: "https://www.facebook.com/solrevdevtechradar"
+    instagram: "https://www.instagram.com/solrevdev"
+    twitter: "https://www.twitter.com/solrevdev"
 
 # Outputting
 paginate: 5
 
 # Custom vars
-version: '2.1.0'
+version: "2.1.0"
 
 github: [metadata]
 
-exclude: ['Rakefile', 'vendor']
+exclude: ["Rakefile", "vendor"]
 
 # Social Sharing
-facebook_app_id: '1213637668669023'
+facebook_app_id: "1213637668669023"
 
 theme: jekyll-theme-cayman
 
 prose:
-    siteurl: 'https://solrevdev.com'
-    media: 'media'
+    siteurl: "https://solrevdev.com"
+    media: "media"

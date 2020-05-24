@@ -2,6 +2,7 @@
 published: true
 layout: post
 title: Blazor hosted on vercel aka zeit now.sh
+description: How to deploy a Blazor WebAssembly ASP.NET Core site to vercel aka now.sh
 tags:
   - dotnetcore
   - dotnet
