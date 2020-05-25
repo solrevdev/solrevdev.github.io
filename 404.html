@@ -5,23 +5,25 @@ permalink: /404.html
 ---
 
 <div class="page">
-  <h1 class="page-title">404: Page not found</h1>
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ site.baseurl }}">Head back home</a> to try finding it again.</p>
-  
-  <p>This website has been migrated from a Blogger hosted site so some links are no longer valid so here are some possible pages for you to browse.</p>
+    <h1 class="page-title">404: Page not found</h1>
+    <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a
+            href="{{ site.baseurl }}/">Head back home</a> to try finding it again.</p>
 
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:10 %}
-      <li>
-        <h3>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
+    <p>This website has been migrated from a Blogger hosted site so some links are no longer valid so here are some
+        possible pages for you to browse.</p>
+
+    <ul class="related-posts">
+        {% for post in site.related_posts limit:10 %}
+        <li>
+            <h3>
+                <a href="{{ site.baseurl }}{{ post.url }}">
+                    {{ post.title }}
+                    <small>{{ post.date | date_to_string }}</small>
+                </a>
+            </h3>
+        </li>
+        {% endfor %}
+    </ul>
 
 
 </div>
