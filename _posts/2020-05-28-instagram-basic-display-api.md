@@ -170,8 +170,7 @@ In your [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/about) library 
 
 ## Common Uses
 
-Now that you have a .NET Core Razor Pages website and the Solrevdev.InstagramBasicDisplay library has been added
-you can achieve some of the following common uses.
+Now that you have a .NET Core Razor Pages website and the Solrevdev.InstagramBasicDisplay library has been added you can achieve some of the following common uses.
 
 **Get an Instagram User Access Token and permissions from an Instagram user**
 
