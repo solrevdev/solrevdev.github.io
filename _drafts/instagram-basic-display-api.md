@@ -17,7 +17,7 @@ A while ago I was working on a project that consumed the [Instagram Legacy API P
 
 ![](https://i.imgur.com/PHCXZXK.png)
 
-To make things easier there was fantastic library called [InstaSharp](http://instasharp.github.io/InstaSharp/) which wrapped the HTTP calls to the Instagram API endpoints.
+To make things easier there was fantastic library called [InstaSharp](http://instasharp.github.io/InstaSharp/) which wrapped the HTTP calls to the Instagram Legacy API endpoints.
 
 ![](https://i.imgur.com/YgLkx4K.png)
 
