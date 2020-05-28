@@ -13,9 +13,9 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 **Hardware**
 
 - macmini running macOS mojave
-- hp laptop running ubuntu 19.10
+- hp laptop running Ubuntu 19.10
 - various windows virtual machines
-- iPhone 6S
+- iPhone XS
 
 ![2020-01-21_11_15_15_macos.png]({{site.baseurl}}/media/2020-01-21_11_15_15_macos.png)
 
@@ -32,16 +32,43 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 - [LastPass](http://lastpass.com/)
 - [Homebrew](https://brew.sh/)
 
+**Ubuntu apps**
+
+- [Ulauncher](https://ulauncher.io/)
+- [Flameshot](https://flameshot.js.org/#/)
+- [Workspaces to Dock](https://extensions.gnome.org/extension/427/workspaces-to-dock/)
+- [Workspace Indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
+- [Native Window Placement](https://extensions.gnome.org/extension/18/native-window-placement/)
+- [Horizontal Workspaces](https://extensions.gnome.org/extension/2141/horizontal-workspaces/)
+- [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+- [Arc Menu](https://extensions.gnome.org/extension/1228/arc-menu/)
+- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
+- [Oh My BASH!](https://ohmybash.github.io/)
+- [Kazam Screencaster](https://launchpad.net/kazam)
+- [Remmina](https://remmina.org/)
+- [Trimage](https://trimage.org/)
+- [Mailspring](https://getmailspring.com/)
+- [Bat](https://github.com/sharkdp/bat)
+- [Eog](https://howtoinstall.co/en/ubuntu/xenial/eog)
+- [Trash CLI](https://github.com/sindresorhus/guides/blob/285270f06e117c7e0a6b6e51eca6e488d9d7c44d/how-not-to-rm-yourself.md#how-not-to-rm-yourself)
+- [RipGrep](https://github.com/BurntSushi/ripgrep)
+
 **Editor and Terminal**
 
 - [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/) / [Visual Studio Code](https://code.visualstudio.com)
-- [Visual Studio 2019](https://visualstudio.microsoft.com) / [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)
+- [Visual Studio 2019](https://visualstudio.microsoft.com) / [Visual Studio for Mac](https:https://ohmybash.github.io///visualstudio.microsoft.com/vs/mac/)
 - Either the default light theme or [cobalt2](https://github.com/wesbos/cobalt2-vscode) for when I want dark themes
 - [iTerm2](https://iterm2.com) for macOS with the zeit theme
 - [zsh](https://ohmyz.sh)
+- [Oh My BASH!](https://ohmybash.github.io/)
 
-![2020-01-21_11_10_40_zeit_terminal.png]({{site.baseurl}}/media/2020-01-21_11_10_40_zeit_terminal.png)
+**macOS**
 
+![macOS]({{site.baseurl}}/media/2020-01-21_11_10_40_zeit_terminal.png)
+
+**Ubuntu**
+
+![Ubuntu](https://i.imgur.com/HROQVXm.png)
 
 **Fonts**
 
