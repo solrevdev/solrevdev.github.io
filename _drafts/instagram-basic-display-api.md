@@ -2,7 +2,9 @@
 published: true
 layout: post
 title: Instagram Basic Display API
-description: How to consume the Instagram Basic Display API using a dotnetcore netstandard2.0 library which is also on nuget
+description: >-
+  How to consume the Instagram Basic Display API using a dotnetcore
+  netstandard2.0 library which is also on nuget
 tags:
   - aspnetcore
   - dotnet
@@ -17,17 +19,17 @@ A while ago I was working on a project that consumed the [Instagram Legacy API P
 
 ![](https://i.imgur.com/PHCXZXK.png)
 
-To make things easier there was fantastic library called [InstaSharp](http://instasharp.github.io/InstaSharp/) which wrapped the HTTP calls to the Instagram Legacy API endpoints.
+To make things easier there was a fantastic library called [InstaSharp](http://instasharp.github.io/InstaSharp/) which wrapped the HTTP calls to the Instagram Legacy API endpoints.
 
 ![](https://i.imgur.com/YgLkx4K.png)
 
-However, Instagram began disabling the [Instagram Legacy API Platform](https://www.instagram.com/developer/) and on June 29, 2020 any remaining endpoints will no longer be available.
+However, Instagram began disabling the [Instagram Legacy API Platform](https://www.instagram.com/developer/) and on June 29, 2020, any remaining endpoints will no longer be available.
 
 The replacements to the [Instagram Legacy API Platform](https://www.instagram.com/developer/) are the [Instagram Graph API](https://developers.facebook.com/docs/instagram-graph-api) and the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api).
 
 So, If my project was to continue to work I needed to migrate over to the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api) before the deadline.
 
-I decided to build and release an open source library, A  wrapper around the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api) in the same way as [InstaSharp](http://instasharp.github.io/InstaSharp/) did for the original.
+I decided to build and release an open-source library, A  wrapper around the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api) in the same way as [InstaSharp](http://instasharp.github.io/InstaSharp/) did for the original.
 
 ## Solrevdev.InstagramBasicDisplay
 
@@ -35,13 +37,13 @@ And so began [Solrevdev.InstagramBasicDisplay](https://github.com/solrevdev/inst
 
 ![](https://i.imgur.com/Te7DLdK.png)
 
-It is also available on [nuget](https://www.nuget.org/packages/Solrevdev.InstagramBasicDisplay/) so you can add this functionality to your own .NET projects.
+It is also available on [nuget](https://www.nuget.org/packages/Solrevdev.InstagramBasicDisplay/) so you can add this functionality to your .NET projects.
 
 ![](https://i.imgur.com/FWeRqgo.png)
 
 ## Getting Started
 
-So, in order to consume the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api/) you will need to generate an Instagram  `client_id` and `client_secret` by creating a Facebook app and configuring it so that it knows your ***https only*** `redirect_url`.
+So, to consume the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api/) you will need to generate an Instagram  `client_id` and `client_secret` by creating a Facebook app and configuring it so that it knows your ***https only*** `redirect_url`.
 
 ### Facebook and Instagram Setup 
 
@@ -73,7 +75,7 @@ In the form that appears, complete each section using the guidelines below.
 Enter the name of the Facebook app you just created.
 
 **Valid OAuth Redirect URIs**
-Enter <https://localhost:5001/auth/oauth/> for your `redirect_url` that will be used later. **HTTPS must be used on all redirect urls**
+Enter <https://localhost:5001/auth/oauth/> for your `redirect_url` that will be used later. **HTTPS must be used on all redirect URLs**
 
 **Deauthorize Callback URL**
 Enter <https://localhost:5001/deauthorize>
@@ -90,7 +92,7 @@ Navigate to **Roles > Roles** and scroll down to the **Instagram Testers section
 
 ![Step 3a - Add an Instagram Test User](https://i.imgur.com/UWPx2NK.png)
 
-Open a new web browser and go to [www.instagram.com](https://www.instagram.com/) and sign into your Instagram account that you just invited. Navigate to **(Profile Icon) > Edit Profile > Apps and Websites > Tester Invites** and accept the invitation.
+Open a new web browser and go to [www.instagram.com](https://www.instagram.com/) and sign in to your Instagram account that you just invited. Navigate to **(Profile Icon) > Edit Profile > Apps and Websites > Tester Invites** and accept the invitation.
 
 ![Step 3b - Add an Instagram Test User](https://i.imgur.com/Z25fBaq.png)
 
@@ -119,8 +121,7 @@ This is going to be known as `redirect_url` later
 
 ## Installation
 
-Now that you have an Instagram `client_id` and `client_secret` to use we can now create a new dotnet project and add 
-the Solrevdev.InstagramBasicDisplay package to it.
+Now that you have an Instagram `client_id` and `client_secret` to use we can now create a new dotnet project and add the Solrevdev.InstagramBasicDisplay package to it.
 
 Create a .NET Core Razor Pages project.
 
@@ -176,7 +177,7 @@ you can achieve some of the following common uses.
 
 First, you send the user to Instagram to authenticate using the `Authorize` method, they will be redirected to the `RedirectUrl` set in `InstagramCredentials` so ensure that is set-up correctly in the Instagram app settings page.
 
-Instagram will redirect the user on a successful login to the `RedirectUrl` page you configured in `InstagramCredentials` and this is where you can call `AuthenticateAsync` which exchanges the [Authorization Code](https://developers.facebook.com/docs/instagram-basic-display-api/overview#authorization-codes) for a [short-lived Instagram user access token](https://developers.facebook.com/docs/instagram-basic-display-api/overview#instagram-user-access-tokens) or optionally a [long-lived Instagram user access token](https://developers.facebook.com/docs/instagram-basic-display-api/guides/long-lived-access-tokens#get-a-long-lived-token).
+Instagram will redirect the user on successful login to the `RedirectUrl` page you configured in `InstagramCredentials` and this is where you can call `AuthenticateAsync` which exchanges the [Authorization Code](https://developers.facebook.com/docs/instagram-basic-display-api/overview#authorization-codes) for a [short-lived Instagram user access token](https://developers.facebook.com/docs/instagram-basic-display-api/overview#instagram-user-access-tokens) or optionally a [long-lived Instagram user access token](https://developers.facebook.com/docs/instagram-basic-display-api/guides/long-lived-access-tokens#get-a-long-lived-token).
 
 You then have access to an `OAuthResponse` which contains your [access token](https://developers.facebook.com/docs/instagram-basic-display-api/reference/access_token) and a [user](https://developers.facebook.com/docs/instagram-basic-display-api/reference/user) which can be used to make further API calls.
 
