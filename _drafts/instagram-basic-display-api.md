@@ -43,7 +43,7 @@ It is also available on [nuget](https://www.nuget.org/packages/Solrevdev.Instagr
 
 So, in order to consume the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api/) you will need to generate an Instagram  `client_id` and `client_secret` by creating a Facebook app and configuring it so that it knows your ***https only*** `redirect_url`.
 
-### Facebook and Instagram Setup ![instagram logo](https://i.imgur.com/gFDtvYe.png)
+### Facebook and Instagram Setup 
 
 Before you begin you will need to create an Instagram  `client_id` and `client_secret` by creating a Facebook app and configuring it so that it knows your `redirect_url`. There are full [instructions here](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started).
 
@@ -119,9 +119,19 @@ This is going to be known as `redirect_url` later
 
 ## Installation
 
+Now that you have an Instagram `client_id` and `client_secret` to use we can now create a new dotnet project and add 
+the Solrevdev.InstagramBasicDisplay package to it.
+
+Create a .NET Core Razor Pages project.
+
+```powershell
+dotnet new webapp -n web
+cd web
+``` 
+
 To install via [nuget](https://www.nuget.org/packages/Solrevdev.InstagramBasicDisplay/) using the dotnet cli
 
-```bash
+```powershell
 dotnet add package Solrevdev.InstagramBasicDisplay
 ```
 
@@ -158,6 +168,9 @@ In your [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/about) library 
 ```
 
 ## Common Uses
+
+Now that you have a .NET Core Razor Pages website and the Solrevdev.InstagramBasicDisplay library has been added
+you can achieve some of the following common uses.
 
 **Get an Instagram User Access Token and permissions from an Instagram user**
 
