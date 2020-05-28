@@ -11,7 +11,7 @@ tags:
   - nuget
 ---
 
-### Background
+## Background
 
 A while ago I was working on a project that consumed the [Instagram Legacy API Platform](https://www.instagram.com/developer/).
 
@@ -29,7 +29,7 @@ So, If my project was to continue to work I needed to migrate over to the [Insta
 
 I decided to build and release an open source library, A  wrapper around the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api) in the same way as [InstaSharp](http://instasharp.github.io/InstaSharp/) did for the original.
 
-### Solrevdev.InstagramBasicDisplay
+## Solrevdev.InstagramBasicDisplay
 
 And so began [Solrevdev.InstagramBasicDisplay](https://github.com/solrevdev/instagram-basic-display),  a [netstandard2.0](https://docs.microsoft.com/en-us/dotnet/standard/net-standard) library that consumes the new [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api/).
 
@@ -39,9 +39,9 @@ It is also available on [nuget](https://www.nuget.org/packages/Solrevdev.Instagr
 
 ![](https://i.imgur.com/FWeRqgo.png)
 
-### Getting Started
+## Getting Started
 
-Before you begin you will need to create an Instagram  `client_id` and `client_secret` by creating a Facebook app and configuring it so that it knows your ***https only*** `redirect_url`.
+So, in order to consume the [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api/) you will need to generate an Instagram  `client_id` and `client_secret` by creating a Facebook app and configuring it so that it knows your ***https only*** `redirect_url`.
 
 ### Facebook and Instagram Setup ![instagram logo](https://i.imgur.com/gFDtvYe.png)
 
@@ -117,17 +117,7 @@ This is going to be known as `redirect_url` later
 
 ![Facebook and Instagram Credentials](https://i.imgur.com/k5H2JSN.png) *[go here for a full size screenshot](https://i.imgur.com/bSHOS5p.png)*
 
-### User Token Generator
-
-The Instagram User Token Generator is a tool you can use to quickly generate [long-lived Instagram User Access Tokens](https://developers.facebook.com/docs/instagram-basic-display-api/overview#instagram-user-access-tokens) for any of your public Instagram accounts. This is useful if you're testing your app and don't want to bother with implementing the [Authorization Window](https://developers.facebook.com/docs/instagram-basic-display-api/overview#authorization-window).
-
-The tool works by triggering the Authorization Window, which you can sign into with a public Instagram account that you have designated as a [tester account](https://developers.facebook.com/docs/instagram-basic-display-api/overview#instagram-testers). After signing in, the tool will generate a long-lived access token that you can copy and paste. Note that tokens can only be generated for public Instagram accounts.
-
-You can access the token generator in the **App Dashboard > Products > Instagram > Basic Display** tab.
-
-![User Token Generator](https://i.imgur.com/ToqSQr7.png)
-
-### Installation
+## Installation
 
 To install via [nuget](https://www.nuget.org/packages/Solrevdev.InstagramBasicDisplay/) using the dotnet cli
 
@@ -142,7 +132,7 @@ Install-Package Solrevdev.InstagramBasicDisplay
 ```
 
 
-### App Configuration
+## App Configuration
 
 In your [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/about) library or application create an `appsettings.json` file if one does not already exist and fill out the `InstagramSettings` section with your Instagram credentials such as client_id, client_secret and redirect_url as mentioned above.
 
@@ -167,7 +157,7 @@ In your [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/about) library 
 }
 ```
 
-### Common Uses
+## Common Uses
 
 **Get an Instagram User Access Token and permissions from an Instagram user**
 
@@ -373,29 +363,8 @@ public IndexModel(InstagramApi api, ILogger<IndexModel> logger)
 }
 ```
 
-### Start kestrel web server
+## Sample Code
 
-**First navigate to the directory this `readme.md` file is in.**
-
-```bash
-cd path/to/samples/Web/
-```
-
-**Run `dotnet` on port 5001**
-
-```powershell
-dotnet run
-```
-
-or
-
-```powershell
-dotnet watch run
-```
-
-### Open page
-
-e.g `https://localhost:5001/` which will serve the razor page from the samples/Web folder over https which is required by the Facebook app.
-
+For more documentation and a sample ASP.Net Core Razor Pages web application visit the [samples folder](https://github.com/solrevdev/instagram-basic-display/blob/master/samples/Web/readme.md) in the [GitHub repo](https://github.com/solrevdev/instagram-basic-display)
 
 Success 🎉
