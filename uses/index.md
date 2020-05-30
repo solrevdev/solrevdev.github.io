@@ -52,6 +52,8 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 - [Eog](https://howtoinstall.co/en/ubuntu/xenial/eog)
 - [Trash CLI](https://github.com/sindresorhus/guides/blob/285270f06e117c7e0a6b6e51eca6e488d9d7c44d/how-not-to-rm-yourself.md#how-not-to-rm-yourself)
 - [RipGrep](https://github.com/BurntSushi/ripgrep)
+- [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher)
+- [Beekeeper Studio](https://www.beekeeperstudio.io/)
 
 **Editor and Terminal**
 
