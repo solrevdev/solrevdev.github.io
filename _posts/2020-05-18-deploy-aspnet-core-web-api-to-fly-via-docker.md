@@ -235,6 +235,8 @@ For example [https://blue-dust-2805.fly.dev/weatherforecast](https://blue-dust-2
 
 If all has gone well you should see some random weather!
 
+![](https://i.imgur.com/Hfyzi1J.png)
+
 Login to you fly.io control panel to see some stats
 
 ![](https://i.imgur.com/1MyvTwn.png)
