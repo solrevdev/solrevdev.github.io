@@ -2,8 +2,7 @@
 published: true
 layout: post
 title: Adding TypeScript to an existing aspnetcore project
-description: >-
-  How to add TypeScript to an ASP.NET Core Razor Pages site
+description: How to add TypeScript to an ASP.NET Core Razor Pages site
 tags:
   - typescript
   - aspnetcore
@@ -123,7 +122,6 @@ if (window.console) {
 **After**
 
 ```javascript
-
 if (window.console) {
     var message = 'site.ts > site.js > site.js.min';
     console.log(message);
