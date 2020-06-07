@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 
 
@@ -79,15 +79,19 @@ Using the [Rest Client](https://marketplace.visualstudio.com/items?itemName=huma
 
 You will get a response that gives you a `code` that you need for the next step so make sure you make a note of it
 
-```http
-@code=111111-1111-1111-1111-111111
+```json
+{
+  code:'111111-1111-1111-1111-111111'
+}
 ```
 
 ### Step 3: Redirect user to Pocket to continue authorization
 
 Take your `code` and `redirect_url` from Step 2 above and relace in the URL below and copy and paste the below URL in to a browser and follow the instructions.
 
+```powershell
 https://getpocket.com/auth/authorize?request_token=111111-1111-1111-1111-111111&redirect_uri=https://solrevdev.com
+```
 
 ### Step 4: Receive the callback from Pocket
 
@@ -112,8 +116,7 @@ X-Accept: application/json
 
 Again, using the fantastic Rest Client send the request and make a note of the `access_token` in the response
 
-```http
-# This is the response from the above step 5
+```json
 {
   "access_token": "111111-1111-1111-1111-111111",
   "username": "solrevdev"
