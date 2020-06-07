@@ -58,11 +58,13 @@ code .
 ### Step 1: Obtain a Pocket platform consumer key
 
 Create a new application over at [https://getpocket.com/developer/apps/new](https://getpocket.com/developer/apps/new)
-and make sure you select all of the Add/Modify/Retrieve Permissions and choose Web as the platform.
+and make sure you select all of the Add/Modify/Retrieve permissions and choose Web as the platform.
 
 ![](https://i.imgur.com/mRF2g4Z.png)
 
-Make a note of the `consumer_key` that is created. You can also find it over at [https://getpocket.com/developer/apps/](https://getpocket.com/developer/apps/)
+Make a note of the `consumer_key` that is created. 
+
+You can also find it over at [https://getpocket.com/developer/apps/](https://getpocket.com/developer/apps/)
 
 ### Step 2: Obtain a request token
 
@@ -104,7 +106,9 @@ https://getpocket.com/auth/authorize?request_token=111111-1111-1111-1111-111111&
 
 ### Step 4: Receive the callback from Pocket
 
-Pocket will redirect you to the `redirect_url` you entered. This URL does not matter.
+Pocket will redirect you to the `redirect_url` you entered in step 3 above. 
+
+This step authorises the application giving it the add/modify/delete permissions we asked for in step 1.
 
 ### Step 5: Convert a request token into a Pocket access token
 
@@ -134,9 +138,9 @@ Again, using the fantastic Rest Client send the request and make a note of the `
 
 ## Make some requests
 
-Now we can make some requests against our account, take a look at the [documentation](https://getpocket.com/developer/docs/overview) for more information.
+Now we have an `access_token` we  can make some requests against our account, take a look at the [documentation](https://getpocket.com/developer/docs/overview) for more information on what can be done with the API
 
-We can view all pockets
+We can view all pockets:
 
 ```http
 ### get all pockets
@@ -153,7 +157,7 @@ X-Accept: application/json
 }
 ```
 
-We can modify pockets
+We can modify pockets:
 
 ```http
 ### modify  pockets
@@ -175,11 +179,10 @@ X-Accept: application/json
 
 ## Generate Code Snippet
 
-For a quick and dirty solution, I used the Generate Code Snippet feature of the Rest Client Extension to get me the
-boilerplate code which I extended as below to loop until I had no more bookmarks left archiving them in batches of 100.
+I used the Generate Code Snippet feature of the Rest Client Extension to get me some 
+boilerplate code which I extended to loop until I had no more bookmarks left archiving them in batches of 100.
 
-Once you've sent a request as above, use shortcut <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd> or <kbd>Cmd</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd> for macOS, or right-click in the editor and
-then select Generate Code Snippet in the menu, or press <kbd>F1</kbd> and then select/type `Rest Client: Generate Code Snippet`, it will pop up the language picklist, Select `JavaScript` then enter and your code will appear in a right-hand pane.
+To do this once you've sent a request as above, use shortcut <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd> or <kbd>Cmd</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd> for macOS, or right-click in the editor and then select Generate Code Snippet in the menu, or press <kbd>F1</kbd> and then select/type `Rest Client: Generate Code Snippet`, it will show the available languages, Select `JavaScript` then enter and your code will appear in a right-hand pane.
 
 Below is that code slightly modified to iterate all unread items then archive them until all complete.
 
