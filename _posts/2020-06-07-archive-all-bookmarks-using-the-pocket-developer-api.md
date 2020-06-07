@@ -2,7 +2,9 @@
 published: true
 layout: post
 title: Archiving all bookmarks using the Pocket Developer API
-description: How to archive all bookmarks using the Pocket Developer API using Visual Studio Code, Rest Client extension and JavaScript
+description: >-
+  How to archive all bookmarks using the Pocket Developer API using Visual
+  Studio Code, Rest Client extension and JavaScript
 tags:
   - javascript
   - rest
@@ -43,7 +45,7 @@ API's nicely.
 I will not be using it to its full potential as it supports variables and such like so I will leave that for an exercise
 for the reader to refactor away.
 
-So, to get started to create a working folder, 2 files to work with then open Visual Studio Code
+So, to get started create a working folder, 2 files to work with and then open Visual Studio Code
 
 ```powershell
 mkdir pocket-api
@@ -258,4 +260,3 @@ It took a while as I had content going back to 2016 but once it was finished I h
 ![](https://i.imgur.com/YLysmmV.png)
 
 Success 🎉
-
