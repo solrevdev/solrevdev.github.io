@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "API's",
         "Blazor",
         "Codacy",
         "Deauthorize",
@@ -59,12 +60,14 @@
         "macmini",
         "macos",
         "minifier",
+        "mkdir",
         "monokai",
         "msbuild",
         "myget",
         "netstandard",
         "nuget",
         "omnisharp",
+        "picklist",
         "postbacks",
         "precomposed",
         "procps",
