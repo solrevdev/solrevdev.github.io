@@ -1,9 +1,7 @@
 ---
 published: true
 layout: post
-title: >-
-  ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY error on down-level windows operating
-  systems
+title: ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY
 author: John Smith
 tags:
   - '#dotnetcore'
