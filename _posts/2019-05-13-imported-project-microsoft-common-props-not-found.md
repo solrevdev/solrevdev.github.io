@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'The imported project "/usr/lib/mono/xbuild/15.0/Microsoft.Common.props" was not found'
+title: The imported project was not found
 author: John Smith
 tags:
   - '#dotnetcore'
