@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: ERR_HTTP2_INADEQUATE_TRANSPORT_SECURITY
+title: SSL error on downlevel windows versions
 author: John Smith
 tags:
   - '#dotnetcore'
@@ -27,7 +27,7 @@ dotnet dev-certs https --clean
 dotnet dev-certs https --trust
 ```
 
-I created a [github issue](https://github.com/aspnet/AspNetCore.Docs/issues/16434) and the ever-helpful [@guardrex](https://github.com/guardrex) came to my rescue again and pointed me in the right direction.
+I created a [github issue](https://github.com/aspnet/AspNetCore.Docs/issues/16434) and the ever-helpful @guardrex came to my rescue again and pointed me in the right direction.
 
 It is a [known bug](https://github.com/dotnet/aspnetcore/issues/16811) and there is an open Github issue for it.
 
