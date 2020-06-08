@@ -230,7 +230,7 @@ while (keepGoing) {
 
     //console.log('body', body);
 
-    response = await fetch('https://getpocket.com/v3/send', {
+    let response = await fetch('https://getpocket.com/v3/send', {
         method: 'POST',
         headers: {
             'content-type': 'application/json; charset=UTF-8',
@@ -239,7 +239,7 @@ while (keepGoing) {
         body: body
     });
 
-    json = await response.json();
+    let json = await response.json();
 
     console.log('http post json', json);
 
@@ -256,7 +256,7 @@ while (keepGoing) {
 
 ## Run in Chrome's console window
 
-And so the quick and dirty solution for me was to take the above JavaScript and in a Chrome console window past and run.
+And so the quick and dirty solution for me was to copy the above JavaScript and in a Chrome console window paste and run.
 
 It took a while as I had content going back to 2016 but once it was finished I had a nice clean inbox again!
 
