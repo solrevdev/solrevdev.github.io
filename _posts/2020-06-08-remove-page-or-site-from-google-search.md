@@ -21,7 +21,7 @@ This is a file that website owners could use to inform web crawlers and robots s
 
 If you wanted to stop all robots from indexing your site you created a file called `robots.txt` in your site root with the following content
 
-{% gist https://gist.github.com/solrevdev/b0f05c422ac359168bff77e319b6b7ff %}
+{% gist b0f05c422ac359168bff77e319b6b7ff %}
 
 While still used, it is no longer the recommended way to block or remove a URL or site from Google.
 
