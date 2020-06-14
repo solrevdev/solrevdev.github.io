@@ -23,6 +23,10 @@ description: "A blog about things I find on the web, tools and technologies that
 url: "https://solrevdev.com"
 baseurl: ""
 
+# Minify css
+sass:
+    style: compressed
+
 # Contacts
 author:
     name: "John Smith"
