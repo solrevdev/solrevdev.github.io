@@ -182,7 +182,11 @@ X-Accept: application/json
 I used the Generate Code Snippet feature of the Rest Client Extension to get me some
 boilerplate code which I extended to loop until I had no more bookmarks left archiving them in batches of 100.
 
-To do this once you've sent a request as above, use shortcut <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd> or <kbd>Cmd</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd> for macOS, or right-click in the editor and then select Generate Code Snippet in the menu, or press <kbd>F1</kbd> and then select/type `Rest Client: Generate Code Snippet`, it will show the available languages, Select `JavaScript` then enter and your code will appear in a right-hand pane.
+To do this once you've sent a request as above, use shortcut <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd> or <kbd>Cmd</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd> for macOS, or right-click in the editor and then select Generate Code Snippet in the menu, or press <kbd>F1</kbd> and then select/type `Rest Client: Generate Code Snippet`.
+
+It will show the available languages.
+
+Select `JavaScript` then select enter and your code will appear in a right-hand pane.
 
 Below is that code slightly modified to iterate all unread items then archive them until all complete.
 
