@@ -28,7 +28,7 @@ quick and dirty script to archive bookmarks going back to 2016!
 Now, since I ran this script I found a handy dandy page that would have done the job for me although instead of archiving
 all my bookmarks it would have deleted them so I am pleased I used my script instead.
 
-If you want to clear you Pocket account without deleting your account head over to this page:
+If you want to clear your Pocket account without deleting your account head over to this page:
 
 [https://getpocket.com/privacy_clear](https://getpocket.com/privacy_clear)
 
