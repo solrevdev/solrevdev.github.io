@@ -18,8 +18,8 @@ markdown: kramdown
 
 # Setup
 title: "solrevdev"
-tagline: "developer / devops / comedy nerd / full time carer"
-description: "A blog about things I find on the web, tools and technologies that I like."
+tagline: "A blog about things I find on the web, tools and technologies that I like."
+description: "solrevdev is a blog by the software engineer John Smith about things he finds on the web, tools and technologies that he likes."
 url: "https://solrevdev.com"
 baseurl: ""
 
