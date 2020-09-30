@@ -14,7 +14,7 @@ upload_dir: media
 public_path: "/media"
 front_matter_path: ''
 use_front_matter_path: false
-file_template: ":year:-:month:-:day_:filename:"
+file_template: ":year:-:month:-:day:_:filename:"
 build:
   preview_env:
   - JEKYLL_ENV=staging
