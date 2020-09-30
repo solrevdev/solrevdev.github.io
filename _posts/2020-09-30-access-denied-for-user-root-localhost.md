@@ -1,13 +1,14 @@
 ---
 layout: post
 title: Access denied for user root'@'localhost
-description: How to resolve the Access denied for user root'@'localhost MySQL error message
+description: How to resolve the Access denied for user root'@'localhost MySQL error
+  message
 tags:
-  - dotnet
-  - dotnetcore
-  - ubuntu
-  - mysql
-published: true
+- dotnet
+- dotnetcore
+- ubuntu
+- mysql
+
 ---
 Every time `apt-get upgrade` upgrades my local MySQL instance on my Ubuntu laptop I get the following error:
 
