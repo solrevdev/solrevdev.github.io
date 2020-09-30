@@ -16,7 +16,7 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 * various windows virtual machines
 * iPhone XS
 
-![2020-01-21]({{site.baseurl}}/media/2020-01-21_11_15_15_macos.png)
+![neofetch screenshot]({{site.baseurl}}/media/2020-01-21_11_15_15_macos.png "neofetch screenshot")
 
 **macOS apps**
 
@@ -64,11 +64,11 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 
 **macOS**
 
-![macOS]({{site.baseurl}}/media/2020-01-21_11_10_40_zeit_terminal.png)
+![macos screenshot]({{site.baseurl}}/media/2020-01-21_11_10_40_zeit_terminal.png "macos screeshot")
 
 **Ubuntu**
 
-![Ubuntu](https://i.imgur.com/HROQVXm.png)
+![ubuntu screenshot](https://i.imgur.com/HROQVXm.png "ubuntu screenshot")
 
 **Fonts**
 
