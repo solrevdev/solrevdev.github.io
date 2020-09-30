@@ -3,9 +3,9 @@ layout: page
 title: Uses
 author: John Smith
 tags:
-- "#uses"
-- "#me"
-
+  - '#uses'
+  - '#me'
+published: true
 ---
 Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to do what I do;
 
@@ -16,7 +16,7 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 * various windows virtual machines
 * iPhone XS
 
-![neofetch screenshot]({{site.baseurl}}/media/2020-01-21_11_15_15_macos.png "neofetch screenshot")
+![neofetch screenshot](/media/2020-01-21_11_15_15_macos.png "neofetch screenshot")
 
 **macOS apps**
 
@@ -64,7 +64,7 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 
 **macOS**
 
-![macos screenshot]({{site.baseurl}}/media/2020-01-21_11_10_40_zeit_terminal.png "macos screeshot")
+![macos screenshot](/media/2020-01-21_11_10_40_zeit_terminal.png "macos screeshot")
 
 **Ubuntu**
 
