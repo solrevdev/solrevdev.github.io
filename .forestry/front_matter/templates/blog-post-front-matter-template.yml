@@ -16,5 +16,5 @@ fields:
   label: tags
 pages:
 - _posts/2020-09-30-access-denied-for-user-root-localhost.md
+- _posts/2020-10-02-spotlight-stops-indexing-applications.md
 - _posts/creating-a.net-core-global-tool.md
-- _posts/spotlight-stops-indexing-applications.md
