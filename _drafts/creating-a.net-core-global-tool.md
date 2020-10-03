@@ -115,7 +115,9 @@ Once you are happy with your tool and you have installed in globally and tested 
 
 **Publish to NuGet** 🚀
 
-Head over to NuGet and create an API Key
+Head over to NuGet and [create an API Key](https://www.nuget.org/account/apikeys "create an API Key") 
+
+![NuGet API Keys](/media/2020-10-03_2020-10-03_14-27-10_nuget-api-keys.png "NuGet API Keys")
 
 ```yml
 name: CI
