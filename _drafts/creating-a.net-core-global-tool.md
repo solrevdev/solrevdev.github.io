@@ -3,11 +3,11 @@ layout: post
 title: Creating a .NET Core Global Tool
 description: How to create a .NET Core Global Tool
 tags:
-  - dotnet-global-tools
-  - dotnet-global-tool
-  - csharp
-  - dotnetcore
-published: true
+- dotnet-global-tools
+- dotnet-global-tool
+- csharp
+- dotnetcore
+
 ---
 I have now built my first .NET Core Global Tool!
 
@@ -103,9 +103,9 @@ Your tool should now be in your path from any folder. You call your tool whateve
 <ToolCommandName>seedfolder</ToolCommandName>
 ```
 
-You may find you need uninstall and instal while you debug. 
+You may find you need uninstall and instal while you debug.
 
-To uninstall you need to do as follows: 
+To uninstall you need to do as follows:
 
 ```powershell
 dotnet tool uninstall -g solrevdev.seedfolder
@@ -115,17 +115,17 @@ Once you are happy with your tool and you have installed in globally and tested 
 
 **Publish to NuGet** 🚀
 
-Head over to NuGet and [create an API Key](https://www.nuget.org/account/apikeys "create an API Key") 
+Head over to NuGet and [create an API Key](https://www.nuget.org/account/apikeys "create an API Key")
 
 ![NuGet API Keys](/media/2020-10-03_2020-10-03_14-27-10_nuget-api-keys.png "NuGet API Keys")
 
 Once you have this key go to your GitHub Project and under settings and secrets create a new secret named `NUGET_API_KEY` with the value you just created over at NuGet.
 
-Image here
+![Github Secrets](/media/2020-10-03_2020-10-03_14-35-47_github-secrets.png "Github Secrets")
 
-Finally create a new workflow like the one below which will check out the code, build and package the .NET Core console application as a NuGet package then using the API key we just created we will automatically publish the tool to NuGet. 
+Finally create a new workflow like the one below which will check out the code, build and package the .NET Core console application as a NuGet package then using the API key we just created we will automatically publish the tool to NuGet.
 
-Each time you commit do not forget to bump the version tag e.g `<Version>1.0.0</Version>`
+Each time you commit do not forget to bump the version tag e.g. `<Version>1.0.0</Version>`
 
 ```yml
 name: CI
