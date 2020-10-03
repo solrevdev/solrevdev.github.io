@@ -9,9 +9,10 @@ tags:
 - dotnetcore
 
 ---
-I have now built my first .NET Core Global Tool!
 
 **Overview** ☀
+
+I have now built my first .NET Core Global Tool!
 
 A .NET Core Global Tool is special NuGet package that contains a console application that is installed globally on your machine and is installed in a default directory that is added to the PATH environment variable.
 
@@ -44,7 +45,7 @@ I won't explain how this code was written; you can view the [source code](https:
 The important thing to note is that the application is a standard .NET Core console application that you can create as follows:
 
 ```powershell
-dotnet new console -n yourconsoleapp
+dotnet new console -n solrevdev.seedfolder
 ```
 
 **Metadata** 📖
@@ -78,7 +79,7 @@ What sets a standard .NET Core console application and a global tool apart is so
 </Project>
 ```
 
-The extra `PackAsTool` to `Version` tags are required fields while the `Title` to `PackageTags` are useful to help describe the package in NuGet and help get it discovered.
+The extra tags from  `PackAsTool` to `Version`  are required fields while the `Title` to `PackageTags` are useful to help describe the package in NuGet and help get it discovered.
 
 **Packaging and Installation** ⚙
 
@@ -88,7 +89,7 @@ Once I was happy that my console application was working the next step was to cr
 dotnet pack
 ```
 
-This produces a _nupkg_ package  The nupkg NuGet package is what the .NET Core CLI uses to install the global tool.
+This produces a _nupkg_ package.  This nupkg NuGet package is what the .NET Core CLI uses to install the global tool.
 
 So, to package and install locally without publishing to NuGet which will be needed while you are still testing you need the following:
 
@@ -97,7 +98,7 @@ dotnet pack
 dotnet tool install --global --add-source ./nupkg solrevdev.seedfolder
 ```
 
-Your tool should now be in your path from any folder. You call your tool whatever was in the ToolCommandName property in your .csproj file
+Your tool should now be in your path accessible from any folder. You call your tool whatever was in the ToolCommandName property in your .csproj file
 
 ```xml
 <ToolCommandName>seedfolder</ToolCommandName>
@@ -175,6 +176,8 @@ jobs:
 
 **Find More** 🔍
 
-Now that you have built and published a .NET Core Global Tool you may wish to find some others for inspiration, Search the [NuGet](https://www.nuget.org/ "NuGet") website by using the ".NET tool" package type filter or see the list of tools in the [natemcmaster/dotnet-tools](https://github.com/natemcmaster/dotnet-tools "natemcmaster/dotnet-tools") GitHub repository.
+Now that you have built and published a .NET Core Global Tool you may wish to find some others for inspiration.
+
+Search the [NuGet](https://www.nuget.org/ "NuGet") website by using the ".NET tool" package type filter or see the list of tools in the [natemcmaster/dotnet-tools](https://github.com/natemcmaster/dotnet-tools "natemcmaster/dotnet-tools") GitHub repository.
 
 Success! 🎉
