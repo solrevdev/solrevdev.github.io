@@ -9,7 +9,6 @@ tags:
 - dotnetcore
 
 ---
-
 **Overview** ☀
 
 I have now built my first .NET Core Global Tool!
@@ -21,6 +20,8 @@ You can invoke the tool from any directory on the machine without specifying its
 **The Application** 🌱
 
 So, rather than the usual _Hello World_ example to install as a global tool I wanted a tool that would be useful to me.
+
+![solrevdev.seedfolder app](/media/2020-10-03_2020-10-03_16-02-52-seedfolder-app-running.png "solrevdev.seedfolder app")
 
 I wanted to build a tool that will create a folder named after either a Trello card reference or the current Date in a YYYY-MM-DD format followed by the folder name and to then also copy some default standard dotfiles over in that folder
 
