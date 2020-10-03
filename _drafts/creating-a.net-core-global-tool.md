@@ -3,11 +3,11 @@ layout: post
 title: Creating a .NET Core Global Tool
 description: How to create a .NET Core Global Tool
 tags:
-- dotnet-global-tools
-- dotnet-global-tool
-- csharp
-- dotnetcore
-
+  - dotnet-global-tools
+  - dotnet-global-tool
+  - csharp
+  - dotnetcore
+published: true
 ---
 I have now built my first .NET Core Global Tool!
 
@@ -119,6 +119,14 @@ Head over to NuGet and [create an API Key](https://www.nuget.org/account/apikeys
 
 ![NuGet API Keys](/media/2020-10-03_2020-10-03_14-27-10_nuget-api-keys.png "NuGet API Keys")
 
+Once you have this key go to your GitHub Project and under settings and secrets create a new secret named `NUGET_API_KEY` with the value you just created over at NuGet.
+
+Image here
+
+Finally create a new workflow like the one below which will check out the code, build and package the .NET Core console application as a NuGet package then using the API key we just created we will automatically publish the tool to NuGet. 
+
+Each time you commit do not forget to bump the version tag e.g `<Version>1.0.0</Version>`
+
 ```yml
 name: CI
 
@@ -161,16 +169,12 @@ jobs:
               uses: rohith/publish-nuget@v2.1.1
               with:
                 PROJECT_FILE_PATH: src/solrevdev.seedfolder.csproj # Relative to repository root
-                # VERSION_FILE_PATH: Directory.Build.props # Filepath with version info, relative to repository root. Defaults to project file
-                # VERSION_REGEX: <Version>(.*)<\/Version> # Regex pattern to extract version info in a capturing group
-                # TAG_COMMIT: true # Flag to enable / disable git tagging
-                # TAG_FORMAT: v* # Format of the git tag, [*] gets replaced with version
                 NUGET_KEY: ${{secrets.NUGET_API_KEY}} # nuget.org API key
                 PACKAGE_NAME: solrevdev.seedfolder
 ```
 
 **Find More** 🔍
 
-Search the [NuGet](https://www.nuget.org/ "NuGet") website by using the ".NET tool" package type filter or see the list of tools in the [natemcmaster/dotnet-tools](https://github.com/natemcmaster/dotnet-tools "natemcmaster/dotnet-tools") GitHub repository.
+Now that you have built and published a .NET Core Global Tool you may wish to find some others for inspiration, Search the [NuGet](https://www.nuget.org/ "NuGet") website by using the ".NET tool" package type filter or see the list of tools in the [natemcmaster/dotnet-tools](https://github.com/natemcmaster/dotnet-tools "natemcmaster/dotnet-tools") GitHub repository.
 
 Success! 🎉
