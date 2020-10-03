@@ -56,12 +56,13 @@ What sets a standard .NET Core console application and a global tool apart is so
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>yourtoolname</ToolCommandName>
     <PackageOutputPath>./nupkg</PackageOutputPath>
-    <NoDefaultExcludes>true</NoDefaultExcludes>
-    
+    <NoDefaultExcludes>true</NoDefaultExcludes>    
     <Version>1.0.0</Version>
+    
     <Title>your project name</Title>
     <Description>A nice description of your tool</Description>
     <PackageDescription>A nice description of your tool</PackageDescription>
@@ -77,11 +78,13 @@ What sets a standard .NET Core console application and a global tool apart is so
 </Project>
 ```
 
-Installation ⚙
+The extra `PackAsTool` to `Version` tags are required fields while the `Title` to `PackageTags` are useful to help describe the package in NuGet and help get it discovered.
+
+**Installation** ⚙
 
 How to install here
 
-Publish to NuGet 🚀
+**Publish to NuGet** 🚀
 
 How to publish to NuGet
 
