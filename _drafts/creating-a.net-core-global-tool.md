@@ -13,9 +13,11 @@ tags:
 
 I have now built my first .NET Core Global Tool!
 
-A .NET Core Global Tool is special NuGet package that contains a console application that is installed globally on your machine and is installed in a default directory that is added to the PATH environment variable.
+A .NET Core Global Tool is special NuGet package that contains a console application that is installed globally on your machine.
 
-You can invoke the tool from any directory on the machine without specifying its location.
+It is installed in a default directory that is added to the PATH environment variable.
+
+This means you can invoke the tool from any directory on the machine without specifying its location.
 
 **The Application** 🌱
 
@@ -23,11 +25,13 @@ So, rather than the usual _Hello World_ example to install as a global tool I wa
 
 ![solrevdev.seedfolder app](/media/2020-10-03_2020-10-03_16-02-52-seedfolder-app-running.png "solrevdev.seedfolder app")
 
-I wanted to build a tool that will create a folder named after either a Trello card reference or the current Date in a YYYY-MM-DD format followed by the folder name and to then also copy some default standard dotfiles over in that folder
+I wanted to build a tool that will create a folder prefixed with either a bespoke reference (in my case a Trello card number) or the current date in a YYYY-MM-DD format followed by a normal folder name.
+
+The tool once it has created the folder will then also copy some dotfiles that I find useful in most projects over.
 
 For example:
 
-`MO-818_create-dotnet-tool`
+`818_create-dotnet-tool`
 
 `2020-09-29_create-dotnet-tool`
 
@@ -58,13 +62,13 @@ What sets a standard .NET Core console application and a global tool apart is so
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    
+
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>seedfolder</ToolCommandName>
     <PackageOutputPath>./nupkg</PackageOutputPath>
-    <NoDefaultExcludes>true</NoDefaultExcludes>    
+    <NoDefaultExcludes>true</NoDefaultExcludes>
     <Version>1.0.0</Version>
-    
+
     <Title>solrevdev.seedfolder</Title>
     <Description>A nice description of your tool</Description>
     <PackageDescription>A nice description of your tool</PackageDescription>
@@ -99,13 +103,15 @@ dotnet pack
 dotnet tool install --global --add-source ./nupkg solrevdev.seedfolder
 ```
 
-Your tool should now be in your path accessible from any folder. You call your tool whatever was in the ToolCommandName property in your .csproj file
+Your tool should now be in your path accessible from any folder.
+
+You call your tool whatever was in the ToolCommandName property in your .csproj file
 
 ```xml
 <ToolCommandName>seedfolder</ToolCommandName>
 ```
 
-You may find you need uninstall and instal while you debug.
+You may find you need uninstall and install while you debug.
 
 To uninstall you need to do as follows:
 
@@ -148,7 +154,7 @@ jobs:
 
         steps:
             - name: checkout code
-              uses: actions/checkout@v2           
+              uses: actions/checkout@v2
 
             - name: setup .net core sdk
               uses: actions/setup-dotnet@v1
@@ -157,7 +163,7 @@ jobs:
 
             - name: dotnet build
               run: dotnet build solrevdev.seedfolder.sln --configuration Release
-            
+
             - name: dotnet pack
               run: dotnet pack solrevdev.seedfolder.sln -c Release --no-build --include-source --include-symbols
 
