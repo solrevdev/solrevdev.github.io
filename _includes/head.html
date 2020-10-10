@@ -20,20 +20,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/public/favicon-16x16.png">
     <link rel="manifest" href="{{ site.baseurl }}/public/site.webmanifest">
     <link rel="shortcut icon" href="{{ site.baseurl }}/public/favicon.ico">
-
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52977923-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('set', 'hostname', 'solrevdev.com');
-  gtag('set', 'linker', {'domains': ['solrevdev.com']});
-  gtag('config', 'UA-52977923-1');
-</script>
 
     {% seo %}
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52977923-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('set', 'hostname', 'solrevdev.com');
+        gtag('set', 'linker', { 'domains': ['solrevdev.com'] });
+        gtag('config', 'UA-52977923-1');
+    </script>
 </head>
