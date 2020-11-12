@@ -2,12 +2,12 @@
 layout: post
 description: How to migrate from .NET Core 3.1 to .NET Core 5.0
 tags:
-  - aspnetcore
-  - dotnet5
-  - csharp
-  - dotnetcore
-published: true
+- aspnetcore
+- dotnet5
+- csharp
+- dotnetcore
 title: How to migrate from .NET Core 3.1 to .NET Core 5.0
+
 ---
 The very latest version of .NET Core was launched at [.NET Conf](https://www.dotnetconf.net/).
 
@@ -25,7 +25,7 @@ But for those that want to know what I had change here goes:
 
 The main change is to the Target Framework property.in the .csproj file however, instead I had to change it in my Directory.Build.Props file which covers all of the projects in my solution.
 
-\** Directory.Build.Props: **
+**Directory.Build.Props:**
 
 ```diff
 - TargetFramework>netcoreapp3.1</TargetFramework>
@@ -34,7 +34,7 @@ The main change is to the Target Framework property.in the .csproj file however,
 
 Next up I had to make a change to prevent a new build error that cropped up in an extension method of mine:
 
-\** HttpContextExtensions.cs **
+**HttpContextExtensions.cs** 
 
 ```diff
 public static T GetHeaderValueAs<T>(this IHttpContextAccessor accessor, string headerName)
@@ -57,7 +57,7 @@ public static T GetHeaderValueAs<T>(this IHttpContextAccessor accessor, string h
 
 Then I needed to make a change to ensure that Visual Studio Code (Insiders) would debug my project properly.
 
-\** .vscode/launch.json **
+**.vscode/launch.json** 
 
 ```diff
 {
@@ -88,7 +88,7 @@ pipelines:
 
 A related change was that I needed to make a change to my Dockerfile
 
-\** Dockerfile **
+**Dockerfile**
 
 ```diff
 - FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
@@ -100,7 +100,7 @@ A related change was that I needed to make a change to my Dockerfile
 
 I then ran a tool called [dotnet outdated](https://github.com/dotnet-outdated/dotnet-outdated) which then upgraded all my NuGet packages including the needed Microsoft one's going from 3.1 to 5.0 for example:
 
-\** dotnet outdated **
+**dotnet outdated**
 
 ```powershell
 dotnet tool install --global dotnet-outdated-tool
@@ -117,7 +117,7 @@ dotnet outdated -u
   Microsoft.Web.LibraryManager.Build                 2.1.76        -> 2.1.113
 ```
 
-\** web.csproj **
+**web.csproj**
 
 ```diff
 - <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.9" />
@@ -126,7 +126,7 @@ dotnet outdated -u
 
 And finally, one thing I forgot once I tried to deploy was that in my project, I use [Visual Studio Publish Profiles](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/visual-studio-publish-profiles?view=aspnetcore-5.0) to automatically deploy the site via MsBuild.
 
-\**/Properties/PublishProfiles/deploy.pubxml **
+**/Properties/PublishProfiles/deploy.pubxml** 
 
 ```diff
 -    <PublishFramework>netcoreapp3.1</PublishFramework>
