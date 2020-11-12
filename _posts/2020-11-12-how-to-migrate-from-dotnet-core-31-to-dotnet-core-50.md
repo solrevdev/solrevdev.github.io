@@ -1,5 +1,12 @@
 ---
 published: false
+layout: post
+description: How to migrate from .NET Core 3.1 to .NET Core 5.0
+tags:
+  - aspnetcore
+  - dotnet5
+  - csharp
+  - dotnetcore
 ---
 ## How to migrate from .NET Core 3.1 to .NET Core 5.0
 
