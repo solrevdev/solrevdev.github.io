@@ -12,7 +12,7 @@ tags:
 
 The very latest version of .NET Core was launched at [.NET Conf](https://www.dotnetconf.net/).
 
-I decided to wait until the upgrade was available in all the various package managers such as homebrew on macOS and apt-get on Ubuntu and chocolatey on Windows. 
+I decided to wait until the upgrade was available in all the various package managers such as homebrew on macOS and apt-get on Ubuntu and chocolatey on Windows.
 
 This ensured that my operating systems were upgraded from .NET Core 3.1 to .NET Core 5.0 for me almost automatically.
 
@@ -138,6 +138,6 @@ And finally, one thing I forgot once I tried to deploy was that in my project, I
      <_IsPortable>true</_IsPortable>
 ```
 
-And with that I was done. A fairly large and complex appliaction was ported.
+And with that I was done. A fairly large and complex application was ported.
 
 Success 🥳
