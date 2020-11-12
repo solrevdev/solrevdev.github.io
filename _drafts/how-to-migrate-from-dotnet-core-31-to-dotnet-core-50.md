@@ -8,8 +8,6 @@ tags:
 - dotnetcore
 
 ---
-## How to migrate from .NET Core 3.1 to .NET Core 5.0
-
 The very latest version of .NET Core was launched at [.NET Conf](https://www.dotnetconf.net/).
 
 I decided to wait until the upgrade was available in all the various package managers such as homebrew on macOS and apt-get on Ubuntu and chocolatey on Windows.
