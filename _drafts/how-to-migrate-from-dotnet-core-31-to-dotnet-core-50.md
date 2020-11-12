@@ -125,7 +125,7 @@ dotnet outdated -u
 + <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.0" />
 ```
 
-And finally, one thing I forgot once I tried to deploy was that in my project, I use [Visual Studio Publish Profiles](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/visual-studio-publish-profiles?view=aspnetcore-5.0) to automatically deploy the site via MsBuild
+And finally, one thing I forgot once I tried to deploy was that in my project, I use [Visual Studio Publish Profiles](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/visual-studio-publish-profiles?view=aspnetcore-5.0) to automatically deploy the site via MsBuild.
 
 \**/Properties/PublishProfiles/deploy.pubxml **
 
