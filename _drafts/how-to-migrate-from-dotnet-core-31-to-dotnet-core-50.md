@@ -138,6 +138,6 @@ And finally, one thing I forgot once I tried to deploy was that in my project, I
      <_IsPortable>true</_IsPortable>
 ```
 
-And with that I was done. A fairly large and complex application was ported.
+And with that I was done. A fairly large and complex application was ported over.
 
 Success 🥳
