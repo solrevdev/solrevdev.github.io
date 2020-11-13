@@ -70,7 +70,9 @@ Then I needed to make a change to ensure that Visual Studio Code (Insiders) woul
 },
 ```
 
-This particular project has the source code hosted at Bitbucket and my pipelines file needed the following change. [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines) is basically Atlassian's version of [Github Actions](https://github.com/features/actions).
+This particular project has the source code hosted at Bitbucket and my pipelines file needed the following change. 
+
+[Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines) is basically Atlassian's version of [Github Actions](https://github.com/features/actions).
 
 **bitbucket-pipelines.yml**
 
