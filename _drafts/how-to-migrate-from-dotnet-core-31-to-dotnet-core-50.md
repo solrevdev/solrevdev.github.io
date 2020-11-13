@@ -7,8 +7,10 @@ tags:
 - csharp
 - dotnetcore
 title: How to migrate from .NET Core 3.1 to .NET Core 5.0
-
 ---
+
+**Overview** ☀
+
 The very latest version of .NET Core was launched at [.NET Conf](https://www.dotnetconf.net/).
 
 It is the free, cross-platform and open source developer platform from Microsoft which includes the latest versions of ASP.NET and C#.
@@ -23,7 +25,7 @@ The [migrate from .NET Core 3.1 to 5.0](https://docs.microsoft.com/en-us/aspnet/
 
 But for those that want to know what I had change here goes:
 
-## Getting Started
+**Getting Started** 🌱
 
 The main change will be to the Target Framework property.in the website's .csproj file however, in my case I had to change it in my Directory.Build.Props file which covers all of the projects in my solution.
 
@@ -128,7 +130,7 @@ This changed my website's csproj file to use the correct nuget packages for .NET
 + <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.0" />
 ```
 
-## Deployments
+**Deployments** 🚀
 
 And finally, one thing I forgot once I tried to deploy was that in my project, I use [Visual Studio Publish Profiles](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/visual-studio-publish-profiles?view=aspnetcore-5.0) to automatically deploy the site via MsBuild and I needed to change the Target Framework and Publish Framework versions before it would deploy correctly.
 
