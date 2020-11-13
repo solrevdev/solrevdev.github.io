@@ -38,7 +38,7 @@ The main change will be to the Target Framework property.in the website's .cspro
 
 Next up I had to make a change to prevent a new build error that cropped up in an extension method of mine, something I am sure worked fine under .NET Core 3.1:
 
-**HttpContextExtensions.cs**
+**HttpContextExtensions.cs:**
 
 ```diff
 public static T GetHeaderValueAs<T>(this IHttpContextAccessor accessor, string headerName)
@@ -53,7 +53,7 @@ public static T GetHeaderValueAs<T>(this IHttpContextAccessor accessor, string h
 
 Then I needed to make a change to ensure that Visual Studio Code (Insiders) would debug my project properly.
 
-**.vscode/launch.json**
+**.vscode/launch.json:**
 
 ```diff
 {
@@ -74,7 +74,7 @@ This particular project has the source code hosted at Bitbucket and my pipelines
 
 [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines) is basically Atlassian's version of [Github Actions](https://github.com/features/actions).
 
-**bitbucket-pipelines.yml**
+**bitbucket-pipelines.yml:**
 
 ```diff
 - image: mcr.microsoft.com/dotnet/core/sdk:3.1
@@ -86,7 +86,7 @@ pipelines:
 
 A related change was that I needed to make a change to my Dockerfile so that it uses the latest .NET 5 SDK and runtime.
 
-**Dockerfile**
+**Dockerfile:**
 
 ```diff
 - FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
@@ -100,7 +100,7 @@ I then ran a tool called [dotnet outdated](https://github.com/dotnet-outdated/do
 
 For example:
 
-**dotnet outdated**
+**dotnet outdated:**
 
 ```powershell
 dotnet tool install --global dotnet-outdated-tool
@@ -121,7 +121,7 @@ This changed my website's csproj file to use the correct nuget packages for .NET
 
 A much quicker way than doing it manually.
 
-**web.csproj**
+**web.csproj:**
 
 ```diff
 - <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.9" />
