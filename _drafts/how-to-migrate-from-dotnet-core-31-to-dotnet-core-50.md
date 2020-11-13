@@ -7,19 +7,19 @@ tags:
 - csharp
 - dotnetcore
 title: How to migrate from .NET Core 3.1 to .NET Core 5.0
----
 
+---
 **Overview** ☀
 
 The very latest version of .NET Core was launched at [.NET Conf](https://www.dotnetconf.net/).
 
-It is the free, cross-platform and open source developer platform from Microsoft which includes the latest versions of ASP.NET and C#.
+It is the free, cross-platform and open-source developer platform from Microsoft which includes the latest versions of ASP.NET and C# among others.
 
 I decided to wait until the upgrade was available in all the various package managers such as [homebrew](https://brew.sh/) on macOS and [apt-get](https://linux.die.net/man/8/apt-get) on Ubuntu and [chocolatey](https://chocolatey.org/) on Windows before I upgraded my projects.
 
 This ensured that my operating systems were upgraded from .NET Core 3.1 to .NET Core 5.0 for me almost automatically.
 
-So, this post will hopefully document the steps needed to upgrade an ASP.NET Core 3.1 Razor Pages project from ASP.NET Core 3.1 to ASP.NET Core 5.0.
+This post will hopefully document the steps needed to upgrade an ASP.NET Core 3.1 Razor Pages project from ASP.NET Core 3.1 to ASP.NET Core 5.0.
 
 The [migrate from .NET Core 3.1 to 5.0](https://docs.microsoft.com/en-us/aspnet/core/migration/31-to-50?view=aspnetcore-5.0&tabs=visual-studio-code) document over at Microsoft should help you as it did me.
 
@@ -32,8 +32,8 @@ The main change will be to the Target Framework property.in the website's .cspro
 **Directory.Build.Props:**
 
 ```diff
-- TargetFramework>netcoreapp3.1</TargetFramework>
-+<TargetFramework>net5.0</TargetFramework>
+- <TargetFramework>netcoreapp3.1</TargetFramework>
++ <TargetFramework>net5.0</TargetFramework>
 ```
 
 Next up I had to make a change to prevent a new build error that cropped up in an extension method of mine, something I am sure worked fine under .NET Core 3.1:
@@ -49,14 +49,6 @@ public static T GetHeaderValueAs<T>(this IHttpContextAccessor accessor, string h
     if (accessor.HttpContext?.Request?.Headers?.TryGetValue(headerName, out values) ?? false)
     {
         var rawValues = values.ToString();
-        if (!rawValues.IsNullOrWhitespace())
-        {
-            return (T)Convert.ChangeType(values.ToString(), typeof(T));
-        }
-    }
-
-    return default;
-}
 ```
 
 Then I needed to make a change to ensure that Visual Studio Code (Insiders) would debug my project properly.
@@ -78,7 +70,7 @@ Then I needed to make a change to ensure that Visual Studio Code (Insiders) woul
 },
 ```
 
-This particular project has its source code hosted at Bitbucket and my pipelines file needed the following change. [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines) is basically Atlassian's version of [Github Actions](https://github.com/features/actions).
+This particular project has the source code hosted at Bitbucket and my pipelines file needed the following change. [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines) is basically Atlassian's version of [Github Actions](https://github.com/features/actions).
 
 **bitbucket-pipelines.yml**
 
@@ -90,7 +82,7 @@ pipelines:
         - step:
 ```
 
-A related change was that I needed to make a change to my Dockerfile so that it now uses the latest .NET 5 SDK and runtime.
+A related change was that I needed to make a change to my Dockerfile so that it uses the latest .NET 5 SDK and runtime.
 
 **Dockerfile**
 
@@ -102,7 +94,9 @@ A related change was that I needed to make a change to my Dockerfile so that it 
 + FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS runtime
 ```
 
-I then ran a tool called [dotnet outdated](https://github.com/dotnet-outdated/dotnet-outdated) which then upgraded all my NuGet packages including the needed Microsoft one's going from 3.1 to 5.0 for example first I ran `dotnet-outdated`:
+I then ran a tool called [dotnet outdated](https://github.com/dotnet-outdated/dotnet-outdated) which upgraded all my NuGet packages including the Microsoft Framwwork packages going from 3.1 to 5.0. 
+
+For example:
 
 **dotnet outdated**
 
@@ -121,7 +115,9 @@ dotnet outdated -u
   Microsoft.Web.LibraryManager.Build                 2.1.76        -> 2.1.113
 ```
 
-This changed my website's csproj file to use the correct nuget packages for .NET 5. A much quicker way than doing it manually.
+This changed my website's csproj file to use the correct nuget packages for .NET 5. 
+
+A much quicker way than doing it manually.
 
 **web.csproj**
 
