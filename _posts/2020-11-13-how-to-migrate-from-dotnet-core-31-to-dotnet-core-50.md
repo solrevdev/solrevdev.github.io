@@ -27,7 +27,7 @@ But for those that want to know what I had change here goes:
 
 **Getting Started** 🌱
 
-The main change will be to the Target Framework property.in the website's .csproj file however, in my case I had to change it in my Directory.Build.Props file which covers all of the projects in my solution.
+The main change will be to the Target Framework property in the website's .csproj file however, in my case I had to change it in my Directory.Build.Props file which covers all of the projects in my solution.
 
 **Directory.Build.Props:**
 
@@ -70,7 +70,7 @@ Then I needed to make a change to ensure that Visual Studio Code (Insiders) woul
 },
 ```
 
-This particular project has the source code hosted at Bitbucket and my pipelines file needed the following change. 
+This particular project has the source code hosted at Bitbucket and my pipelines file needed the following change.
 
 [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines) is basically Atlassian's version of [Github Actions](https://github.com/features/actions).
 
@@ -96,7 +96,7 @@ A related change was that I needed to make a change to my Dockerfile so that it 
 + FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS runtime
 ```
 
-I then ran a tool called [dotnet outdated](https://github.com/dotnet-outdated/dotnet-outdated) which upgraded all my NuGet packages including the Microsoft Framwwork packages going from 3.1 to 5.0. 
+I then ran a tool called [dotnet outdated](https://github.com/dotnet-outdated/dotnet-outdated) which upgraded all my NuGet packages including the Microsoft Frameworks packages going from 3.1 to 5.0.
 
 For example:
 
@@ -117,9 +117,9 @@ dotnet outdated -u
   Microsoft.Web.LibraryManager.Build                 2.1.76        -> 2.1.113
 ```
 
-This changed my website's csproj file to use the correct nuget packages for .NET 5. 
+This changed my website's csproj file to use the correct nuget packages for .NET 5.
 
-A much quicker way than doing it manually.
+A much quicker way than doing it manually!
 
 **web.csproj:**
 
