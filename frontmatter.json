@@ -1,0 +1,14 @@
+{
+    "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+    "frontMatter.framework.id": "jekyll",
+    "frontMatter.content.publicFolder": "[[workspace]]/public",
+    "frontMatter.content.pageFolders": [
+        {
+            "title": "_posts",
+            "path": "[[workspace]]/_posts"
+        },
+        {
+            "path": "[[workspace]]/media"
+        }
+    ]
+}
