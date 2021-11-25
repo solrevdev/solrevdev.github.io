@@ -108,6 +108,5 @@
         "whoami",
         "wwwroot",
         "xbuild"
-    ],
-    "frontMatter.dashboard.openOnStart": true
+    ]
 }
