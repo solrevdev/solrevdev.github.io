@@ -42,6 +42,29 @@ jekyll serve
 ```
 Now open your browser and go to <http://localhost:4000>
 
+## testing on arm
+
+I had to add `gem 'webrick'` to the GemFile plus had to update nokogiri  `gem update nokogiri` and had to remove the Gemfile.lock file
+to get it working but then all seems well for testing again.
+
+```bash
+bundle install
+bundle update github-pages
+
+bundle exec jekyll build
+
+# this is what I tested with
+bundle exec jekyll serve
+
+# these are from before and do not know if they work but am leaving them here for now
+bundle exec jekyll serve --drafts --baseurl '' 2>/dev/null
+bundle exec jekyll serve --drafts 2>/dev/null
+```
+
+Now open your browser and go to : `http://localhost:4000` <http://localhost:4000>
+
+## hyde theme
+
 
 It is a brazen two-column  theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](http://getpoole.com), the Jekyll butler.
 
@@ -52,6 +75,8 @@ It is a brazen two-column  theme that pairs a prominent sidebar with uncomplicat
 
 - [solrevdev.github.io](#solrevdevgithubio)
   - [testing the site locally](#testing-the-site-locally)
+  - [testing on arm](#testing-on-arm)
+  - [hyde theme](#hyde-theme)
   - [Contents](#contents)
   - [Usage](#usage)
   - [Options](#options)
