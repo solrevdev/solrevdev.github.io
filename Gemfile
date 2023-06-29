@@ -11,3 +11,5 @@ gem 'jekyll-github-metadata'
 gem 'jemoji'
 gem 'jekyll-seo-tag'
 gem 'jekyll-loading-lazy'
+gem 'webrick'
+
