@@ -6,20 +6,17 @@ published: true
 
 ## Overview
 
+I'm a full stack software and DevOps engineer with a rich array of technical skills. Formerly the Head of Infrastructure and Operations, I hold Microsoft certification.
 
-I am now a full-time carer but until recently have been head of infrastructure and operations, a full stack software engineer and a devops engineer.
+Though I have a fondness for C#, I'm not limited to the Microsoft stack. I've enjoyed writing cloud automation code in Python and NodeJS.
 
-With a wealth of technical skills and natural passion for technology I am also Microsoft certified.
+Currently, I'm a strong advocate for the .NET Core cross-platform development platform, constantly seeking new knowledge through reading and watching relevant content.
 
-A lover of C# but not tied exclusively to the Microsoft stack and have enjoyed writing some cloud automation code in both Python and Node.js.
+I employ a variety of tools for my work, including Visual Studio Code, Sublime Text, and the comprehensive Microsoft Visual Studio IDE. Likewise, I'm versatile in operating systems, comfortable with macOS, Windows, and Linux.
 
-Currently, I am a big fan of the .NET Core cross-platform development platform and am taking an interest in Blazor WebAssembly.
+My interests span full stack development, DevOps, and cloud-based work. Lately, I've been engrossed in writing front-end code in Vue.js and VanillaJS.
 
-I write code in Visual Studio Code, Sublime Text and the full Microsoft Visual Studio IDE. I also like to switch between macOS, Windows and Linux for development.
-
-I enjoy full stack development, devops and cloud-based work and am enjoying writing front end code in VueJS.
-
-Commercially I have worked with the Amazon Web Services stack and using various technologies have thrived in providing startups with a scalable continuous deployment architecture and delivered proof of concept, prototype applications and innovate software solutions.
+In commercial settings, I've worked with a range of technologies including the Amazon Web Services stack, MySQL, MongoDB, SQL Server, C#, ASP.NET, Classic ASP, GIT, Mercurial, TeamCity, and Octopus Deploy. I thrive in equipping startups with scalable, continuous deployment architecture and platforms
 
 I can be found on social media here:
 
