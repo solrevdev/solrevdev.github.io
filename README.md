@@ -1,6 +1,6 @@
 # solrevdev.github.io
 
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/solrevdev/solrevdev.github.io) [![GitHub last commit](https://img.shields.io/github/last-commit/solrevdev/solrevdev.github.io)](https://github.com/solrevdev/solrevdev.github.io) [![Build Status](https://travis-ci.org/solrevdev/solrevdev.github.io.svg?branch=master)](https://travis-ci.org/solrevdev/solrevdev.github.io) [![CircleCI](https://circleci.com/gh/solrevdev/solrevdev.github.io.svg?style=svg)](https://circleci.com/gh/solrevdev/solrevdev.github.io) [![Twitter Follow](https://img.shields.io/twitter/follow/solrevdev?label=Follow&style=social)](https://twitter.com/solrevdev)
+[![GitHub last commit](https://img.shields.io/github/last-commit/solrevdev/solrevdev.github.io)](https://github.com/solrevdev/solrevdev.github.io) [![Build Status](https://travis-ci.org/solrevdev/solrevdev.github.io.svg?branch=master)](https://travis-ci.org/solrevdev/solrevdev.github.io) [![CircleCI](https://circleci.com/gh/solrevdev/solrevdev.github.io.svg?style=svg)](https://circleci.com/gh/solrevdev/solrevdev.github.io) [![Twitter Follow](https://img.shields.io/twitter/follow/solrevdev?label=Follow&style=social)](https://twitter.com/solrevdev)
 
 
 
