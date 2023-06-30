@@ -3,13 +3,9 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/solrevdev/solrevdev.github.io)](https://github.com/solrevdev/solrevdev.github.io) [![Build Status](https://travis-ci.org/solrevdev/solrevdev.github.io.svg?branch=master)](https://travis-ci.org/solrevdev/solrevdev.github.io) [![CircleCI](https://circleci.com/gh/solrevdev/solrevdev.github.io.svg?style=svg)](https://circleci.com/gh/solrevdev/solrevdev.github.io) [![Twitter Follow](https://img.shields.io/twitter/follow/solrevdev?label=Follow&style=social)](https://twitter.com/solrevdev)
 
 
-
-
-
 Static [Jekyll](http://jekyllrb.com) driven website to replace solrevdev.com blogger account
 
-
-## testing the site locally
+## Testing the site locally
 
 
 ```powershell
@@ -19,12 +15,11 @@ bundle exec jekyll serve --baseurl ''
 bundle exec jekyll serve --drafts --baseurl ''
 bundle exec jekyll serve --drafts --baseurl '' 2>/dev/null
 
-
 bundle exec jekyll serve --drafts 2>/dev/null
-
 ```
 
 To get rid of warnings you can use this
+
 ```powershell
 bundle exec jekyll serve --drafts --baseurl '' 2>/dev/null
 
@@ -42,7 +37,7 @@ jekyll serve
 ```
 Now open your browser and go to <http://localhost:4000>
 
-## testing on arm
+## Testing on Apple Silicon
 
 I had to add `gem 'webrick'` to the GemFile plus had to update nokogiri  `gem update nokogiri` and had to remove the Gemfile.lock file
 to get it working but then all seems well for testing again.
@@ -63,7 +58,7 @@ bundle exec jekyll serve --drafts 2>/dev/null
 
 Now open your browser and go to : `http://localhost:4000` <http://localhost:4000>
 
-## hyde theme
+## Hyde theme
 
 
 It is a brazen two-column  theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](http://getpoole.com), the Jekyll butler.
@@ -74,9 +69,9 @@ It is a brazen two-column  theme that pairs a prominent sidebar with uncomplicat
 ## Contents
 
 - [solrevdev.github.io](#solrevdevgithubio)
-  - [testing the site locally](#testing-the-site-locally)
-  - [testing on arm](#testing-on-arm)
-  - [hyde theme](#hyde-theme)
+  - [Testing the site locally](#testing-the-site-locally)
+  - [Testing on Apple Silicon](#testing-on-apple-silicon)
+  - [Hyde theme](#hyde-theme)
   - [Contents](#contents)
   - [Usage](#usage)
   - [Options](#options)
