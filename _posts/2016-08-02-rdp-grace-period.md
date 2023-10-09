@@ -2,6 +2,7 @@
 layout: post
 title: 'Locked out of Windows Server 2012'
 tags: ['windows server', 'rdp']
+canonical_url: 'https://solrevdev.com/2016/08/02/rdp-grace-period.html'
 ---
 An issue I had a while back was a development lab version of Microsoft Windows Server 2012 locking me out via RDP or any other means due to RDP licensing and a grace period expiring. 
 

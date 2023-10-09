@@ -22,6 +22,10 @@
     <link rel="shortcut icon" href="{{ site.baseurl }}/public/favicon.ico">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
+    {% if page.canonical_url %}
+    <link rel="canonical" href="{{ page.canonical_url }}" />
+    {% endif %}
+
     {% seo %}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
