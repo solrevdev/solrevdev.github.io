@@ -3,10 +3,57 @@ layout: post
 title: S#arp Architecture 1.0 RTM
 date: '2009-07-15T23:00:00.001+01:00'
 author: solrevdev
-tags: 
+tags:
 modified_time: '2009-07-16T16:48:01.784+01:00'
 blogger_id: tag:blogger.com,1999:blog-31446756.post-3452908913218761103
-blogger_orig_url: http://www.solrevdev.com/2009/07/sarp-architecture-10-rtm.html
+blogger_orig_url: https://solrevdev.com/2009/07/sarp-architecture-10-rtm.html
 ---
 
-<p>The Sharp Architecture ASP.NET MVC and NHibernate framework has reached an important <a href="http://devlicio.us/blogs/billy_mccafferty/archive/2009/07/15/it-is-done-s-arp-architecture-1-0-rtm.aspx" target="_blank">milestone</a>.</p>  <p>Some cracking work has gone into this project and it’s a project that I have <a href="http://sol-rev.blogspot.com/2008/06/aspnet-mvc-with-nhibernate-and-spring.html" target="_blank">blogged</a> about before.</p>  <p>Here are some of the improvements in this release (lifted straight from the <a href="http://devlicio.us/blogs/billy_mccafferty/archive/2009/07/15/it-is-done-s-arp-architecture-1-0-rtm.aspx" target="_blank">Billy’s blog post</a>):</p>  <ul>   <li>     <p>Compatible with ASP.NET MVC 1.0</p>   </li>    <li>     <p>All upgraded dependencies including NHibernate 2.1 CR 1</p>   </li>    <li>     <p>We now have a community site at <a href="http://www.sharparchitecture.net">http://www.sharparchitecture.net</a>, <i>still a work in progress</i> (a flippin' ginormous thank you to Kyle Baley for setting this up)</p>   </li>    <li>     <p>S#arp Architecture documentation may now be found at <a href="http://wiki.sharparchitecture.net">http://wiki.sharparchitecture.net</a>, <i>still a work in progress</i> (a huge thanks to Joe Lowrance for migrating the docs)</p>   </li>    <li>     <p>Strongly typed action link for areas (SharpArch.Web.Areas.ActionLinkForAreas&lt;&gt; and BuildUrlFromExpressionForAreas&lt;&gt; - thanks Brad Buhrkuhl!)</p>   </li>    <li>     <p>Fluent NHibernate now using configuration classes</p>   </li>    <li>     <p>(Re)Introduced support for IIS 7 integrated mode</p>   </li>    <li>     <p>Support for WCF has been added as SharpArch.Wcf for server support and SharpArch.WcfClient.Castle for auto-closing of the connection on the client (thanks Frank Laub!)</p>   </li>    <li>     <p>SharpModelBinder has been introduced for much better form binding, including support for all association types; e.g., one-to-one, one-to-many, and many-to-one Entity associations</p>   </li>    <li>     <p>Support for multiple databases outside of WCF communications (thanks Russell Thatcher, David Longnecker, James Broome and Howard van Rooijen for suggestions and input!)</p>   </li>    <li>A CI home at <a href="http://teamcity.codebetter.com/overview.html">http://teamcity.codebetter.com/overview.html</a> (thanks Kyle and Simone!), </li>    <li>Updated compatibility with the latest T4 Toolbox for a much faster and stable CRUD Scaffolding generation experience </li> </ul>  <p><a href="http://devlicio.us/blogs/billy_mccafferty/archive/2009/07/15/it-is-done-s-arp-architecture-1-0-rtm.aspx" target="_blank">Top Stuff</a>.</p>  
+<p>The Sharp Architecture ASP.NET MVC and NHibernate framework has reached an important <a
+        href="http://devlicio.us/blogs/billy_mccafferty/archive/2009/07/15/it-is-done-s-arp-architecture-1-0-rtm.aspx" target="_blank">milestone</a>.</p>
+<p>Some cracking work has gone into this project and it’s a project that I have <a
+        href="http://sol-rev.blogspot.com/2008/06/aspnet-mvc-with-nhibernate-and-spring.html" target="_blank">blogged</a> about before.</p>
+<p>Here are some of the improvements in this release (lifted straight from the <a
+        href="http://devlicio.us/blogs/billy_mccafferty/archive/2009/07/15/it-is-done-s-arp-architecture-1-0-rtm.aspx" target="_blank">Billy’s blog post</a>):
+</p>
+<ul>
+    <li>
+        <p>Compatible with ASP.NET MVC 1.0</p>
+    </li>
+    <li>
+        <p>All upgraded dependencies including NHibernate 2.1 CR 1</p>
+    </li>
+    <li>
+        <p>We now have a community site at <a href="http://www.sharparchitecture.net">http://www.sharparchitecture.net</a>, <i>still a work in progress</i> (a
+            flippin' ginormous thank you to Kyle Baley for setting this up)</p>
+    </li>
+    <li>
+        <p>S#arp Architecture documentation may now be found at <a href="http://wiki.sharparchitecture.net">http://wiki.sharparchitecture.net</a>, <i>still a
+                work in progress</i> (a huge thanks to Joe Lowrance for migrating the docs)</p>
+    </li>
+    <li>
+        <p>Strongly typed action link for areas (SharpArch.Web.Areas.ActionLinkForAreas&lt;&gt; and BuildUrlFromExpressionForAreas&lt;&gt; - thanks Brad
+            Buhrkuhl!)</p>
+    </li>
+    <li>
+        <p>Fluent NHibernate now using configuration classes</p>
+    </li>
+    <li>
+        <p>(Re)Introduced support for IIS 7 integrated mode</p>
+    </li>
+    <li>
+        <p>Support for WCF has been added as SharpArch.Wcf for server support and SharpArch.WcfClient.Castle for auto-closing of the connection on the client
+            (thanks Frank Laub!)</p>
+    </li>
+    <li>
+        <p>SharpModelBinder has been introduced for much better form binding, including support for all association types; e.g., one-to-one, one-to-many, and
+            many-to-one Entity associations</p>
+    </li>
+    <li>
+        <p>Support for multiple databases outside of WCF communications (thanks Russell Thatcher, David Longnecker, James Broome and Howard van Rooijen for
+            suggestions and input!)</p>
+    </li>
+    <li>A CI home at <a href="http://teamcity.codebetter.com/overview.html">http://teamcity.codebetter.com/overview.html</a> (thanks Kyle and Simone!), </li>
+    <li>Updated compatibility with the latest T4 Toolbox for a much faster and stable CRUD Scaffolding generation experience </li>
+</ul>
+<p><a href="http://devlicio.us/blogs/billy_mccafferty/archive/2009/07/15/it-is-done-s-arp-architecture-1-0-rtm.aspx" target="_blank">Top Stuff</a>.</p>
