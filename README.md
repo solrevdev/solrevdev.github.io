@@ -58,6 +58,19 @@ bundle exec jekyll serve --drafts 2>/dev/null
 
 Now open your browser and go to : `http://localhost:4000` <http://localhost:4000>
 
+## Testing imgur hosted images
+
+For some reason images served from the default default server address `http://127.0.0.1:4000/` does not load imgur images. However localhost will work so `http://localhost:4000/` will work
+
+The fix is:
+
+```bash
+bundle exec jekyll serve --host=localhost
+```
+
+Then your images will load
+
+
 ## SEO Improvements
 
 To enhance SEO and address Google Search Console issues, we've implemented the ability to control the canonical URL and robots meta tags on a per-post basis using Jekyll front matter.
@@ -131,6 +144,7 @@ It is a brazen two-column  theme that pairs a prominent sidebar with uncomplicat
 - [solrevdev.github.io](#solrevdevgithubio)
   - [Testing the site locally](#testing-the-site-locally)
   - [Testing on Apple Silicon](#testing-on-apple-silicon)
+  - [Testing imgur hosted images](#testing-imgur-hosted-images)
   - [SEO Improvements](#seo-improvements)
     - [Canonical URL](#canonical-url)
     - [Robots Tag](#robots-tag)
