@@ -26,6 +26,10 @@
     <link rel="canonical" href="{{ page.canonical_url }}" />
     {% endif %}
 
+    {% if page.robots %}
+    <meta name="robots" content="{{ page.robots }}">
+    {% endif %}
+
     {% seo %}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
