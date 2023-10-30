@@ -58,6 +58,66 @@ bundle exec jekyll serve --drafts 2>/dev/null
 
 Now open your browser and go to : `http://localhost:4000` <http://localhost:4000>
 
+## SEO Improvements
+
+To enhance SEO and address Google Search Console issues, we've implemented the ability to control the canonical URL and robots meta tags on a per-post basis using Jekyll front matter.
+
+### Canonical URL
+
+A canonical URL is specified to prevent duplicate content issues and to consolidate page ranking for similar content. In the `_includes/head.html` file, we've added the following snippet to insert a canonical link element when the `canonical_url` variable is set in a post's front matter:
+
+```html
+{% if page.canonical_url %}
+<link rel="canonical" href="{{ page.canonical_url }}" />
+{% endif %}
+```
+
+This allows individual posts to define their canonical URL in the front matter like so:
+
+```yaml
+---
+canonical_url: 'https://solrevdev.com/2011/10/10/amazoncom-really-want-me-don-they.html'
+---
+```
+
+### Robots Tag
+
+To further direct search engine indexing behavior, the `robots` meta tag can be included. This is useful for specifying pages that should not be indexed or followed by search engine crawlers. The following snippet in `_includes/head.html` checks for a `robots` variable:
+
+```html
+{% if page.robots %}
+<meta name="robots" content="{{ page.robots }}">
+{% endif %}
+```
+
+In a post's front matter, you can control the robots tag like this:
+
+```yaml
+---
+robots: "noindex, follow"
+---
+```
+
+### Updating Old Content
+
+For outdated content that no longer provides SEO value, we've introduced a standard update notice. This notice directs users to more relevant sections of the site and is included at the top of such posts:
+
+```html
+<h1>Update</h1>
+<p>This page's content is no longer relevant. However, we have plenty of updated information on related topics:</p>
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/archive/">Archive</a></li>
+    <li><a href="/uses/">Uses</a></li>
+    <li><a href="https://github.com/solrevdev/solrevdev.github.io">GitHub project</a></li>
+</ul>
+```
+
+These changes aim to improve the overall SEO of the site and resolve specific issues flagged by Google Search Console.
+
+
+
 ## Hyde theme
 
 
@@ -71,6 +131,10 @@ It is a brazen two-column  theme that pairs a prominent sidebar with uncomplicat
 - [solrevdev.github.io](#solrevdevgithubio)
   - [Testing the site locally](#testing-the-site-locally)
   - [Testing on Apple Silicon](#testing-on-apple-silicon)
+  - [SEO Improvements](#seo-improvements)
+    - [Canonical URL](#canonical-url)
+    - [Robots Tag](#robots-tag)
+    - [Updating Old Content](#updating-old-content)
   - [Hyde theme](#hyde-theme)
   - [Contents](#contents)
   - [Usage](#usage)
