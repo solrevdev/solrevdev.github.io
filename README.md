@@ -70,6 +70,18 @@ bundle exec jekyll serve --host=localhost
 
 Then your images will load
 
+## Current full site testing example:
+
+So, a full example that works on my Apple Silicon MacMini 2020 is:
+
+```bash
+bundle install
+bundle update github-pages
+bundle exec jekyll build
+bundle exec jekyll serve --host=localhost
+```
+
+
 
 ## SEO Improvements
 
@@ -145,6 +157,7 @@ It is a brazen two-column  theme that pairs a prominent sidebar with uncomplicat
   - [Testing the site locally](#testing-the-site-locally)
   - [Testing on Apple Silicon](#testing-on-apple-silicon)
   - [Testing imgur hosted images](#testing-imgur-hosted-images)
+  - [Current full site testing example:](#current-full-site-testing-example)
   - [SEO Improvements](#seo-improvements)
     - [Canonical URL](#canonical-url)
     - [Robots Tag](#robots-tag)
