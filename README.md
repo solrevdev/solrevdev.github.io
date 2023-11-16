@@ -128,8 +128,9 @@ robots: "noindex, follow"
 For outdated content that no longer provides SEO value, we've introduced a standard update notice. This notice directs users to more relevant sections of the site and is included at the top of such posts:
 
 ```html
-<h1>Update</h1>
-<p>This page's content is no longer relevant. However, we have plenty of updated information on related topics:</p>
+<h3>Update</h3>
+<p>This page's content is no longer relevant. However, we have plenty of updated information on some other topics you may find useful. Make a start looking
+    through the <a href="/archive/">archive</a> :</p>
 <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/about">About</a></li>
