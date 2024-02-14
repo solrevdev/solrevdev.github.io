@@ -56,6 +56,14 @@ bundle exec jekyll serve --drafts --baseurl '' 2>/dev/null
 bundle exec jekyll serve --drafts 2>/dev/null
 ```
 
+### Live reload
+
+[Via the docs](https://jekyllrb.com/docs/)
+
+```bash
+bundle exec jekyll serve --livereload
+```
+
 Now open your browser and go to : `http://localhost:4000` <http://localhost:4000>
 
 ## Testing imgur hosted images
@@ -157,6 +165,7 @@ It is a brazen two-column  theme that pairs a prominent sidebar with uncomplicat
 - [solrevdev.github.io](#solrevdevgithubio)
   - [Testing the site locally](#testing-the-site-locally)
   - [Testing on Apple Silicon](#testing-on-apple-silicon)
+    - [Live reload](#live-reload)
   - [Testing imgur hosted images](#testing-imgur-hosted-images)
   - [Current full site testing example:](#current-full-site-testing-example)
   - [SEO Improvements](#seo-improvements)
