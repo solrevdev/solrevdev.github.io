@@ -83,6 +83,7 @@ Then your images will load
 So, a full example that works on my Apple Silicon MacMini 2020 is:
 
 ```bash
+bundle update --bundler
 bundle install
 bundle update github-pages
 bundle exec jekyll build

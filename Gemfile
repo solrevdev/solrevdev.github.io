@@ -12,4 +12,6 @@ gem 'jemoji'
 gem 'jekyll-seo-tag'
 gem 'jekyll-loading-lazy'
 gem 'webrick'
+gem 'csv'
+gem 'faraday-retry'
 
