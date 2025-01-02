@@ -88,6 +88,7 @@ bundle install
 bundle update github-pages
 bundle exec jekyll build
 bundle exec jekyll serve --host=localhost
+bundle exec jekyll serve --host=localhost --livereload
 ```
 
 
