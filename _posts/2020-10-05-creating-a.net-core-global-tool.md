@@ -181,6 +181,12 @@ jobs:
                 PACKAGE_NAME: solrevdev.seedfolder
 ```
 
+**Evolution and Updates** 🔄
+
+Since publishing this post, SeedFolder has evolved significantly! The tool now supports multiple project templates, cross-platform compatibility, and has been enhanced with the help of GitHub Copilot.
+
+Read about the journey from a simple dotfile copier to a comprehensive project scaffolding tool in my follow-up post: [Evolving SeedFolder with GitHub Copilot - From Personal Tool to Multi-Template System](/2025/08/20/evolving-seedfolder-with-github-copilot.html).
+
 **Find More** 🔍
 
 Now that you have built and published a .NET Core Global Tool you may wish to find some others for inspiration.
