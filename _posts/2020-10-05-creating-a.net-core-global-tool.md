@@ -181,6 +181,12 @@ jobs:
                 PACKAGE_NAME: solrevdev.seedfolder
 ```
 
+**Update: SeedFolder Evolution** ⚡
+
+Since writing this post, SeedFolder has evolved significantly from a simple folder creator to a comprehensive project scaffolding system with support for multiple programming languages and frameworks. 
+
+Read about this transformation in my follow-up post: [Evolving SeedFolder with GitHub Copilot](/2025/08/20/evolving-seedfolder-with-github-copilot.html), which details how AI-assisted development accelerated the tool's growth from 7 dotfiles to a full multi-template system supporting .NET, Node.js, Python, Ruby, and more.
+
 **Find More** 🔍
 
 Now that you have built and published a .NET Core Global Tool you may wish to find some others for inspiration.
