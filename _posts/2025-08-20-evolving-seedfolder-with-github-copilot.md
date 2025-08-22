@@ -13,7 +13,9 @@ tags:
 ---
 **Overview** ☀
 
-It's been over 4 years since I first published my [.NET Core Global Tool](/2020/10/05/creating-a.net-core-global-tool.html) blog post about creating SeedFolder. What started as a simple tool to copy my personal dotfiles has evolved into something much more powerful and useful to the broader developer community.
+It's been over 4 years since I first published my [.NET Core Global Tool](/2020/10/05/creating-a.net-core-global-tool.html) blog post about creating SeedFolder.
+
+What started as a simple tool to copy my personal dotfiles has evolved into something much more powerful and hopefully eventually will be useful to the broader developer community.
 
 The original version was quite limited - it basically just copied my specific `.editorconfig`, `.gitignore`, and other dotfiles to new project folders. While this was useful for me, it wasn't particularly helpful to other developers who might have different preferences or work with different technology stacks.
 
@@ -25,14 +27,13 @@ Over the years, I've made several significant improvements to SeedFolder, partic
 
 One of the consistent maintenance tasks has been keeping the tool updated with each .NET LTS release. For example, [upgrading to .NET 7](https://github.com/solrevdev/seedfolder/pull/4) involved updating the target framework and ensuring compatibility:
 
-```xml
+```diff
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+-    <TargetFramework>net6.0</TargetFramework>
     <!-- Multi-targeting for backward compatibility -->
-    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
-    
++   <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>seedfolder</ToolCommandName>
     <!-- ... other properties -->
@@ -58,7 +59,7 @@ For example, [Issue #9](https://github.com/solrevdev/seedfolder/issues/9) outlin
 
 The biggest transformation was moving from a single set of dotfiles to a comprehensive template system. [Pull Request #10](https://github.com/solrevdev/seedfolder/pull/10) introduced support for six different project types:
 
-```bash
+```powershell
 # Interactive mode - prompts for template selection
 seedfolder
 
@@ -79,7 +80,7 @@ Each template now includes carefully curated files appropriate for that project 
 - **dotnet**: .editorconfig, .gitignore for C#, omnisharp.json
 - **node**: package.json template, .nvmrc, npm-specific .gitignore
 - **python**: requirements.txt, .python-version, Python .gitignore
-- **ruby**: Gemfile template, .ruby-version, Ruby .gitignore  
+- **ruby**: Gemfile template, .ruby-version, Ruby .gitignore
 - **markdown**: Basic structure for documentation projects
 - **universal**: Generic files useful across all project types
 
@@ -87,8 +88,8 @@ Each template now includes carefully curated files appropriate for that project 
 
 The tool is now much more user-friendly and customizable. Some key improvements include:
 
-**Interactive Mode**: 
-```bash
+**Interactive Mode**:
+```powershell
 $ seedfolder
 ? Select a project template: (Use arrow keys)
 ❯ dotnet - .NET applications with C# configuration
@@ -100,7 +101,7 @@ $ seedfolder
 ```
 
 **Better CLI Interface**:
-```bash
+```powershell
 # All the standard options you'd expect
 seedfolder --help
 seedfolder --version
@@ -115,38 +116,75 @@ seedfolder --template dotnet --output ./projects MyApi
 [Pull Request #16](https://github.com/solrevdev/seedfolder/pull/16) addressed CI workflow issues and simplified the build process:
 
 ```yaml
-# Simplified from complex matrix to reliable single job
-name: CI
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
+name: CI
+
+on:
+    push:
+        branches:
+            - master
+            - release/*
+        paths-ignore:
+          - '**/*.md'
+          - '**/*.gitignore'
+          - '**/*.gitattributes'
+    pull_request:
+        branches:
+            - master
+            - release/*
+        paths-ignore:
+            - '**/*.md'
+            - '**/*.gitignore'
+            - '**/*.gitattributes'
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: |
-          6.0.x
-          7.0.x
-          8.0.x
-    
-    - name: Build and Test
-      run: |
-        dotnet build --configuration Release
-        dotnet test --configuration Release --no-build
-        
-    - name: Pack and Publish
-      if: github.ref == 'refs/heads/master'
-      run: |
-        dotnet pack --configuration Release --no-build
-        dotnet nuget push "**/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }}
+    build:
+        if: github.event_name == 'push' && contains(toJson(github.event.commits), '***NO_CI***') == false && contains(toJson(github.event.commits), '[ci skip]') == false && contains(toJson(github.event.commits), '[skip ci]') == false
+        runs-on: ubuntu-latest
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+          DOTNET_CLI_TELEMETRY_OPTOUT: 1
+          DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+          DOTNET_NOLOGO: true
+          DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+          DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
+          DOTNET_MULTILEVEL_LOOKUP: 0
+
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            - name: setup .net core sdk
+              uses: actions/setup-dotnet@v4
+              with:
+                  dotnet-version: |
+                    8.0.x
+                    9.0.x
+
+            - name: dotnet build
+              run: dotnet build solrevdev.seedfolder.sln --configuration Release
+
+            - name: run integration tests
+              run: ./tests/integration-test.sh
+
+            - name: dotnet pack
+              run: dotnet pack solrevdev.seedfolder.sln -c Release --no-build --include-source --include-symbols
+
+            - name: setup nuget
+              if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+              uses: nuget/setup-nuget@v1
+              with:
+                  nuget-version: latest
+
+            - name: Publish NuGet
+              if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+              uses: rohith/publish-nuget@v2.1.1
+              with:
+                PROJECT_FILE_PATH: src/solrevdev.seedfolder.csproj # Relative to repository root
+                NUGET_KEY: ${{secrets.NUGET_API_KEY}} # nuget.org API key
+                PACKAGE_NAME: solrevdev.seedfolder
+
+
 ```
 
 **The Power of AI-Assisted Development** 🚀
@@ -158,34 +196,47 @@ What I found particularly interesting about working with GitHub Copilot was how 
 - **User Experience**: Proposed CLI interface improvements that made the tool much more pleasant to use
 - **Testing Strategies**: Suggested test cases and scenarios I hadn't considered
 
-Here's an example of how Copilot helped implement the template selection logic:
+Here's an example of how Copilot helped implement the template system using enums and pattern matching:
 
 ```csharp
-public static class TemplateManager
+// Template metadata structure for future extensibility
+internal record TemplateFile(string ResourceName, string FileName, string Description = "");
+
+// Enum for supported project types
+internal enum ProjectType
 {
-    private static readonly Dictionary<string, TemplateInfo> Templates = new()
+    Dotnet, Node, Python, Ruby, Markdown, Universal
+}
+
+private static bool TryParseProjectType(string input, out ProjectType projectType)
+{
+    projectType = input switch
     {
-        ["dotnet"] = new("dotnet", ".NET applications with C# configuration", 
-            new[] { ".editorconfig", ".gitignore", "omnisharp.json" }),
-        ["node"] = new("node", "Node.js applications with npm setup",
-            new[] { "package.json", ".nvmrc", ".gitignore" }),
-        // ... other templates
+        "dotnet" or "net" or "csharp" => ProjectType.Dotnet,
+        "node" or "nodejs" or "javascript" or "js" => ProjectType.Node,
+        "python" or "py" => ProjectType.Python,
+        "ruby" or "rb" => ProjectType.Ruby,
+        "markdown" or "md" or "docs" => ProjectType.Markdown,
+        "universal" or "basic" or "minimal" => ProjectType.Universal,
+        _ => ProjectType.Dotnet
     };
+    
+    return input is "dotnet" or "net" or "csharp" or "node" or "nodejs" 
+        or "javascript" or "js" or "python" or "py" or "ruby" or "rb" 
+        or "markdown" or "md" or "docs" or "universal" or "basic" or "minimal";
+}
 
-    public static TemplateInfo GetTemplate(string name)
+private static TemplateFile[] GetTemplateFiles(ProjectType projectType)
+{
+    return projectType switch
     {
-        return Templates.TryGetValue(name.ToLowerInvariant(), out var template) 
-            ? template 
-            : throw new ArgumentException($"Template '{name}' not found");
-    }
-
-    public static void ListTemplates()
-    {
-        foreach (var (key, template) in Templates)
-        {
-            Console.WriteLine($"  {key,-12} - {template.Description}");
-        }
-    }
+        ProjectType.Node => GetNodeTemplate(),
+        ProjectType.Python => GetPythonTemplate(),
+        ProjectType.Ruby => GetRubyTemplate(),
+        ProjectType.Markdown => GetMarkdownTemplate(),
+        ProjectType.Universal => GetUniversalTemplate(),
+        _ => GetDotnetTemplate()
+    };
 }
 ```
 
@@ -193,7 +244,7 @@ public static class TemplateManager
 
 The next major evolution is planned around [Issue #15](https://github.com/solrevdev/seedfolder/issues/15) - creating a template marketplace. This will allow the community to share and install custom templates:
 
-```bash
+```powershell
 # Future marketplace commands
 seedfolder marketplace search angular
 seedfolder marketplace install solrevdev/vue-typescript
@@ -203,7 +254,7 @@ seedfolder marketplace update
 
 The marketplace will be hosted as a separate GitHub repository at `solrevdev/seedfolder-marketplace` with this structure:
 
-```
+```powershell
 solrevdev/seedfolder-marketplace/
 ├── templates/
 │   ├── angular/
@@ -225,7 +276,7 @@ This will enable developers to:
 
 The current version is available on NuGet and much more capable than the original:
 
-```bash
+```powershell
 # Install the latest version
 dotnet tool install --global solrevdev.seedfolder
 
