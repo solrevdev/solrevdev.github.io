@@ -2,6 +2,7 @@
 layout: post
 title: Evolving SeedFolder with GitHub Copilot - From Personal Tool to Multi-Template System
 description: How GitHub Copilot helped transform a simple dotfile copier into a comprehensive project scaffolding tool with multiple templates and cross-platform support
+summary: How I used GitHub Copilot to evolve SeedFolder from a dotfile copier into a flexible, multi-template scaffolding tool with cross-platform support, better UX, and CI improvements.
 tags:
 - dotnet-global-tools
 - github-copilot
@@ -59,7 +60,7 @@ For example, [Issue #9](https://github.com/solrevdev/seedfolder/issues/9) outlin
 
 The biggest transformation was moving from a single set of dotfiles to a comprehensive template system. [Pull Request #10](https://github.com/solrevdev/seedfolder/pull/10) introduced support for six different project types:
 
-```powershell
+```bash
 # Interactive mode - prompts for template selection
 seedfolder
 
@@ -89,7 +90,7 @@ Each template now includes carefully curated files appropriate for that project 
 The tool is now much more user-friendly and customizable. Some key improvements include:
 
 **Interactive Mode**:
-```powershell
+```bash
 $ seedfolder
 ? Select a project template: (Use arrow keys)
 ❯ dotnet - .NET applications with C# configuration
@@ -101,7 +102,7 @@ $ seedfolder
 ```
 
 **Better CLI Interface**:
-```powershell
+```bash
 # All the standard options you'd expect
 seedfolder --help
 seedfolder --version
@@ -220,9 +221,9 @@ private static bool TryParseProjectType(string input, out ProjectType projectTyp
         "universal" or "basic" or "minimal" => ProjectType.Universal,
         _ => ProjectType.Dotnet
     };
-    
-    return input is "dotnet" or "net" or "csharp" or "node" or "nodejs" 
-        or "javascript" or "js" or "python" or "py" or "ruby" or "rb" 
+
+    return input is "dotnet" or "net" or "csharp" or "node" or "nodejs"
+        or "javascript" or "js" or "python" or "py" or "ruby" or "rb"
         or "markdown" or "md" or "docs" or "universal" or "basic" or "minimal";
 }
 
@@ -244,7 +245,7 @@ private static TemplateFile[] GetTemplateFiles(ProjectType projectType)
 
 The next major evolution is planned around [Issue #15](https://github.com/solrevdev/seedfolder/issues/15) - creating a template marketplace. This will allow the community to share and install custom templates:
 
-```powershell
+```bash
 # Future marketplace commands
 seedfolder marketplace search angular
 seedfolder marketplace install solrevdev/vue-typescript
@@ -254,7 +255,7 @@ seedfolder marketplace update
 
 The marketplace will be hosted as a separate GitHub repository at `solrevdev/seedfolder-marketplace` with this structure:
 
-```powershell
+```text
 solrevdev/seedfolder-marketplace/
 ├── templates/
 │   ├── angular/
@@ -276,7 +277,7 @@ This will enable developers to:
 
 The current version is available on NuGet and much more capable than the original:
 
-```powershell
+```bash
 # Install the latest version
 dotnet tool install --global solrevdev.seedfolder
 
