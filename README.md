@@ -92,6 +92,39 @@ bundle exec jekyll serve --host=localhost --livereload
 ```
 
 
+## Post summaries (home page excerpts)
+
+The home page now shows a concise summary for each post without leaking large code blocks.
+
+Summary priority (no changes needed to old posts):
+
+1. If a post defines `summary:` (or `description:`) in front matter, that is used.
+2. Otherwise the first real paragraph from the post body is extracted and truncated.
+3. If no paragraph is found, it falls back to Jekyll's excerpt or stripped content.
+
+Recommended usage for new posts:
+
+```yaml
+---
+layout: post
+title: My Post
+date: 2025-08-27
+summary: A one‑sentence teaser for the home page list.
+---
+
+Intro paragraph here…
+
+<!--more-->
+
+Rest of the content…
+```
+
+Notes:
+- `summary:` gives you full control over the home-page blurb.
+- `<!--more-->` is optional; use it when you want the per‑post page to show a short intro before the rest.
+- Old posts don’t need to be edited. They’ll automatically use their first paragraph.
+
+
 
 ## SEO Improvements
 
@@ -170,6 +203,7 @@ It is a brazen two-column  theme that pairs a prominent sidebar with uncomplicat
     - [Live reload](#live-reload)
   - [Testing imgur hosted images](#testing-imgur-hosted-images)
   - [Current full site testing example:](#current-full-site-testing-example)
+  - [Post summaries (home page excerpts)](#post-summaries-home-page-excerpts)
   - [SEO Improvements](#seo-improvements)
     - [Canonical URL](#canonical-url)
     - [Robots Tag](#robots-tag)
