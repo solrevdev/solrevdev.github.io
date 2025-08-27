@@ -14,7 +14,34 @@ title: Home
 
         <span class="post-date">{{ post.date | date_to_string }}</span>
 
-        <p>{{ post.content | strip_html | truncatewords:75}}</p>
+                {%- comment -%}
+                    Summary priority:
+                    1) front matter: summary/description
+                    2) first actual paragraph from rendered content (skips headings/code)
+                    3) fallback to excerpt or stripped content
+                {%- endcomment -%}
+
+                {% if post.summary %}
+                    <p>{{ post.summary }}</p>
+                {% elsif post.description %}
+                    <p>{{ post.description }}</p>
+                {% else %}
+                    {% assign paragraphs = post.content | split: '</p>' %}
+                    {% assign found_para = false %}
+                    {% for p in paragraphs %}
+                        {% if found_para == false and p contains '<p' %}
+                            {% assign found_para = true %}
+                            <p>{{ p | append: '</p>' | strip_html | truncatewords: 75 }}</p>
+                        {% endif %}
+                    {% endfor %}
+                    {% unless found_para %}
+                        {% if post.excerpt %}
+                            <p>{{ post.excerpt | strip_html | truncatewords: 75 }}</p>
+                        {% else %}
+                            <p>{{ post.content | strip_html | truncatewords: 75 }}</p>
+                        {% endif %}
+                    {% endunless %}
+                {% endif %}
         <p><a href="{{ site.baseurl }}{{ post.url }}">Continue Reading</a></p>
 
 
