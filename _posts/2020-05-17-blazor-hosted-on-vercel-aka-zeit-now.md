@@ -25,32 +25,32 @@ Firstly make sure you have [.NET Core 3.1](https://dotnet.microsoft.com/download
 
 Optionally install the Blazor WebAssembly preview template by running the following command:
 
-```powershell
+```bash
 dotnet new -i Microsoft.AspNetCore.Components.WebAssembly.Templates::3.2.0-rc1.20223.4
 ```
 
 Make any changes to the template that you like then when you are ready to publish enter the following command
 
-```powershell
+```bash
 dotnet publish -c Release
 ```
 
 This will build and publish the assets you can deploy to the folder:
 
-```powershell
+```bash
 bin/Release/netstandard2.1/publish/wwwroot
 ```
 
 Make sure you have the now.sh command line tool installed.
 
-```powershell
+```bash
 npm i -g vercel
 now login
 ```
 
 Navigate to this folder and run the now command line tool for deploying.
 
-```powershell
+```bash
 cd bin/Release/netstandard2.1/publish/wwwroot
 now --prod
 ```
@@ -65,7 +65,7 @@ To fix this we need to create a configuration file to tell vercel to redirect 40
 
 Create a file in your project named vercel.json that will match the publish path
 
-```powershell
+```bash
 publish/wwwroot/vercel.json
 ```
 
@@ -92,7 +92,7 @@ Next we need to tell .NET Core to publish that file so open your `.csproj` file 
 
 Finally you can create a `deploy.sh` file that can publish and deploy all in one command.
 
-```powershell
+```bash
 #!/usr/bin/env bash
 
 dotnet publish -c Release
@@ -100,7 +100,7 @@ now --prod bin/Release/netstandard2.1/publish/wwwroot/
 ```
 
 To run this make sure it has the correct permissions
-```powershell
+```bash
 chmod +x deploy.sh
 ./deploy.sh
 ```

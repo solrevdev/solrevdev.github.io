@@ -56,7 +56,7 @@ I won't explain how this code was written; you can view the [source code](https:
 
 The important thing to note is that the application is a standard .NET Core console application that you can create as follows:
 
-```powershell
+```bash
 dotnet new console -n solrevdev.seedfolder
 ```
 
@@ -97,7 +97,7 @@ The extra tags from  `PackAsTool` to `Version`  are required fields while the `T
 
 Once I was happy that my console application was working the next step was to create a NuGet package by running the [dotnet pack](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-pack "dotnet pack") command:
 
-```powershell
+```bash
 dotnet pack
 ```
 
@@ -105,7 +105,7 @@ This produces a _nupkg_ package.  This nupkg NuGet package is what the .NET Core
 
 So, to package and install locally without publishing to NuGet which will be needed while you are still testing you need the following:
 
-```powershell
+```bash
 dotnet pack
 dotnet tool install --global --add-source ./nupkg solrevdev.seedfolder
 ```
@@ -122,7 +122,7 @@ You may find you need uninstall and install while you debug.
 
 To uninstall you need to do as follows:
 
-```powershell
+```bash
 dotnet tool uninstall -g solrevdev.seedfolder
 ```
 

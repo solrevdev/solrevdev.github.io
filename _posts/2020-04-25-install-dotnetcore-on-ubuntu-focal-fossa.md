@@ -23,14 +23,14 @@ For those looking for a TLDR; here is the info copied from that page.
 
 **Microsoft repository key and feed needed.**
 
-```powershell
+```bash
 wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 ```
 
 **Install the .NET Core SDK**
 
-```powershell
+```bash
 sudo apt-get update
 sudo apt-get install apt-transport-https
 sudo apt-get update
@@ -39,7 +39,7 @@ sudo apt-get install dotnet-sdk-3.1
 
 **Install the ASP.NET Core runtime**
 
-```powershell
+```bash
 sudo apt-get update
 sudo apt-get install apt-transport-https
 sudo apt-get update
@@ -48,7 +48,7 @@ sudo apt-get install aspnetcore-runtime-3.1
 
 **Install the .NET Core runtime**
 
-```powershell
+```bash
 sudo apt-get update
 sudo apt-get install apt-transport-https
 sudo apt-get update
@@ -60,9 +60,9 @@ I have not pulled the trigger yet. I am waiting for things to settle down and fo
 However, for those who want to upgrade now and cannot wait you can force the issue by the following.
 
 Press <kbd>ALT</kbd> + <kbd>F2</kbd> followed by
-```powershell
+```bash
 update-manager -cd
-````
+```
 
 The following dialog will then appear allowing you to then upgrade now.
 

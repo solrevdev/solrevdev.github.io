@@ -19,7 +19,7 @@ However, for Linux each release of [dotnetcore](https://dotnet.microsoft.com/dow
 
 If you follow the [instructions](https://docs.microsoft.com/en-gb/dotnet/core/install/linux-package-manager-ubuntu-1904]) from Microsoft  you will get the following error message:
 
-```powershell
+```text
 Unable to locate package dotnet-sdk-3.1
 ```
 
@@ -27,7 +27,7 @@ The issue is that page targets Ubuntu version 19.04 and I am running Ubuntu vers
 
 So, If you are me from the future wanting to know how to get the latest version installed  here is what you need to do:
 
-```powershell
+```bash
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 sudo apt-add-repository https://packages.microsoft.com/ubuntu/19.10/prod
 sudo apt-get update
