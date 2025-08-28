@@ -47,7 +47,7 @@ for the reader to refactor away.
 
 So, to get started create a working folder, 2 files to work with and then open Visual Studio Code
 
-```powershell
+```bash
 mkdir pocket-api
 cd pocket-api
 touch api.http
@@ -100,7 +100,7 @@ You will get a response that gives you a `code` that you need for the next step 
 
 Take your `code` and `redirect_url` from Step 2 above and replace in the URL below and copy and paste the below URL in to a browser and follow the instructions.
 
-```powershell
+```
 https://getpocket.com/auth/authorize?request_token=111111-1111-1111-1111-111111&redirect_uri=https://solrevdev.com
 ```
 

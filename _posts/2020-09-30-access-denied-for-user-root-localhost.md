@@ -12,13 +12,13 @@ tags:
 ---
 Every time `apt-get upgrade` upgrades my local MySQL instance on my Ubuntu laptop I get the following error:
 
-```powershell   
+```bash
 (1698, "Access denied for user 'root'@'localhost'")
 ```
 
 The fix each time is the following, so here it is for me next time save me wasting time googling the error every time.
 
-```powershell
+```bash
 sudo mysql -u root
 
 use mysql;

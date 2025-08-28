@@ -16,7 +16,7 @@ In this post, I’ll address a common issue many developers face when working wi
 
 When connecting to MySQL via the terminal using `mysql -u root`, you might encounter the following error messages:
 
-```powershell
+```bash
 ERROR 2006 (HY000): MySQL server has gone away
 No connection. Trying to reconnect...
 ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initial communication packet', system error: 102
@@ -40,7 +40,7 @@ This error typically occurs due to:
 
 One of the simplest troubleshooting steps is to restart the MySQL service. This can resolve many transient issues.
 
-```powershell
+```bash
 sudo killall mysqld
 mysql.server start
 ```

@@ -102,7 +102,7 @@ For example:
 
 **dotnet outdated:**
 
-```powershell
+```bash
 dotnet tool install --global dotnet-outdated-tool
 dotnet outdated -u
 

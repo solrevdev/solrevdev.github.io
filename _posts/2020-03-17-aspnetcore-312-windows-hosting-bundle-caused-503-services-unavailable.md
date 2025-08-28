@@ -18,7 +18,7 @@ However, on installing it, the next request to the website showed a 503 Service 
 
 Debugging the w3 process in Visual Studio showed this error:
 
-```powershell
+```text
 Unhandled exception at 0x53226EE9 (aspnetcorev2.dll) in w3wp.exe: 0xC000001D: Illegal Instruction.
 ```
 

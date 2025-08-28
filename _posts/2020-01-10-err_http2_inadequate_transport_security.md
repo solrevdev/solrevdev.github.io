@@ -22,7 +22,7 @@ This site worked fine elsewhere so to try and narrow down the problem I created 
 
 After some googling, I tried to reset the servers self-signed SSL certificate by using the following closing the browser in between but that had no effect:
 
-```powershell
+```bash
 dotnet dev-certs https --clean
 dotnet dev-certs https --trust
 ```

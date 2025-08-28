@@ -15,14 +15,14 @@ Normally when I want to create a directory in the command line it takes multiple
 
 For example:
 
-```powershell 
+```bash
 mkdir tempy
 cd tempy
 ```
 
 Well, that can be shortened to a one-liner!
 
-```powershell 
+```bash
 mkdir tempy && cd $_
 ```
 

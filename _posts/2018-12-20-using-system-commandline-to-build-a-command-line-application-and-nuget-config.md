@@ -56,7 +56,7 @@ class Program
 ```
 
 
-```powershell
+```bash
 dotnet run -- --int-option 123
 The value for --int-option is: 0
 The value for --bool-option is: False

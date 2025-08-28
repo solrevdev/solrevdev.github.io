@@ -125,14 +125,14 @@ Now that you have an Instagram `client_id` and `client_secret` to use we can now
 
 Create a .NET Core Razor Pages project.
 
-```powershell
+```bash
 dotnet new webapp -n web
 cd web
 ``` 
 
 To install via [nuget](https://www.nuget.org/packages/Solrevdev.InstagramBasicDisplay/) using the dotnet cli
 
-```powershell
+```bash
 dotnet add package Solrevdev.InstagramBasicDisplay
 ```
 
