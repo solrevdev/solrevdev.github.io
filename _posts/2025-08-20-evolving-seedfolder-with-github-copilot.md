@@ -48,6 +48,19 @@ The tool now uses multi-targeting to support various .NET SDKs, ensuring users c
 
 The real transformation happened when I started using GitHub Copilot - both from the web interface and my iOS app - to help implement more ambitious features. This was a game-changer for a side project that I rarely had dedicated time to improve.
 
+**My AI Development Journey** 🛤️
+
+This project coincided with my own evolution in AI-assisted development. Over the past couple of years, I've progressed through several stages:
+
+1. **Context Sharing Era**: Using tools like Repomix to bundle codebase snippets for web-based ChatGPT, Claude, and Gemini conversations
+2. **Desktop Integration**: Adopting dedicated ChatGPT and Claude desktop clients for more seamless workflows  
+3. **IDE-Native AI**: Integrating GitHub Copilot directly into VSCode, progressing through OpenAI's GPT 4.0, 4.1, and eventually to GPT-5 and Claude Sonnet 4
+4. **Terminal-First Development**: Embracing agentic terminal clients like Warp Terminal, Claude Code, and Codex for more direct development interaction
+
+Today, my workflow splits between contexts: during work hours, I rely on VSCode with GitHub Copilot and terminal-based AI clients. But evenings and weekends - when I'm often watching TV with my phone in hand - GitHub's web and iOS Copilot interfaces became the perfect tools for iterating on side projects through issue-driven development.
+
+This hybrid approach proved ideal for SeedFolder's evolution: I could sketch out features and improvements during downtime, then implement them through focused GitHub issue conversations. The combination of accessibility and power made consistent progress possible on a project that might otherwise have stagnated between day job commitments.
+
 Here's how the process typically worked:
 
 1. **Issue Creation**: I'd create a GitHub issue describing what I wanted to achieve
@@ -299,9 +312,12 @@ Working on SeedFolder's evolution taught me several valuable lessons:
 2. **Incremental Improvement**: Small, consistent improvements over time can transform a simple tool into something genuinely useful
 3. **Community Focus**: Building for your own needs first is fine, but thinking about broader use cases makes tools more valuable
 4. **Template Systems**: Flexibility through templates is much more powerful than hardcoded configurations
+5. **Context-Driven Development**: Different AI tools excel in different contexts - terminal clients for focused coding sessions, mobile interfaces for planning and ideation
 
-The transformation from a personal dotfile copier to a comprehensive project scaffolding tool shows how AI assistance can help maintain and evolve side projects that might otherwise stagnate.
+The transformation from a personal dotfile copier to a comprehensive project scaffolding tool shows how AI assistance can help maintain and evolve side projects that might otherwise stagnate. The key insight was finding the right AI tool for each development context rather than trying to force a single solution across all scenarios.
 
 Watch out for the next steps as I work on the marketplace functionality - the goal is to make SeedFolder not just more useful, but a platform for the community to share their own project setup best practices.
+
+*If you're curious about the specific workflows and tools that made this multi-context AI development approach work, I'm planning a follow-up post diving deeper into the practical setup and decision-making process behind choosing the right AI tool for different development scenarios.*
 
 Success! 🎉
