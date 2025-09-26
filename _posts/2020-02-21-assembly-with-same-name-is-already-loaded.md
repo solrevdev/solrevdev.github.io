@@ -15,7 +15,7 @@ The library is [Nerdbank.GitVersioning](https://github.com/AArnott/Nerdbank.GitV
 
 The error?
 
-```powershell
+```bash
 The "Nerdbank.GitVersioning.Tasks.GetBuildVersion" task could not be loaded from the assembly
 
 Assembly with same name is already loaded Confirm that the <UsingTask> declaration is correct, that the assembly and all its dependencies are available, and that the task contains a public class that implements Microsoft.Build.Framework.ITask
@@ -24,7 +24,7 @@ Assembly with same name is already loaded Confirm that the <UsingTask> declarati
 And the fix was to run the following command, thanks to [this issue](https://github.com/AArnott/Nerdbank.GitVersioning/issues/374) over on GitHub
 
 
-```powershell
+```bash
 dotnet build-server shutdown
 nbgv install
 ```

@@ -15,7 +15,7 @@ A fairly smooth upgrade all in all.
 
 I did have to re-enable the .NET Core APT repository using the following command:
 
-```powershell
+```bash
 sudo apt-add-repository https://packages.microsoft.com/ubuntu/20.04/prod
 ```
 

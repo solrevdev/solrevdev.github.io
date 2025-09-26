@@ -24,7 +24,7 @@ So, after a quick google the following was suggested to me:
 
 **mono-libgdiplus**
 
-```powershell
+```bash
 brew install mono-libgdiplus
 ```
 

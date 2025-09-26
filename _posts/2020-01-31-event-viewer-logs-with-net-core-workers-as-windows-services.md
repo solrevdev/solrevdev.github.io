@@ -17,14 +17,14 @@ Also, I was able to add some logging to the Windows Event Viewer Application Log
 
 First, I created a .NET Core Worker project:
 
-```powershell
+```bash
 mkdir tempy && cd $_
 dotnet new worker
 ```
 
 Then I added some references:
 
-```powershell
+```bash
 dotnet add package Microsoft.Extensions.Hosting
 dotnet add package Microsoft.Extensions.Hosting.WindowsServices
 dotnet add package Microsoft.Extensions.Logging.EventLog
@@ -100,7 +100,7 @@ I was able to manage all of this from the command line, using the [SC tool](http
 
 Publish:
 
-```powershell
+```bash
 cd C:\PathToSource\
 dotnet publish -r win-x64 -c Release -o C:\PathToDestination
 ```

@@ -21,13 +21,15 @@ So naturally, when I develop locally I want to visit <https://www.localhost:5001
 
 Now you can do this out of the box you just need to add this to your hosts file.
 
-```powershell
+```bash
 #macos / linux
 cat /etc/hosts
 
 127.0.0.1 www.localhost
 127.0.0.1 customer1.localhost
+```
 
+```powershell
 #windows
 type C:\Windows\System32\drivers\etc\hosts
 
@@ -45,7 +47,7 @@ The answer is to use some software called [mkcert](https://github.com/FiloSottil
 
 **First install mkcert**
 
-```powershell
+```bash
 #macOS
 brew install mkcert
 brew install nss # if you use Firefox
@@ -60,7 +62,9 @@ sudo pacman -S nss
 sudo zypper install mozilla-nss-tools
 
 brew install mkcert
+```
 
+```powershell
 #windows
 choco install mkcert
 scoop bucket add extras
@@ -69,7 +73,7 @@ scoop install mkcert
 
 **Then create a new local certificate authority.**
 
-```powershell
+```bash
 mkcert -install
 Using the local CA at "/Users/solrevdev/Library/Application Support/mkcert" ✨
 The local CA is already installed in the system trust store! 👍
@@ -80,7 +84,7 @@ The local CA is now installed in the Firefox trust store (requires browser resta
 
 **Now create your certificate covering the subdomains you want to use**
 
-```powershell
+```bash
 #navigate to your website root
 cd src/web/
 #remove any earlier failed attempts!

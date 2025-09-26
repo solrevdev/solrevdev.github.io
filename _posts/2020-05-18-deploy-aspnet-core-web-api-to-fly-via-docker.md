@@ -39,7 +39,7 @@ First up I created a backend web API using the `dotnet new` template and added t
 
 Fortunately, the .NET Core Web API template comes out of the box with a `/weatherforecast` endpoint that returns the same shape data as the `sample_data/weather.json` file in the frontend.
 
-```powershell
+```bash
 dotnet new webapi -n backend
 dotnet sln add backend/backend.csproj
 ```
@@ -162,7 +162,7 @@ After some trial and error and some fantastic help from support, I worked out th
 
 I created an app using port 5000 by first navigating into the backend project so that I was in the same location as the csproj file.
 
-```powershell
+```bash
 cd backend
 flyctl apps create -p 5000
 ```
@@ -197,19 +197,19 @@ Make a mental note of the app name you will see it again in the final hostname, 
 
 Now to deploy the app…
 
-```powershell
+```bash
 flyctl deploy
 ```
 
 And get the deployed endpoint URL back to use in the front end…
 
-```powershell
+```bash
 flyctl info
 ```
 
 The `flyctl info` command will return a deployed endpoint along with a random hostname such as
 
-```powershell
+```bash
 flyctl info
 App
   Name = blue-dust-2805
@@ -260,7 +260,7 @@ protected override async Task OnInitializedAsync()
 
 Re-deploy that to vercel by navigating to the root of our solution and running the deploy.sh script or manually via
 
-```powershell
+```bash
 cd ../../
 dotnet publish -c Release
 now --prod frontend/bin/Release/netstandard2.1/publish/wwwroot/
@@ -276,7 +276,7 @@ As a final nice to have fly.io have GitHub action we can use to [automatically b
 
 Create an auth token in your project
 
-```powershell
+```bash
 cd backend
 flyctl auth token
 ```

@@ -26,7 +26,7 @@ There was no such problem on macOS or Windows however as I like to write code on
 
 It's a bug that I [raised over on GitHub](https://github.com/OmniSharp/omnisharp-vscode/issues/3049) and while the full logs and environment details are over there in more detail, for brevity I will show what I believe is the main problem here:
 
-```powershell
+```text
 [warn]: OmniSharp.MSBuild.ProjectManager
         Failed to load project file '/home/solrevdev/Code/scratch/testconsole/testconsole.csproj'.
 /home/solrevdev/Code/scratch/testconsole/testconsole.csproj(1,1)
@@ -41,7 +41,7 @@ That was to re-install or update my version of Mono from the official [download 
 
 The instructions for doing this I borrowed and adapted are from there and are as follows:
 
-```powershell
+```bash
 sudo apt install gnupg ca-certificates
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
