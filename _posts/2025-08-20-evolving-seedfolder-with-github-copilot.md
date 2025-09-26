@@ -26,7 +26,7 @@ Over the years, I've made several significant improvements to SeedFolder, partic
 
 **Upgrading Through .NET LTS Versions** ⬆️
 
-One of the consistent maintenance tasks has been keeping the tool updated with each .NET LTS release. For example, [upgrading to .NET 7](https://github.com/solrevdev/seedfolder/pull/4) involved updating the target framework and ensuring compatibility:
+One of the consistent maintenance tasks has been keeping the tool updated with each .NET LTS release. For example, [upgrading to more currwnt .NET versions](https://github.com/solrevdev/seedfolder/pull/4) involved updating the target framework and ensuring compatibility:
 
 ```diff
 <Project Sdk="Microsoft.NET.Sdk">
