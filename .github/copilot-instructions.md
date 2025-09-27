@@ -18,9 +18,11 @@ This is a Jekyll-based static blog for solrevdev.com using the Hyde theme with c
 ### Cover Images
 - Store in `/images/` directory
 - Use `cover_image: /images/filename.ext` in front matter
-- Supported formats: SVG (preferred), PNG, JPG
-- Recommended dimensions: 800x400px
-- Automatically responsive across desktop, tablet, and mobile
+- Supported formats: SVG (preferred), PNG, JPG - all handled gracefully
+- Size handling: CSS automatically scales images responsively
+- Recommended dimensions: 800x400px aspect ratio
+- Keep file size under 50KB for performance
+- Optional field - posts without cover images work perfectly
 
 ### Local Development Image Issues
 **Important**: During local development, images may not display properly due to URL resolution:
@@ -52,6 +54,6 @@ This is a Jekyll-based static blog for solrevdev.com using the Hyde theme with c
 ```
 
 ### Testing
-- Use `test-cover-image.html` for image URL testing
 - Test responsive design at 375px (mobile), 768px (tablet), 1200px+ (desktop)
-- Screenshots saved in `.playwright-mcp/` directory
+- Cover images scale automatically across all device sizes
+- Posts without cover images display normally
