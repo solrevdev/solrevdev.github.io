@@ -22,3 +22,44 @@ kbd {
     word-break: inherit;
     word-wrap: inherit;
 }
+
+/* Cover image styles for blog posts */
+.post-cover-image {
+    margin-bottom: 2rem;
+    margin-top: -1rem; /* Pull up to reduce spacing */
+}
+
+.cover-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.cover-image:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .post-cover-image {
+        margin-bottom: 1.5rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+
+    .cover-image {
+        border-radius: 0;
+        max-height: 250px;
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+    .cover-image {
+        max-height: 200px;
+    }
+}
