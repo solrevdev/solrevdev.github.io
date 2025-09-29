@@ -3,6 +3,7 @@ layout: post
 title: Building ytx - A YouTube Transcript Extractor as a .NET Global Tool
 description: How to build a .NET Global Tool that extracts YouTube video metadata and transcripts as structured JSON, from concept to NuGet publication
 summary: A tutorial on creating ytx, a .NET global tool that extracts YouTube video titles, descriptions, and transcripts as JSON using YoutubeExplode and automated CI/CD.
+cover_image: /images/ytx-dotnet-tool-cover.svg
 tags:
 - dotnet-global-tools
 - youtube
@@ -321,7 +322,7 @@ jobs:
       - name: Bump version
         run: |
           # Script to increment version in .csproj
-          VERSION_TYPE="${{ github.event.inputs.version_bump || 'patch' }}"
+          VERSION_TYPE="{% raw %}${{ github.event.inputs.version_bump || 'patch' }}{% endraw %}"
           ./scripts/bump-version.sh "$VERSION_TYPE"
 
       - name: Build and Pack
@@ -333,7 +334,7 @@ jobs:
       - name: Publish to NuGet
         run: |
           dotnet nuget push nupkg/*.nupkg \
-            --api-key ${{ secrets.NUGET_API_KEY }} \
+            --api-key {% raw %}${{ secrets.NUGET_API_KEY }}{% endraw %} \
             --source https://api.nuget.org/v3/index.json
 ```
 
