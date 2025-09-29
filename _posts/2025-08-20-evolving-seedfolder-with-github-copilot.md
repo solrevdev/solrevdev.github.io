@@ -3,6 +3,7 @@ layout: post
 title: Evolving SeedFolder with GitHub Copilot - From Personal Tool to Multi-Template System
 description: How GitHub Copilot helped transform a simple dotfile copier into a comprehensive project scaffolding tool with multiple templates and cross-platform support
 summary: How I used GitHub Copilot to evolve SeedFolder from a dotfile copier into a flexible, multi-template scaffolding tool with cross-platform support, better UX, and CI improvements.
+cover_image: /images/seedfolder-evolution-cover.svg
 tags:
 - dotnet-global-tools
 - github-copilot
