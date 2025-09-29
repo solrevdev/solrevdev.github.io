@@ -4,6 +4,7 @@ layout: post
 title: Building Winget Search - A fast web interface for Windows Package Manager
 description: >-
   How I built a GitHub Pages-hosted search interface for winget packages to solve my machine setup workflow
+cover_image: /images/winget-search-cover.svg
 tags:
   - python
   - javascript
@@ -17,8 +18,6 @@ tags:
 When setting up a new Windows machine, I used to rely on [Scoop](https://scoop.sh/) and [Chocolatey](https://chocolatey.org/) for package management. Both are excellent tools, but when Microsoft introduced [Windows Package Manager (winget)](https://learn.microsoft.com/en-us/windows/package-manager/), I decided to give it a try on my latest machine setup.
 
 The problem? Finding winget package IDs was tedious. While `winget search` works, I wanted something faster - a web interface where I could quickly search, find packages, and copy installation commands. That's how [winget-search](https://github.com/solrevdev/winget-search) was born.
-
-![Winget Search Interface](https://i.imgur.com/YLysmmV.png)
 
 ## The Challenge
 
@@ -96,17 +95,22 @@ The search interface is pure vanilla JavaScript - no frameworks needed. It loads
 function showResults(query) {
     const q = query.trim().toLowerCase();
 
-    let results = packages.filter(pkg => {
-        const idMatch = pkg.id?.toLowerCase().includes(q);
-        const nameMatch = pkg.name?.toLowerCase().includes(q);
-        const descMatch = pkg.description?.toLowerCase().includes(q);
-        const publisherMatch = pkg.publisher?.toLowerCase().includes(q);
-        const tagMatch = pkg.tags?.some(tag =>
-            tag && typeof tag === 'string' && tag.toLowerCase().includes(q)
-        );
+    let results;
+    if (!q) {
+        results = packages.slice(0, 50);
+    } else {
+        results = packages.filter(pkg => {
+            const idMatch = pkg.id?.toLowerCase().includes(q);
+            const nameMatch = pkg.name?.toLowerCase().includes(q);
+            const descMatch = pkg.description?.toLowerCase().includes(q);
+            const publisherMatch = pkg.publisher?.toLowerCase().includes(q);
+            const tagMatch = pkg.tags?.some(tag =>
+                tag && typeof tag === 'string' && tag.toLowerCase().includes(q)
+            );
 
-        return idMatch || nameMatch || descMatch || publisherMatch || tagMatch;
-    }).slice(0, 100);
+            return idMatch || nameMatch || descMatch || publisherMatch || tagMatch;
+        }).slice(0, 100);
+    }
 
     // Render results...
 }
@@ -117,8 +121,19 @@ Each search result includes a one-click copy button for the winget install comma
 ```javascript
 function copyCommand(button, cmd) {
     navigator.clipboard.writeText(cmd).then(() => {
-        button.innerHTML = 'Copied!';
-        setTimeout(() => button.innerHTML = 'Copy', 2000);
+        const originalHtml = button.innerHTML;
+        button.classList.add('success');
+        button.innerHTML = `
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Copied!
+        `;
+
+        setTimeout(() => {
+            button.classList.remove('success');
+            button.innerHTML = originalHtml;
+        }, 2000);
     });
 }
 ```
