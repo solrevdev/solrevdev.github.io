@@ -12,7 +12,7 @@ A static HTML website I look after is hosted on a Windows Server 2012R2 instance
 
 Today it kept crashing with the thousands of these events in event viewer:
 
-```powershell
+```text
 Event code: 3008
 Event message: A configuration error has occurred.
 Event time: 05/03/2020 09:15:49

@@ -18,7 +18,7 @@ First I published a last known good version of my application by creating a new 
 
 The idea being I can deploy from this branch while I investigated and once fixed I could delete the branch.
 
-```powershell
+```bash
 git reset e64c51bf1c3bdde753ff2d8fd8b18d4d902b8b5b --hard
 ```
 

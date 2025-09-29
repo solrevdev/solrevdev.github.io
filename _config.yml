@@ -46,7 +46,7 @@ version: "2.1.0"
 
 github: [metadata]
 
-exclude: ["Rakefile", "vendor"]
+exclude: ["Rakefile", "vendor", "claude.md", "CLAUDE.md", "warp.md", "WARP.md", "agent.md", "AGENT.md", "agents.md", "AGENTS.md"]
 
 # Social Sharing
 facebook_app_id: "1213637668669023"

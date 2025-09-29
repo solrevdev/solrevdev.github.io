@@ -31,7 +31,7 @@ I would get either:
 
 `MySqlException (0x80004005): The Command Timeout expired before the operation completed`
 
-```powershell
+```text
 [MySqlException (0x80004005): The Command Timeout expired before the operation completed.]
  System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task) +102
  System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task) +64
@@ -55,7 +55,7 @@ or:
 
 `A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond`
 
-```powershell
+```text
 [SocketException (0x274c): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond]
  System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags) +94
  System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size) +130
