@@ -15,7 +15,7 @@ There is a process called `mdutil` which manages the metadata stores used by Spo
 
 The fix after some Google Fu and some trial and error was to restart this process as follows:
 
-```powershell
+```bash
 sudo mdutil -a -i off  
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist  
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist  

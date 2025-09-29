@@ -1,0 +1,58 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#grad)"/>
+
+  <g transform="translate(400,200)">
+    <!-- SeedFolder Icon -->
+    <circle cx="-100" cy="-50" r="40" fill="#fbbf24" opacity="0.9"/>
+    <rect x="-115" y="-35" width="30" height="5" fill="#92400e"/>
+    <rect x="-110" y="-25" width="20" height="3" fill="#92400e"/>
+
+    <!-- Arrow -->
+    <path d="M -40 -50 L 40 -50" stroke="#fbbf24" stroke-width="4" marker-end="url(#arrowhead)"/>
+
+    <!-- Templates -->
+    <g transform="translate(70,-80)">
+      <rect x="0" y="0" width="25" height="30" fill="#34d399" rx="3"/>
+      <text x="12" y="45" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">.NET</text>
+    </g>
+    <g transform="translate(110,-50)">
+      <rect x="0" y="0" width="25" height="30" fill="#f59e0b" rx="3"/>
+      <text x="12" y="45" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Node</text>
+    </g>
+    <g transform="translate(90,-20)">
+      <rect x="0" y="0" width="25" height="30" fill="#3b82f6" rx="3"/>
+      <text x="12" y="45" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Python</text>
+    </g>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="100" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">
+    SeedFolder Evolution
+  </text>
+
+  <!-- Subtitle -->
+  <text x="400" y="330" font-family="Arial, sans-serif" font-size="18" fill="#e5e7eb" text-anchor="middle">
+    From Personal Tool to Multi-Template System
+  </text>
+
+  <!-- GitHub Copilot Badge -->
+  <g transform="translate(650,50)">
+    <rect x="0" y="0" width="120" height="30" fill="#24292e" rx="15"/>
+    <text x="60" y="20" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">
+      🤖 GitHub Copilot
+    </text>
+  </g>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24"/>
+    </marker>
+  </defs>
+</svg>
