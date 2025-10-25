@@ -3,7 +3,7 @@ published: true
 layout: post
 title: Building Winget Search - A fast web interface for Windows Package Manager
 description: >-
-  How I built a GitHub Pages-hosted search interface for winget packages to solve my machine setup workflow
+  Learn how I built a fast web-based winget search tool to quickly find Windows Package Manager packages and generate installation commands instantly
 cover_image: /images/winget-search-cover.svg
 tags:
   - python
@@ -17,7 +17,7 @@ tags:
 
 When setting up a new Windows machine, I used to rely on [Scoop](https://scoop.sh/) and [Chocolatey](https://chocolatey.org/) for package management. Both are excellent tools, but when Microsoft introduced [Windows Package Manager (winget)](https://learn.microsoft.com/en-us/windows/package-manager/), I decided to give it a try on my latest machine setup.
 
-The problem? Finding winget package IDs was tedious. While `winget search` works, I wanted something faster - a web interface where I could quickly search, find packages, and copy installation commands. That's how [winget-search](https://github.com/solrevdev/winget-search) was born.
+The problem? Finding winget package IDs was tedious. While `winget search` works, I wanted something faster - a web interface where I could quickly search, find packages, and copy installation commands. That's how [winget-search](https://github.com/solrevdev/winget-search) was born, available at [https://solrevdev.com/winget-search/](https://solrevdev.com/winget-search/).
 
 ## The Challenge
 
@@ -230,7 +230,7 @@ The end result is a fast, searchable interface hosted at GitHub Pages that:
 - Updates automatically every day
 - Costs nothing to host
 
-Perfect for when you need to quickly find that package ID for your setup scripts!
+Perfect for when you need to quickly find that package ID for your setup scripts! You can use it right now at [https://solrevdev.com/winget-search/](https://solrevdev.com/winget-search/).
 
 ## Future Improvements
 
@@ -242,9 +242,9 @@ Some ideas I'm considering:
 - **Package details modal** - Show more metadata
 - **Search history** - Remember recent searches
 
-## Live Demo
+## Live Demo & Resources
 
-Check out the live site: [https://solrevdev.github.io/winget-search/](https://solrevdev.github.io/winget-search/)
+**Try the winget search tool now:** [https://solrevdev.com/winget-search/](https://solrevdev.com/winget-search/)
 
 The source code is available on [GitHub](https://github.com/solrevdev/winget-search) under the MIT license.
 
