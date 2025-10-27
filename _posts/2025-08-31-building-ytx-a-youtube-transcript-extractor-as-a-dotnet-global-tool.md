@@ -307,6 +307,7 @@ To streamline releases and reduce manual work, I set up GitHub Actions to automa
 
 The complete workflow file (`.github/workflows/publish.yml`) handles all of this:
 
+{% raw %}
 ```yaml
 name: Publish NuGet (ytx)
 
@@ -401,6 +402,7 @@ jobs:
           name: ytx v${{ steps.bump.outputs.version }}
           generate_release_notes: true
 ```
+{% endraw %}
 
 **Understanding the Workflow Architecture** 🏗️
 
