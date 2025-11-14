@@ -1,33 +1,44 @@
 ---
 layout: post
-title: Upgrading SeedFolder to .NET 10 LTS - Maintaining Multi-Target Framework Support
-description: How to upgrade a .NET Global Tool to support .NET 10 while maintaining backward compatibility with .NET 8 and 9
-summary: A walkthrough of upgrading SeedFolder to support .NET 10 (LTS) while maintaining full backward compatibility with .NET 8 and 9. Covers multi-targeting, dependency management, CI/CD updates, and testing strategies for .NET global tools.
+title: How to Upgrade to .NET 10 LTS - Complete Guide for .NET Global Tools with Multi-Targeting
+description: Step-by-step guide to upgrade .NET applications to .NET 10 LTS while maintaining backward compatibility with .NET 8 and 9. Learn multi-targeting, dependency management, CI/CD updates, and migration best practices.
+summary: Complete tutorial for upgrading .NET global tools to .NET 10 LTS. Learn how to add .NET 10 support while maintaining compatibility with .NET 8 (LTS) and .NET 9 (STS) using multi-targeting. Includes project configuration, dependency management, CI/CD pipeline updates, testing strategies, and real-world migration examples.
 cover_image: /images/seedfolder-dotnet10-upgrade.svg
 tags:
+- dotnet-10
+- dotnet10
+- upgrade-dotnet
+- dotnet-migration
+- dotnet-upgrade-guide
 - dotnet-global-tools
 - dotnet
 - csharp
-- dotnet10
 - multi-targeting
 - nuget
 - ci-cd
+- net10
+- dotnet-lts
+- migration-guide
 
 ---
 **Overview** ☀
 
-With .NET 10 now released as the latest Long-Term Support (LTS) version, it was time to update [SeedFolder](https://github.com/solrevdev/seedfolder) to support the newest framework while maintaining compatibility with .NET 8 and 9. This post walks through the process of adding .NET 10 support to a global tool, managing dependencies, updating CI/CD pipelines, and ensuring a smooth upgrade path for users.
+With .NET 10 now released as the latest Long-Term Support (LTS) version, it was time to upgrade [SeedFolder](https://github.com/solrevdev/seedfolder) to support the newest framework. This comprehensive .NET 10 upgrade guide walks you through migrating a .NET global tool from .NET 8 and 9 to .NET 10 while maintaining full backward compatibility.
 
-**Why .NET 10?** 🎯
+Whether you're upgrading a .NET global tool, console application, or library, this migration tutorial covers everything you need: multi-target framework configuration, dependency management, CI/CD pipeline updates, and thorough testing strategies for a smooth .NET 10 migration.
 
-.NET 10 is the latest LTS release, providing long-term support until November 2028. By adding .NET 10 support alongside existing .NET 8 and 9 targets, SeedFolder users get:
+**Why Upgrade to .NET 10?** 🎯
+
+Migrating to .NET 10 LTS provides significant benefits for .NET developers. As the latest Long-Term Support release (supported until November 2028), upgrading to .NET 10 ensures your applications stay current with the latest framework improvements.
+
+Benefits of upgrading to .NET 10:
 
 - **Latest LTS**: Long-term support until November 2028
 - **Performance improvements**: Built-in performance enhancements from .NET 10
 - **Forward compatibility**: Automatic use of the highest installed SDK
 - **Backward compatibility**: Continued support for .NET 8 (LTS) and .NET 9 (STS)
 
-The beauty of multi-targeting is that users with any of these SDK versions can install and run the tool. When multiple SDKs are installed, the .NET CLI automatically selects the highest compatible version.
+The beauty of multi-targeting during your .NET 10 migration is that users with any of these SDK versions can install and run the tool. When multiple SDKs are installed, the .NET CLI automatically selects the highest compatible version, making your upgrade path seamless.
 
 **The Upgrade Process** 🚀
 
