@@ -1,0 +1,68 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#512bd4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a1f94;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#grad)"/>
+
+  <!-- Main content group -->
+  <g transform="translate(400,200)">
+    <!-- .NET 8 Box -->
+    <g transform="translate(-180,-60)">
+      <rect x="0" y="0" width="80" height="80" fill="#22c55e" rx="8" opacity="0.9"/>
+      <text x="40" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">.NET</text>
+      <text x="40" y="60" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">8.0</text>
+      <rect x="10" y="65" width="60" height="18" fill="#16a34a" rx="9"/>
+      <text x="40" y="77" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">LTS</text>
+    </g>
+
+    <!-- .NET 9 Box -->
+    <g transform="translate(-180,40)">
+      <rect x="0" y="0" width="80" height="80" fill="#f59e0b" rx="8" opacity="0.9"/>
+      <text x="40" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">.NET</text>
+      <text x="40" y="60" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">9.0</text>
+      <rect x="10" y="65" width="60" height="18" fill="#d97706" rx="9"/>
+      <text x="40" y="77" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">STS</text>
+    </g>
+
+    <!-- Arrow -->
+    <path d="M -80 20 L 50 20" stroke="#fbbf24" stroke-width="6" marker-end="url(#arrowhead)"/>
+    <text x="-15" y="10" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#fbbf24" text-anchor="middle">Upgrade</text>
+
+    <!-- .NET 10 Box (larger, emphasized) -->
+    <g transform="translate(80,-80)">
+      <rect x="0" y="0" width="120" height="120" fill="#3b82f6" rx="12" opacity="0.95"/>
+      <text x="60" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">.NET</text>
+      <text x="60" y="85" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white" text-anchor="middle">10.0</text>
+      <rect x="20" y="95" width="80" height="22" fill="#2563eb" rx="11"/>
+      <text x="60" y="110" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">LTS 2028</text>
+    </g>
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white" text-anchor="middle">
+    SeedFolder → .NET 10
+  </text>
+
+  <!-- Subtitle -->
+  <text x="400" y="360" font-family="Arial, sans-serif" font-size="18" fill="#e5e7eb" text-anchor="middle">
+    Multi-Target Framework Upgrade Guide
+  </text>
+
+  <!-- Multi-targeting badge -->
+  <g transform="translate(30,30)">
+    <rect x="0" y="0" width="160" height="32" fill="#1f2937" rx="16" opacity="0.9"/>
+    <text x="80" y="21" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="middle">
+      ⚡ Multi-Targeting
+    </text>
+  </g>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="12" markerHeight="9" refX="11" refY="4.5" orient="auto">
+      <polygon points="0 0, 12 4.5, 0 9" fill="#fbbf24"/>
+    </marker>
+  </defs>
+</svg>
