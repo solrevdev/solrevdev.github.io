@@ -23,7 +23,9 @@ tags:
 ---
 **Overview** ☀
 
-With .NET 10 now released as the latest Long-Term Support (LTS) version, it was time to upgrade [SeedFolder](https://github.com/solrevdev/seedfolder) to support the newest framework. This comprehensive .NET 10 upgrade guide walks you through migrating a .NET global tool from .NET 8 and 9 to .NET 10 while maintaining full backward compatibility.
+With .NET 10 now released as the latest Long-Term Support (LTS) version, it was time to upgrade [SeedFolder](https://github.com/solrevdev/seedfolder) to support the newest framework.
+
+This comprehensive .NET 10 upgrade guide walks you through migrating a .NET global tool from .NET 8 and 9 to .NET 10 while maintaining full backward compatibility.
 
 Whether you're upgrading a .NET global tool, console application, or library, this migration tutorial covers everything you need: multi-target framework configuration, dependency management, CI/CD pipeline updates, and thorough testing strategies for a smooth .NET 10 migration.
 
@@ -38,7 +40,9 @@ Benefits of upgrading to .NET 10:
 - **Forward compatibility**: Automatic use of the highest installed SDK
 - **Backward compatibility**: Continued support for .NET 8 (LTS) and .NET 9 (STS)
 
-The beauty of multi-targeting during your .NET 10 migration is that users with any of these SDK versions can install and run the tool. When multiple SDKs are installed, the .NET CLI automatically selects the highest compatible version, making your upgrade path seamless.
+The beauty of multi-targeting during your .NET 10 migration is that users with any of these SDK versions can install and run the tool.
+
+When multiple SDKs are installed, the .NET CLI automatically selects the highest compatible version, making your upgrade path seamless.
 
 **The Upgrade Process** 🚀
 
