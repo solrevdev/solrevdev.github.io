@@ -1,0 +1,92 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#512bd4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9f1239;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="terminalGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#111827;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgGradient)"/>
+
+  <!-- Title -->
+  <text x="400" y="60" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#ffffff" text-anchor="middle">dotnet-crap</text>
+
+  <!-- Terminal Window -->
+  <rect x="80" y="100" width="640" height="250" rx="10" fill="url(#terminalGradient)" stroke="#374151" stroke-width="2"/>
+
+  <!-- Terminal Header -->
+  <rect x="80" y="100" width="640" height="30" rx="10" fill="#374151"/>
+  <rect x="80" y="120" width="640" height="2" fill="#4b5563"/>
+
+  <!-- Terminal Controls -->
+  <circle cx="100" cy="115" r="5" fill="#ef4444"/>
+  <circle cx="115" cy="115" r="5" fill="#f59e0b"/>
+  <circle cx="130" cy="115" r="5" fill="#10b981"/>
+
+  <!-- Terminal Title -->
+  <text x="400" y="120" font-family="monospace" font-size="12" fill="#d1d5db" text-anchor="middle">dotnet-crap — Change Risk Anti-Patterns</text>
+
+  <!-- Command Line -->
+  <text x="100" y="155" font-family="monospace" font-size="14" fill="#10b981">$</text>
+  <text x="115" y="155" font-family="monospace" font-size="14" fill="#f3f4f6">dotnet-crap ./src --coverage coverage.cobertura.xml</text>
+
+  <!-- Formula highlight -->
+  <text x="100" y="185" font-family="monospace" font-size="12" fill="#60a5fa">CRAP(m) =</text>
+  <text x="180" y="185" font-family="monospace" font-size="12" fill="#fbbf24">comp(m)² · (1 − cov(m)/100)³ + comp(m)</text>
+
+  <!-- Ranked risk table header -->
+  <text x="100" y="215" font-family="monospace" font-size="11" fill="#9ca3af">METHOD                              COMP   COV    CRAP</text>
+  <rect x="100" y="220" width="540" height="1" fill="#374151"/>
+
+  <!-- Row 1: high risk -->
+  <text x="100" y="240" font-family="monospace" font-size="11" fill="#f3f4f6">OrderService.Reconcile</text>
+  <text x="370" y="240" font-family="monospace" font-size="11" fill="#fbbf24">  24</text>
+  <text x="430" y="240" font-family="monospace" font-size="11" fill="#fbbf24">  12%</text>
+  <text x="490" y="240" font-family="monospace" font-size="11" fill="#ef4444" font-weight="bold">  410</text>
+  <rect x="555" y="231" width="55" height="14" rx="7" fill="#7f1d1d"/>
+  <text x="582" y="241" font-family="monospace" font-size="10" font-weight="bold" fill="#fecaca" text-anchor="middle">HIGH</text>
+
+  <!-- Row 2: medium risk -->
+  <text x="100" y="260" font-family="monospace" font-size="11" fill="#f3f4f6">InvoiceParser.ParseLine</text>
+  <text x="370" y="260" font-family="monospace" font-size="11" fill="#fbbf24">  15</text>
+  <text x="430" y="260" font-family="monospace" font-size="11" fill="#34d399">  48%</text>
+  <text x="490" y="260" font-family="monospace" font-size="11" fill="#f59e0b" font-weight="bold">   47</text>
+  <rect x="555" y="251" width="55" height="14" rx="7" fill="#78350f"/>
+  <text x="582" y="261" font-family="monospace" font-size="10" font-weight="bold" fill="#fde68a" text-anchor="middle">MED</text>
+
+  <!-- Row 3: low risk -->
+  <text x="100" y="280" font-family="monospace" font-size="11" fill="#f3f4f6">CartTotaller.Sum</text>
+  <text x="370" y="280" font-family="monospace" font-size="11" fill="#34d399">   8</text>
+  <text x="430" y="280" font-family="monospace" font-size="11" fill="#34d399">  92%</text>
+  <text x="490" y="280" font-family="monospace" font-size="11" fill="#10b981" font-weight="bold">    9</text>
+  <rect x="555" y="271" width="55" height="14" rx="7" fill="#064e3b"/>
+  <text x="582" y="281" font-family="monospace" font-size="10" font-weight="bold" fill="#a7f3d0" text-anchor="middle">LOW</text>
+
+  <!-- Gate result -->
+  <text x="100" y="315" font-family="monospace" font-size="12" fill="#ef4444">✗</text>
+  <text x="115" y="315" font-family="monospace" font-size="12" fill="#f3f4f6">1 method above --fail-above 100</text>
+
+  <text x="100" y="335" font-family="monospace" font-size="12" fill="#10b981">→</text>
+  <text x="115" y="335" font-family="monospace" font-size="12" fill="#d1d5db">Add tests first, then refactor</text>
+
+  <!-- .NET Logo -->
+  <circle cx="680" cy="180" r="22" fill="#512bd4" stroke="#7c3aed" stroke-width="2"/>
+  <text x="680" y="178" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">.NET</text>
+  <text x="680" y="192" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">10</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="380" font-family="Arial, sans-serif" font-size="18" fill="#fecdd3" text-anchor="middle">Change Risk Anti-Patterns • .NET 10 Global Tool</text>
+
+  <!-- Decorative Elements -->
+  <circle cx="750" cy="50" r="3" fill="#fbbf24" opacity="0.6"/>
+  <circle cx="730" cy="70" r="2" fill="#f472b6" opacity="0.8"/>
+  <circle cx="770" cy="80" r="4" fill="#60a5fa" opacity="0.7"/>
+  <circle cx="50" cy="50" r="2" fill="#f472b6" opacity="0.6"/>
+  <circle cx="30" cy="80" r="3" fill="#fbbf24" opacity="0.8"/>
+  <circle cx="70" cy="90" r="2" fill="#34d399" opacity="0.7"/>
+</svg>
