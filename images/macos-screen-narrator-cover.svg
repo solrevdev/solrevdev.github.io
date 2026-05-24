@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">macOS Screen Narrator cover image</title>
+  <desc id="desc">A stylized macOS screen recording timeline with narration audio and .NET CLI elements.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17212b"/>
+      <stop offset="0.52" stop-color="#243b53"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#020617" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <g opacity="0.2" stroke="#ffffff" stroke-width="2">
+    <path d="M86 118H1114"/>
+    <path d="M86 474H1114"/>
+    <path d="M188 62V538"/>
+    <path d="M1012 62V538"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="160" y="90" width="880" height="470" rx="22" fill="#0b1220"/>
+    <rect x="186" y="124" width="828" height="332" rx="14" fill="url(#screen)"/>
+    <circle cx="206" cy="108" r="7" fill="#fb7185"/>
+    <circle cx="230" cy="108" r="7" fill="#facc15"/>
+    <circle cx="254" cy="108" r="7" fill="#34d399"/>
+  </g>
+
+  <g transform="translate(224 160)">
+    <rect x="0" y="0" width="312" height="220" rx="12" fill="#ffffff" stroke="#bfdbfe" stroke-width="3"/>
+    <rect x="24" y="28" width="264" height="20" rx="10" fill="#38bdf8"/>
+    <rect x="24" y="72" width="188" height="16" rx="8" fill="#94a3b8"/>
+    <rect x="24" y="108" width="238" height="16" rx="8" fill="#cbd5e1"/>
+    <rect x="24" y="144" width="154" height="16" rx="8" fill="#cbd5e1"/>
+    <rect x="220" y="150" width="50" height="50" rx="25" fill="#14b8a6"/>
+    <path d="M239 164l24 15-24 15z" fill="#ffffff"/>
+  </g>
+
+  <g transform="translate(596 154)">
+    <rect x="0" y="0" width="354" height="232" rx="14" fill="#101827"/>
+    <text x="28" y="50" fill="#67e8f9" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="27">dotnet tool</text>
+    <text x="28" y="92" fill="#e2e8f0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="22">macos-screen-narrator</text>
+    <text x="28" y="134" fill="#a7f3d0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="22">prep demo.mov</text>
+    <text x="28" y="176" fill="#fde68a" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="22">render-video</text>
+  </g>
+
+  <g transform="translate(210 478)">
+    <rect x="0" y="0" width="780" height="34" rx="17" fill="#e2e8f0"/>
+    <rect x="26" y="12" width="96" height="10" rx="5" fill="#0f766e"/>
+    <rect x="148" y="12" width="136" height="10" rx="5" fill="#14b8a6"/>
+    <rect x="316" y="12" width="118" height="10" rx="5" fill="#38bdf8"/>
+    <rect x="466" y="12" width="172" height="10" rx="5" fill="#818cf8"/>
+    <rect x="672" y="12" width="76" height="10" rx="5" fill="#f59e0b"/>
+  </g>
+
+  <g fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round">
+    <path d="M126 296c28-34 28-82 0-116" opacity="0.65"/>
+    <path d="M108 322c48-60 48-132 0-192" opacity="0.45"/>
+    <path d="M1074 296c-28-34-28-82 0-116" opacity="0.65"/>
+    <path d="M1092 322c-48-60-48-132 0-192" opacity="0.45"/>
+  </g>
+
+  <text x="600" y="64" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="38" font-weight="700">macOS Screen Narrator</text>
+  <text x="600" y="545" text-anchor="middle" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="25">.NET 10 global tool + FFmpeg + LLM timed narration</text>
+</svg>
