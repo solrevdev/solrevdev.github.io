@@ -124,6 +124,62 @@ Notes:
 - `<!--more-->` is optional; use it when you want the per‑post page to show a short intro before the rest.
 - Old posts don’t need to be edited. They’ll automatically use their first paragraph.
 
+## Blog post publishing workflow
+
+New article drafts should normally start with `published: false` in the post
+front matter so they can be reviewed safely on a branch or pull request.
+
+Recommended front matter for new posts:
+
+```yaml
+---
+published: false
+layout: post
+title: My Post
+description: A concise SEO description.
+summary: A concise home-page teaser.
+cover_image: /images/my-post-cover.svg
+tags:
+- dotnet
+- csharp
+---
+```
+
+Before publishing, decide the publication date and make the filename match it:
+
+```text
+_posts/YYYY-MM-DD-post-slug.md
+```
+
+If a post has an explicit `date:` field in front matter, keep it aligned with
+the filename date. When the article is ready to go live, remove
+`published: false` or change it to `published: true`, then merge the pull
+request.
+
+After merging, GitHub Pages normally rebuilds automatically. If a manual rebuild
+is needed, use the GitHub CLI from an authenticated checkout of this repository:
+
+```bash
+gh api --method POST repos/solrevdev/solrevdev.github.io/pages/builds
+```
+
+For visual checks, run the site locally and inspect the article in all of the
+places readers will see it:
+
+```bash
+bundle exec jekyll serve --drafts --host=localhost --livereload
+```
+
+Then check:
+
+- `http://localhost:4000/`
+- `http://localhost:4000/archive/`
+- the individual post URL
+
+The home page uses `summary:` first, then `description:`, then the first real
+paragraph. Keep `summary:` concise so the listing stays readable and does not
+expose large code blocks.
+
 
 
 ## SEO Improvements
