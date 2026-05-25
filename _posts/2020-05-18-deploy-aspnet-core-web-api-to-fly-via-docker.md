@@ -25,7 +25,7 @@ Unfortunately unlike in the version 1 days of zeit where you could deploy Docker
 
 So, as an alternative, I looked at [fly.io](https://fly.io/docs/).
 
-I first used them in 2017 before GitHub supported HTTPS/SSL for custom domains by [using them as middleware](2017-08-31-http-ssl-via-github-pages-with-flyio.md) to provide this service.
+I first used them in 2017 before GitHub supported HTTPS/SSL for custom domains by [using them as middleware](/2017/08/31/http-ssl-via-github-pages-with-flyio.html) to provide this service.
 
 Since then they now support [deploying Docker based app servers](https://fly.io/docs/hands-on/start/) which works in pretty much the same way as zeit used to.
 
@@ -97,7 +97,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 
 **Docker**
 
-Now that the backend project is ready it was time to deploy it to [https://fly.io/](fly.io).
+Now that the backend project is ready it was time to deploy it to [fly.io](https://fly.io/).
 
 From a previous project, I already had a handy dandy working Dockerfile I could re-use so making sure I replaced the name of dotnet dll and ensured I was pulling a recent version of .NET Core SDK
 
