@@ -56,7 +56,7 @@ Inspired by [wes bos](https://wesbos.com/uses/) here is a list of what I use to 
 **Editor and Terminal**
 
 * [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/) / [Visual Studio Code](https://code.visualstudio.com)
-* [Visual Studio 2019](https://visualstudio.microsoft.com) / [Visual Studio for Mac](https:https://ohmybash.github.io///visualstudio.microsoft.com/vs/mac/)
+* [Visual Studio 2019](https://visualstudio.microsoft.com) / [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)
 * Either the default light theme or [cobalt2](https://github.com/wesbos/cobalt2-vscode) for when I want dark themes
 * [iTerm2](https://iterm2.com) for macOS with the Zeit theme
 * [zsh](https://ohmyz.sh)
