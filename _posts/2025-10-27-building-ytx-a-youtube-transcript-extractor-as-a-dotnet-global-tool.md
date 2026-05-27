@@ -4,6 +4,7 @@ title: Building ytx - A YouTube Transcript Extractor as a .NET Global Tool
 description: Build a .NET Global Tool to extract YouTube transcripts and metadata as JSON. Learn YoutubeExplode, CLI argument parsing, NuGet packaging, and GitHub Actions automation from concept to publication.
 summary: Complete tutorial on creating ytx, a .NET global tool for extracting YouTube video titles, descriptions, and transcripts as JSON. Covers YoutubeExplode library, caption selection logic, JSON serialization, NuGet packaging, and automated CI/CD with GitHub Actions.
 cover_image: /images/ytx-dotnet-tool-cover.svg
+image: /images/ytx-dotnet-tool-cover.png
 tags:
 - dotnet-global-tools
 - youtube
@@ -409,12 +410,12 @@ jobs:
 This workflow implements several production best practices that help .NET developers distribute global tools effectively:
 
 **Environment Variables for DRY Principle:**
-The `env:` block defines reusable values (`PROJECT_DIR`, `CSPROJ`, `NUPKG_DIR`, `NUGET_SOURCE`) referenced throughout the workflow. This approach keeps configuration centralized—change a directory path once, and it updates everywhere. This is crucial when managing complex multi-project solutions or adjusting package output locations.
+The `env:` block defines reusable values (`PROJECT_DIR`, `CSPROJ`, `NUPKG_DIR`, `NUGET_SOURCE`) referenced throughout the workflow. This approach keeps configuration centralized: change a directory path once, and it updates everywhere. This is crucial when managing complex multi-project solutions or adjusting package output locations.
 
 **Permissions Block:**
 The `permissions:` section restricts the workflow to only what it needs:
-- `contents: write` — Required to create commits, tags, and push back to the repository
-- `packages: read` — Required for accessing NuGet package data
+- `contents: write`: Required to create commits, tags, and push back to the repository
+- `packages: read`: Required for accessing NuGet package data
 
 This follows the principle of least privilege, improving security by preventing the workflow from performing unauthorized actions.
 
@@ -442,7 +443,7 @@ case "$BUMP" in
 esac
 ```
 
-This approach ensures version consistency without manually editing `.csproj` files. The `echo "version=$NEW" >> "$GITHUB_OUTPUT"` sends the new version to subsequent steps—a key pattern in GitHub Actions workflows.
+This approach ensures version consistency without manually editing `.csproj` files. The `echo "version=$NEW" >> "$GITHUB_OUTPUT"` sends the new version to subsequent steps, a key pattern in GitHub Actions workflows.
 
 **Git Automation for Reproducible Releases:**
 ```bash
@@ -468,7 +469,7 @@ dotnet build $PROJECT_DIR -c Release --no-restore    # Skip redundant restore
 dotnet pack $PROJECT_DIR -c Release --no-build       # Skip redundant build
 ```
 
-The `--no-restore` and `--no-build` flags prevent repeating expensive operations. For .NET global tools especially, proper dependency isolation matters—you want to ensure your tool works across different .NET SDK versions, which is why this workflow tests against both 8.x and 9.x.
+The `--no-restore` and `--no-build` flags prevent repeating expensive operations. For .NET global tools especially, proper dependency isolation matters because you want to ensure your tool works across different .NET SDK versions, which is why this workflow tests against both 8.x and 9.x.
 
 **NuGet Publishing with Idempotency:**
 ```bash
@@ -476,7 +477,7 @@ dotnet nuget push $NUPKG_DIR/*.nupkg \
   --skip-duplicate
 ```
 
-The `--skip-duplicate` flag means you can safely re-run the workflow without errors if a version was already published. This is crucial for reliability—sometimes you need to retry a build due to temporary network issues or API timeouts.
+The `--skip-duplicate` flag means you can safely re-run the workflow without errors if a version was already published. This is crucial for reliability, since sometimes you need to retry a build due to temporary network issues or API timeouts.
 
 **Automated GitHub Releases:**
 ```yaml
@@ -564,7 +565,7 @@ The most interesting insight wasn't that AI wrote the code, but how it transform
 
 **What This Means for .NET Developers** 🚀
 
-This project represents a new normal in software development—where the bottleneck shifts from typing code to thinking through problems and user needs. The combination of AI coding assistants, intelligent build toolchains (GitHub Actions, NuGet), and human creativity is genuinely transformative.
+This project represents a new normal in software development, where the bottleneck shifts from typing code to thinking through problems and user needs. The combination of AI coding assistants, intelligent build toolchains (GitHub Actions, NuGet), and human creativity is genuinely transformative.
 
 For developers hesitant about AI tools: they're not replacing you; they're amplifying your ability to solve meaningful problems quickly. The future belongs to developers who can effectively collaborate with AI to build better software faster.
 

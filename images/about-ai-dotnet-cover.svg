@@ -1,0 +1,52 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aboutBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="58%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#14532d"/>
+    </linearGradient>
+    <linearGradient id="cardFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#aboutBg)"/>
+
+  <g transform="translate(88 72)">
+    <rect x="0" y="0" width="330" height="228" rx="10" fill="#e5e7eb"/>
+    <rect x="16" y="18" width="298" height="172" rx="6" fill="#0b1220"/>
+    <rect x="130" y="228" width="70" height="20" fill="#94a3b8"/>
+    <rect x="96" y="248" width="138" height="12" rx="6" fill="#cbd5e1"/>
+
+    <circle cx="40" cy="42" r="5" fill="#ef4444"/>
+    <circle cx="58" cy="42" r="5" fill="#f59e0b"/>
+    <circle cx="76" cy="42" r="5" fill="#22c55e"/>
+
+    <text x="40" y="84" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="16" fill="#e5e7eb">$ dotnet run</text>
+    <text x="40" y="117" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="15" fill="#86efac">ASP.NET Core</text>
+    <text x="40" y="146" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="15" fill="#93c5fd">C# MySQL Docker</text>
+    <text x="40" y="175" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="15" fill="#fde68a">HTML CSS JS</text>
+  </g>
+
+  <g transform="translate(462 88)">
+    <rect x="0" y="0" width="220" height="148" rx="12" fill="url(#cardFill)" opacity="0.96"/>
+    <text x="110" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="25" font-weight="700" fill="#111827" text-anchor="middle">AI Toolset</text>
+    <rect x="32" y="66" width="72" height="30" rx="7" fill="#2563eb"/>
+    <text x="68" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Codex</text>
+    <rect x="116" y="66" width="72" height="30" rx="7" fill="#7c3aed"/>
+    <text x="152" y="86" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Claude</text>
+    <rect x="32" y="106" width="72" height="30" rx="7" fill="#0f766e"/>
+    <text x="68" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Gemini</text>
+    <rect x="116" y="106" width="72" height="30" rx="7" fill="#24292f"/>
+    <text x="152" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Copilot</text>
+  </g>
+
+  <g transform="translate(476 258)">
+    <rect x="0" y="0" width="184" height="42" rx="8" fill="#ffffff" opacity="0.94"/>
+    <text x="92" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">Practical web software</text>
+  </g>
+
+  <text x="400" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="700" fill="#ffffff" text-anchor="middle">About John Smith</text>
+  <text x="400" y="360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" fill="#dcfce7" text-anchor="middle">C#, ASP.NET Core, databases, Docker, and AI-assisted development</text>
+</svg>

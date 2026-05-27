@@ -4,6 +4,7 @@ title: How to Upgrade to .NET 10 LTS - Complete Guide for .NET Global Tools with
 description: Step-by-step guide to upgrade .NET applications to .NET 10 LTS while maintaining backward compatibility with .NET 8 and 9. Learn multi-targeting, dependency management, CI/CD updates, and migration best practices.
 summary: Complete tutorial for upgrading .NET global tools to .NET 10 LTS. Learn how to add .NET 10 support while maintaining compatibility with .NET 8 (LTS) and .NET 9 (STS) using multi-targeting. Includes project configuration, dependency management, CI/CD pipeline updates, testing strategies, and real-world migration examples.
 cover_image: /images/seedfolder-dotnet10-upgrade.svg
+image: /images/seedfolder-dotnet10-upgrade.png
 tags:
 - dotnet-10
 - dotnet10
