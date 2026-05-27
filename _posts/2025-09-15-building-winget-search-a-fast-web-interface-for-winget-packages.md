@@ -5,6 +5,7 @@ title: Building Winget Search - A fast web interface for Windows Package Manager
 description: >-
   Learn how I built a fast web-based winget search tool to quickly find Windows Package Manager packages and generate installation commands instantly
 cover_image: /images/winget-search-cover.svg
+image: /images/winget-search-cover.png
 tags:
   - python
   - javascript
