@@ -77,10 +77,12 @@ social image.
    cover_image: /images/example-cover.svg
    ```
 
-3. Generate a PNG social image from the SVG using the local macOS/Homebrew tool:
+3. Generate a 1200x630 PNG social image from the SVG using local
+   macOS/Homebrew tools:
 
    ```bash
-   rsvg-convert -w 1200 -h 600 images/example-cover.svg -o images/example-cover.png
+   rsvg-convert -h 630 images/example-cover.svg -o /tmp/example-cover-1260x630.png
+   magick /tmp/example-cover-1260x630.png -gravity center -crop 1200x630+0+0 +repage images/example-cover.png
    ```
 
 4. Add `image` front matter that points to the generated PNG:
@@ -94,6 +96,7 @@ social image.
    - `meta name="description"`
    - `og:image` using the PNG file
    - `twitter:card` set to `summary_large_image`
+   - the PNG image is 1200x630
 
 Recommended visible cover dimensions are 800x400. The social PNG should be
 1200x600 for reliable Open Graph and Twitter card previews. The post layout
