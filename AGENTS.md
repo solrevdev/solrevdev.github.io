@@ -99,7 +99,7 @@ social image.
    - the PNG image is 1200x630
 
 Recommended visible cover dimensions are 800x400. The social PNG should be
-1200x600 for reliable Open Graph and Twitter card previews. The post layout
+1200x630 for reliable Open Graph and Twitter card previews. The post layout
 uses the page title as cover image alt text.
 
 ## SEO Metadata
