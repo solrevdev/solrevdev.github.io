@@ -29,7 +29,7 @@
   <circle cx="130" cy="115" r="5" fill="#10b981"/>
 
   <!-- Terminal Title -->
-  <text x="400" y="120" font-family="monospace" font-size="12" fill="#d1d5db" text-anchor="middle">dotnet-crap — Change Risk Anti-Patterns</text>
+  <text x="400" y="120" font-family="monospace" font-size="12" fill="#d1d5db" text-anchor="middle">dotnet-crap: Change Risk Anti-Patterns</text>
 
   <!-- Command Line -->
   <text x="100" y="155" font-family="monospace" font-size="14" fill="#10b981">$</text>

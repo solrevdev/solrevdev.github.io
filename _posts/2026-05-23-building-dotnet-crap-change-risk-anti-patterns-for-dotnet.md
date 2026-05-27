@@ -5,6 +5,7 @@ title: Building dotnet-crap - Change Risk Anti-Patterns for .NET
 description: How I built dotnet-crap, a .NET 10 global tool that combines cyclomatic complexity and test coverage into CRAP scores to surface risky C# methods with actionable advice.
 summary: Deep dive into building dotnet-crap, a .NET 10 global tool for CRAP (Change Risk Anti-Patterns) analysis. Covers Roslyn-based complexity analysis, Cobertura/LCOV coverage matching, CI-friendly output formats, risk thresholds, and practical workflows for refactoring and test prioritization.
 cover_image: /images/dotnet-crap-cover.svg
+image: /images/dotnet-crap-cover.png
 tags:
 - dotnet
 - dotnet-10
