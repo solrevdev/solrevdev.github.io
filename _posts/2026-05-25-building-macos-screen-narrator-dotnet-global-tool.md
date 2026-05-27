@@ -5,6 +5,7 @@ title: Building macOS Screen Narrator - a .NET Global Tool for Narrated Screen R
 description: How I built macOS Screen Narrator, a .NET 10 global tool that turns silent macOS screen recordings into narrated MP4s using FFmpeg, an LLM-assisted timing pass, and the built-in macOS say command.
 summary: Deep dive into building macOS Screen Narrator, a local .NET 10 global tool for preparing LLM-timed narration manifests and rendering narrated MP4s from silent macOS screen recordings. Covers the prep/render workflow, FFmpeg frame extraction, scene-change hints, macOS speech synthesis, JSON segment manifests, and testable CLI design.
 cover_image: /images/macos-screen-narrator-cover.svg
+image: /images/macos-screen-narrator-cover.png
 tags:
 - dotnet
 - dotnet-10
