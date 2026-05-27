@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Archive
+description: Browse the solrevdev tech radar archive of posts about C#, ASP.NET Core, .NET, developer tools, AI-assisted development, web development, and DevOps.
 ---
 
 ## Blog Posts

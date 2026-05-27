@@ -20,6 +20,7 @@ title: Post Title
 description: One concise SEO description.
 summary: One concise home-page teaser.
 cover_image: /images/post-cover.svg
+image: /images/post-cover.png
 tags:
 - dotnet
 - csharp
@@ -49,26 +50,63 @@ publish the article.
   `Overview`, `The Problem`, `What I Built`, `Implementation Highlights`,
   `Testing Strategy`, and `What's Next`.
 - Keep code examples runnable or clearly illustrative.
+- Avoid em dashes in new prose. Use commas, colons, parentheses, or separate
+  sentences.
 - New posts should normally end with the established sign-off:
 
 ```markdown
 Success! 🎉
 ```
 
-## Cover Images
+## Cover Images and Social Images
 
-- New technical posts should normally have a cover image.
-- Use AI image generation when a suitable existing asset is not already present.
-- Match the visual style of recent generated blog covers in `images/`, including
-  the topic-specific illustration, simple composition, and readable 800x400
-  treatment.
-- Store cover images in `images/`.
-- Use `cover_image: /images/filename.ext` in front matter.
-- SVG is preferred when the cover is simple and generated as code; PNG or JPG is
-  fine for raster artwork.
-- Recommended dimensions are 800x400.
-- Keep file size modest; under 50 KB is preferred when practical.
-- The post layout uses the page title as cover image alt text.
+New technical posts should normally have both a visible SVG cover and a PNG
+social image.
+
+1. Create a deterministic SVG cover in `/images/`.
+   - Use an 800x400 canvas.
+   - Match the existing style: simple full-canvas background, restrained
+     gradients, terminal or tool UI motifs, clear title text, and a short
+     subtitle.
+   - Keep the SVG local, lightweight, and hand-editable.
+   - Avoid remote image hosts.
+
+2. Add `cover_image` front matter that points to the SVG:
+
+   ```yaml
+   cover_image: /images/example-cover.svg
+   ```
+
+3. Generate a PNG social image from the SVG using the local macOS/Homebrew tool:
+
+   ```bash
+   rsvg-convert -w 1200 -h 600 images/example-cover.svg -o images/example-cover.png
+   ```
+
+4. Add `image` front matter that points to the generated PNG:
+
+   ```yaml
+   image: /images/example-cover.png
+   ```
+
+5. Verify the generated HTML includes the expected metadata:
+   - canonical URL
+   - `meta name="description"`
+   - `og:image` using the PNG file
+   - `twitter:card` set to `summary_large_image`
+
+Recommended visible cover dimensions are 800x400. The social PNG should be
+1200x600 for reliable Open Graph and Twitter card previews. The post layout
+uses the page title as cover image alt text.
+
+## SEO Metadata
+
+- Every post should have an accurate `title`, `description`, `summary`, and
+  useful `tags`.
+- Do not make SEO changes that are only keyword stuffing. Prefer accurate
+  titles, descriptions, tags, and useful cover/social metadata.
+- Use a concise `summary:` so the home page does not leak large code blocks or
+  overly long paragraphs.
 
 ## Styling
 
@@ -88,9 +126,6 @@ public contexts:
 - Archive listing: `archive/index.md` shows the post date and truncated title.
 - Individual post page: `_layouts/post.html` renders `cover_image`, title, date,
   and full content.
-
-Use a concise `summary:` so the home page does not leak large code blocks or
-overly long paragraphs.
 
 ## Local Development
 
@@ -115,6 +150,12 @@ Then inspect:
 During local development, images may fail if opened directly with `file://` and
 absolute paths such as `/images/example.svg`. Use the Jekyll server for reliable
 testing.
+
+Build before finishing:
+
+```bash
+bundle exec jekyll build
+```
 
 ## Visual QA
 
