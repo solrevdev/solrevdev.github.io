@@ -1,0 +1,57 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="background" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="55%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#182235"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#background)"/>
+
+  <g transform="translate(84 70)">
+    <rect x="0" y="0" width="360" height="230" rx="10" fill="#d1d5db"/>
+    <rect x="14" y="16" width="332" height="188" rx="6" fill="url(#screen)"/>
+    <rect x="145" y="230" width="70" height="18" fill="#9ca3af"/>
+    <rect x="115" y="248" width="130" height="12" rx="6" fill="#d1d5db"/>
+
+    <circle cx="36" cy="40" r="5" fill="#ef4444"/>
+    <circle cx="54" cy="40" r="5" fill="#f59e0b"/>
+    <circle cx="72" cy="40" r="5" fill="#22c55e"/>
+
+    <text x="36" y="82" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="16" fill="#e5e7eb">$ codex</text>
+    <text x="36" y="116" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="15" fill="#5eead4">ASP.NET Core</text>
+    <text x="36" y="145" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="15" fill="#93c5fd">C# .NET Docker</text>
+    <text x="36" y="174" font-family="Menlo, Monaco, 'Courier New', monospace" font-size="15" fill="#fde68a">HTML CSS JavaScript</text>
+  </g>
+
+  <g transform="translate(506 86)">
+    <rect x="0" y="0" width="116" height="214" rx="22" fill="#111827"/>
+    <rect x="9" y="13" width="98" height="188" rx="16" fill="#f8fafc"/>
+    <rect x="40" y="22" width="36" height="5" rx="3" fill="#111827"/>
+    <circle cx="58" cy="186" r="8" fill="#e5e7eb"/>
+    <text x="58" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="700" fill="#111827" text-anchor="middle">iPhone</text>
+    <text x="58" y="116" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" fill="#374151" text-anchor="middle">13</text>
+  </g>
+
+  <g transform="translate(476 234)">
+    <rect x="0" y="0" width="210" height="42" rx="8" fill="#ffffff" opacity="0.94"/>
+    <text x="20" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#111827">Apple silicon M1</text>
+  </g>
+
+  <g transform="translate(472 292)">
+    <rect x="0" y="0" width="78" height="34" rx="7" fill="#2563eb"/>
+    <text x="39" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">AI</text>
+    <rect x="88" y="0" width="88" height="34" rx="7" fill="#f97316"/>
+    <text x="132" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Docker</text>
+    <rect x="186" y="0" width="82" height="34" rx="7" fill="#14b8a6"/>
+    <text x="227" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Ghostty</text>
+  </g>
+
+  <text x="400" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="700" fill="#ffffff" text-anchor="middle">My Uses Stack</text>
+  <text x="400" y="360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" fill="#d1fae5" text-anchor="middle">Hardware, terminals, code, containers, and AI-assisted development</text>
+</svg>
