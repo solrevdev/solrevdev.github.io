@@ -124,6 +124,76 @@ Notes:
 - `<!--more-->` is optional; use it when you want the per‑post page to show a short intro before the rest.
 - Old posts don’t need to be edited. They’ll automatically use their first paragraph.
 
+## Blog post publishing workflow
+
+New article drafts should normally start with `published: false` in the post
+front matter so they can be reviewed safely on a branch or pull request.
+
+Recommended front matter for new posts:
+
+```yaml
+---
+published: false
+layout: post
+title: My Post
+description: A concise SEO description.
+summary: A concise home-page teaser.
+cover_image: /images/my-post-cover.svg
+image: /images/my-post-cover.png
+tags:
+- dotnet
+- csharp
+---
+```
+
+Set both image keys. `cover_image` is the 800x400 SVG that the post layout
+shows at the top of the page. `image` is the 1200x630 PNG that `jekyll-seo-tag`
+turns into `og:image` and `twitter:image`. Leaving `image` out drops the
+`og:image` tag and downgrades `twitter:card` to `summary`, so the post gets no
+large preview when shared. `AGENTS.md` has the `rsvg-convert` command that
+generates the PNG from the SVG.
+
+Before publishing, decide the publication date and make the filename match it:
+
+```text
+_posts/YYYY-MM-DD-post-slug.md
+```
+
+If a post has an explicit `date:` field in front matter, keep it aligned with
+the filename date. When the article is ready to go live, remove
+`published: false` or change it to `published: true`, then merge the pull
+request.
+
+Do not use a future date to hold a post back. `_config.yml` sets no `future`
+key, so Jekyll defaults to `future: false` and GitHub Pages will hide the post
+until the date passes without reporting an error. Use `published: false`
+instead.
+
+After merging, GitHub Pages normally rebuilds automatically. If a manual rebuild
+is needed, use the GitHub CLI from an authenticated checkout of this repository:
+
+```bash
+gh api --method POST repos/solrevdev/solrevdev.github.io/pages/builds
+```
+
+For visual checks, run the site locally and inspect the article in all of the
+places readers will see it. A `published: false` post needs `--unpublished`;
+`--drafts` only renders a `_drafts/` folder, which this repo does not use:
+
+```bash
+bundle exec jekyll serve --unpublished --host=localhost --livereload
+```
+
+Then check:
+
+- `http://localhost:4000/`
+- `http://localhost:4000/archive/`
+- the individual post URL
+
+The home page uses `summary:` first, then `description:`, then the first real
+paragraph. Keep `summary:` concise so the listing stays readable and does not
+expose large code blocks.
+
 
 
 ## SEO Improvements
