@@ -1,0 +1,96 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4c1d95;stop-opacity:1" />
+      <stop offset="55%" style="stop-color:#3730a3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#111827;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="terminalGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#111827;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgGradient)"/>
+  <rect width="800" height="400" fill="url(#grid)"/>
+  <circle cx="60" cy="60" r="130" fill="rgba(255,255,255,0.025)"/>
+  <circle cx="740" cy="360" r="160" fill="rgba(255,255,255,0.025)"/>
+
+  <!-- Title -->
+  <text x="400" y="58" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#ffffff" text-anchor="middle">orchat</text>
+
+  <!-- Terminal Window -->
+  <rect x="70" y="88" width="660" height="252" rx="10" fill="url(#terminalGradient)" stroke="#374151" stroke-width="2"/>
+
+  <!-- Terminal Header -->
+  <rect x="70" y="88" width="660" height="30" rx="10" fill="#374151"/>
+  <rect x="70" y="108" width="660" height="10" fill="#374151"/>
+  <rect x="70" y="117" width="660" height="2" fill="#4b5563"/>
+
+  <!-- Terminal Controls -->
+  <circle cx="90" cy="103" r="5" fill="#ef4444"/>
+  <circle cx="105" cy="103" r="5" fill="#f59e0b"/>
+  <circle cx="120" cy="103" r="5" fill="#10b981"/>
+
+  <!-- Terminal Title -->
+  <text x="400" y="108" font-family="monospace" font-size="12" fill="#d1d5db" text-anchor="middle">orchat &#8226; OpenRouter from one .cs file</text>
+
+  <!-- Command Line -->
+  <text x="90" y="146" font-family="monospace" font-size="14" fill="#10b981">$</text>
+  <text x="105" y="146" font-family="monospace" font-size="14" fill="#f3f4f6">dotnet run orchat.cs</text>
+
+  <!-- Session output -->
+  <text x="90" y="176" font-family="monospace" font-size="12" fill="#9ca3af">Model: anthropic/claude-sonnet-4.5</text>
+
+  <text x="90" y="204" font-family="monospace" font-size="13" fill="#a78bfa">&gt;</text>
+  <text x="105" y="204" font-family="monospace" font-size="12" fill="#f3f4f6">explain server-sent events in one sentence</text>
+
+  <text x="90" y="230" font-family="monospace" font-size="12" fill="#34d399">A server pushes a stream of text events down one</text>
+  <text x="90" y="250" font-family="monospace" font-size="12" fill="#34d399">long-lived HTTP response.</text>
+
+  <text x="90" y="278" font-family="monospace" font-size="12" fill="#6b7280">[26 in / 18 out,</text>
+  <text x="212" y="278" font-family="monospace" font-size="12" fill="#fbbf24">$0.000348</text>
+  <text x="278" y="278" font-family="monospace" font-size="12" fill="#6b7280">, 0.9s]</text>
+
+  <text x="90" y="306" font-family="monospace" font-size="13" fill="#a78bfa">&gt;</text>
+  <text x="105" y="306" font-family="monospace" font-size="12" fill="#f3f4f6">/models free</text>
+  <rect x="196" y="296" width="8" height="14" fill="#a78bfa" opacity="0.9"/>
+
+  <!-- Routing mark: one key, many models -->
+  <g transform="translate(628, 150)" opacity="0.9">
+    <circle cx="10" cy="30" r="7" fill="#a78bfa"/>
+    <path d="M17 30 L48 8" stroke="#a78bfa" stroke-width="2" fill="none" opacity="0.75"/>
+    <path d="M17 30 L48 30" stroke="#a78bfa" stroke-width="2" fill="none" opacity="0.75"/>
+    <path d="M17 30 L48 52" stroke="#a78bfa" stroke-width="2" fill="none" opacity="0.75"/>
+    <circle cx="54" cy="8" r="5" fill="#34d399"/>
+    <circle cx="54" cy="30" r="5" fill="#fbbf24"/>
+    <circle cx="54" cy="52" r="5" fill="#60a5fa"/>
+  </g>
+
+  <!-- 337 models badge -->
+  <g transform="translate(618, 224)">
+    <rect x="0" y="0" width="100" height="26" rx="5" fill="#6d28d9"/>
+    <text x="50" y="18" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">337 models</text>
+  </g>
+
+  <!-- .NET 10 badge -->
+  <g transform="translate(636, 264)">
+    <rect x="0" y="0" width="82" height="26" rx="5" fill="#512bd4"/>
+    <text x="41" y="18" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">.NET 10</text>
+  </g>
+
+  <!-- Subtitle -->
+  <text x="400" y="374" font-family="Arial, sans-serif" font-size="18" fill="#c4b5fd" text-anchor="middle">Single File .NET App &#8226; No Project, No Packages</text>
+
+  <!-- Decorative Elements -->
+  <circle cx="752" cy="46" r="3" fill="#fbbf24" opacity="0.6"/>
+  <circle cx="730" cy="66" r="2" fill="#34d399" opacity="0.8"/>
+  <circle cx="770" cy="76" r="4" fill="#a78bfa" opacity="0.7"/>
+  <circle cx="48" cy="46" r="2" fill="#f472b6" opacity="0.6"/>
+  <circle cx="30" cy="76" r="3" fill="#fbbf24" opacity="0.8"/>
+  <circle cx="66" cy="70" r="2" fill="#34d399" opacity="0.7"/>
+</svg>
