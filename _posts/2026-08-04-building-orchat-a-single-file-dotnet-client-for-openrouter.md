@@ -1,5 +1,4 @@
 ---
-published: false
 layout: post
 title: Building orchat - A Single File .NET Client for OpenRouter
 description: How I built orchat, a .NET 10 file-based app with no project file and no NuGet packages, that streams chat from any of OpenRouter's 337 models, browses the catalogue by price, and reports what every turn cost.
