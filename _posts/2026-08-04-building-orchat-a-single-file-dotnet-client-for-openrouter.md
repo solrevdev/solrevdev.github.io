@@ -30,7 +30,7 @@ Easy enough. Send a request, keep the money. Except I could not prove it worked.
 
 So I wrote a client. It ended up being more interesting than the problem that prompted it, because two things landed at once: .NET 10 lets you run a `.cs` file with no project around it, and OpenRouter puts every model worth trying behind one API and one key. Put those together and a usable chat client with model browsing and cost reporting is about 300 lines in a single file you can email to someone.
 
-It is called `orchat` and the whole thing is on GitHub at [solrevdev/orchat](https://github.com/solrevdev/orchat).
+It is called `orchat` and the whole thing is on GitHub at [solrevdev/solrevdev.orchat](https://github.com/solrevdev/solrevdev.orchat).
 
 This post is about that file. I have written about [.NET global tools](https://solrevdev.com/2025/10/27/building-ytx-a-youtube-transcript-extractor-as-a-dotnet-global-tool.html) and [.NET 10](https://solrevdev.com/2025/11/14/upgrading-seedfolder-to-dotnet-10-lts.html) before. This is the other end of the scale: the smallest thing that is still a real application.
 
@@ -334,8 +334,8 @@ If you take one thing from this section: trimming warnings in a file-based app a
 
 ```bash
 # get it
-git clone https://github.com/solrevdev/orchat.git
-cd orchat
+git clone https://github.com/solrevdev/solrevdev.orchat.git
+cd solrevdev.orchat
 
 # store the key once
 security add-generic-password -a "$USER" -s OPENROUTER_API_KEY -w
@@ -375,6 +375,6 @@ The model is read fresh on every request, so `/model` switches mid-thread and th
 
 The whole thing is one file, no project, no packages, and it fits in a screenful of scrolling. If you have an OpenRouter key and .NET 10, you can have it running in about a minute.
 
-The source is at [solrevdev/orchat](https://github.com/solrevdev/orchat), MIT licensed. `orchat.cs` is the entire application, so you can read it in one sitting.
+The source is at [solrevdev/solrevdev.orchat](https://github.com/solrevdev/solrevdev.orchat), MIT licensed. `orchat.cs` is the entire application, so you can read it in one sitting.
 
 Success! 🎉
