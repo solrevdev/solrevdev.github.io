@@ -33,11 +33,15 @@ publish the article.
 ## Drafting Workflow
 
 - Before finalizing a draft, ask the user what publication date they want.
-- If the post is not ready to publish, keep it in `_posts/` with
-  `published: false` or use `_drafts/` if the user asks for a true Jekyll draft.
+- Drafts live in `_posts/` with `published: false`. This repo has no `_drafts/`
+  folder, so keep the file where it is and flip the flag when it goes live.
 - When publishing, rename the file to `_posts/YYYY-MM-DD-slug.md` and make sure
   any `date:` front matter, if present, matches that filename date.
 - Do not silently publish an article by removing `published: false`.
+- Do not use a future date to hold a post back. `_config.yml` sets no `future`
+  key, so Jekyll defaults to `future: false` and the post stays invisible on
+  GitHub Pages until the date passes, with no error to explain why. Use
+  `published: false` with the intended date instead.
 - If the user asks for a PR, keep the PR focused on the article and its related
   assets unless they explicitly ask for wider site changes.
 
@@ -98,9 +102,26 @@ social image.
    - `twitter:card` set to `summary_large_image`
    - the PNG image is 1200x630
 
-Recommended visible cover dimensions are 800x400. The social PNG should be
-1200x630 for reliable Open Graph and Twitter card previews. The post layout
-uses the page title as cover image alt text.
+Both keys are needed, because two different consumers read them:
+
+| Key | Value | Read by | Result |
+| --- | --- | --- | --- |
+| `cover_image` | the 800x400 SVG | `_layouts/post.html` and `_layouts/page.html` | the visible image at the top of the page |
+| `image` | the 1200x630 PNG | the `jekyll-seo-tag` plugin, via `{% seo %}` in `_includes/head.html` | `og:image` and `twitter:image` |
+
+No layout in this repo reads `image`, and the plugin does not read `cover_image`.
+Setting only `cover_image` emits no `og:image` at all and quietly downgrades
+`twitter:card` from `summary_large_image` to `summary`, so the post loses its
+large social preview with nothing in the build output to warn you. There is no
+site-wide fallback image in `_config.yml`.
+
+Every post since August 2025 sets both, as do `about/index.md` and
+`uses/index.md`. Posts before that set neither and are fine left alone.
+
+The post layout uses the page title as cover image alt text.
+
+`public/css/custom.scss` caps the visible cover at 400px tall on desktop, 250px
+below 768px, and 200px below 480px. Keep the SVG under 50KB.
 
 ## SEO Metadata
 
@@ -132,17 +153,21 @@ public contexts:
 
 ## Local Development
 
-Prefer running the Jekyll server for visual checks:
+Run the Jekyll server for visual checks:
 
 ```bash
 bundle exec jekyll serve --host=localhost --livereload
 ```
 
-For drafts:
+A `published: false` post is skipped by that build. Preview one with
+`--unpublished`. The `--drafts` flag renders a `_drafts/` folder instead, which
+this repo does not have, so it will not show the post:
 
 ```bash
-bundle exec jekyll serve --drafts --host=localhost --livereload
+bundle exec jekyll serve --unpublished --host=localhost --livereload
 ```
+
+Add `--future` too if the post is dated later than today.
 
 Then inspect:
 
@@ -169,15 +194,24 @@ bundle exec jekyll build
 - Confirm the home page excerpt remains readable and compact.
 - Confirm the archive title is not awkwardly truncated.
 
+Which browser tool to drive is a machine-level choice, not a repo one, so it
+lives in the global agent instructions rather than here. Follow whatever order
+those set out. This file only says what to look at.
+
 ## Site Structure
 
 ```text
-_posts/           Blog posts
-_drafts/          Optional unpublished drafts
+_posts/           Blog posts, including unpublished ones
 _layouts/         Jekyll layouts
 _includes/        Jekyll includes
 public/css/       SCSS stylesheets
-images/           Blog post images
+images/           Blog post cover and social images
 README.md         Human maintainer workflow
-AGENTS.md         AI agent workflow
+AGENTS.md         AI agent workflow, the single source
+CLAUDE.md         Pointer to AGENTS.md
+.github/copilot-instructions.md   Pointer to AGENTS.md
 ```
+
+`AGENTS.md` is the only agent guidance in this repo. `CLAUDE.md` and
+`.github/copilot-instructions.md` exist because those tools look for those
+paths; both just point here. Add new guidance to this file, not to them.

@@ -46,7 +46,37 @@ version: "2.1.0"
 
 github: [metadata]
 
-exclude: ["Rakefile", "vendor", "claude.md", "CLAUDE.md", "warp.md", "WARP.md", "agent.md", "AGENT.md", "agents.md", "AGENTS.md"]
+# Setting `exclude` replaces Jekyll's default list rather than adding to it, so
+# the defaults are repeated here. Anything not excluded is copied to _site and
+# served from solrevdev.com. `media/` stays: older posts link to images in it.
+exclude:
+  # Jekyll defaults, restored
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  # Repo documentation, not site content
+  - README.md
+  - readme.md
+  - LICENSE.md
+  - licence.md
+  - license.md
+  - claude.md
+  - CLAUDE.md
+  - warp.md
+  - WARP.md
+  - agent.md
+  - AGENT.md
+  - agents.md
+  - AGENTS.md
+  # Build and editor tooling
+  - Rakefile
+  - script
+  - frontmatter.json
+  - .github
 
 # Social Sharing
 facebook_app_id: "1213637668669023"

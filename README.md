@@ -139,11 +139,19 @@ title: My Post
 description: A concise SEO description.
 summary: A concise home-page teaser.
 cover_image: /images/my-post-cover.svg
+image: /images/my-post-cover.png
 tags:
 - dotnet
 - csharp
 ---
 ```
+
+Set both image keys. `cover_image` is the 800x400 SVG that the post layout
+shows at the top of the page. `image` is the 1200x630 PNG that `jekyll-seo-tag`
+turns into `og:image` and `twitter:image`. Leaving `image` out drops the
+`og:image` tag and downgrades `twitter:card` to `summary`, so the post gets no
+large preview when shared. `AGENTS.md` has the `rsvg-convert` command that
+generates the PNG from the SVG.
 
 Before publishing, decide the publication date and make the filename match it:
 
@@ -156,6 +164,11 @@ the filename date. When the article is ready to go live, remove
 `published: false` or change it to `published: true`, then merge the pull
 request.
 
+Do not use a future date to hold a post back. `_config.yml` sets no `future`
+key, so Jekyll defaults to `future: false` and GitHub Pages will hide the post
+until the date passes without reporting an error. Use `published: false`
+instead.
+
 After merging, GitHub Pages normally rebuilds automatically. If a manual rebuild
 is needed, use the GitHub CLI from an authenticated checkout of this repository:
 
@@ -164,10 +177,11 @@ gh api --method POST repos/solrevdev/solrevdev.github.io/pages/builds
 ```
 
 For visual checks, run the site locally and inspect the article in all of the
-places readers will see it:
+places readers will see it. A `published: false` post needs `--unpublished`;
+`--drafts` only renders a `_drafts/` folder, which this repo does not use:
 
 ```bash
-bundle exec jekyll serve --drafts --host=localhost --livereload
+bundle exec jekyll serve --unpublished --host=localhost --livereload
 ```
 
 Then check:
