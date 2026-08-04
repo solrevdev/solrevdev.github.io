@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Building orchat - A Single File .NET Client for OpenRouter
-description: How I built orchat, a .NET 10 file-based app with no project file and no NuGet packages, that streams chat from any of OpenRouter's 337 models, browses the catalogue by price, and reports what every turn cost.
-summary: An OpenRouter email warning me that unused credits expire turned into a 300 line single-file .NET app. Covers .NET 10 file-based apps, streaming chat completions over server-sent events, reading per-token costs back from the API, browsing 337 models by price, why the obvious usage endpoint reports the wrong number, storing the API key in the macOS keychain, and publishing the whole thing as a 5.4 MB native binary.
+description: How I built orchat, a .NET 10 file-based app with no project file and no NuGet packages, that streams chat from any model in OpenRouter's live catalogue, browses by price, and reports what every turn cost.
+summary: An OpenRouter email warning me that unused credits expire turned into a 300 line single-file .NET app. Covers .NET 10 file-based apps, streaming chat completions over server-sent events, reading per-token costs back from the API, browsing the live model catalogue by price, why the obvious usage endpoint reports the wrong number, storing the API key in the macOS keychain, and publishing the whole thing as a 5.4 MB native binary.
 cover_image: /images/orchat-openrouter-cover.svg
 image: /images/orchat-openrouter-cover.png
 tags:
@@ -100,6 +100,9 @@ That last one matters more than it sounds. The usual objection to scripts is tha
 
 It is a chat client that keeps the whole thread in memory, and a model browser.
 
+This early run used `anthropic/claude-sonnet-4.5`, so the cost below reflects that
+model's pricing at the time:
+
 ```
 > what is the difference between a record and a class in C#?
 Records are reference types with value-based equality...
@@ -124,11 +127,29 @@ The commands are deliberately few:
 /exit
 ```
 
+If `/save` cannot write the file, it reports the error and keeps the session open. A bad
+path should not end the process and lose the thread you were trying to save.
+
+```csharp
+try
+{
+    File.WriteAllText(path, sb.ToString());
+    Console.WriteLine($"Saved {path}");
+}
+catch (Exception ex)
+{
+    Console.Error.WriteLine($"Could not save thread: {ex.Message}");
+}
+```
+
 **Talking to OpenRouter** 🔌
 
 OpenRouter's API is the OpenAI chat completions shape, so there is nothing exotic to learn. One base URL, one bearer token, and the model as a string in the body:
 
 ```csharp
+var model = Environment.GetEnvironmentVariable("OPENROUTER_MODEL")
+            ?? "openai/gpt-5.6-luna";
+
 var http = new HttpClient { Timeout = TimeSpan.FromMinutes(10) };
 http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", key);
 http.DefaultRequestHeaders.Add("HTTP-Referer", "https://solrevdev.com");
@@ -137,7 +158,7 @@ http.DefaultRequestHeaders.Add("X-Title", "orchat");
 
 Those last two headers are OpenRouter specific and optional. They attribute the traffic to your app on their rankings page. Worth setting.
 
-The value here is that `anthropic/claude-sonnet-4.5`, `openai/gpt-oss-20b:free` and three hundred others are the same call with a different string. No SDK per vendor, no separate key per vendor, no separate billing relationship per vendor. For trying things out, that is the whole pitch.
+The value here is that `openai/gpt-5.6-luna`, `openai/gpt-oss-20b:free` and hundreds of others are the same call with a different string. No SDK per vendor, no separate key per vendor, no separate billing relationship per vendor. For trying things out, that is the whole pitch.
 
 **Streaming, and Getting the Bill** 💸
 
@@ -173,6 +194,15 @@ while (await reader.ReadLineAsync() is { } chunk)
     catch { continue; }
     if (node is null) continue;
 
+    // Errors after streaming starts arrive as a final SSE event. The HTTP
+    // status stays 200 because OpenRouter has already sent the headers.
+    if (node["error"] is JsonNode error)
+    {
+        var code = error["code"]?.ToString();
+        var message = error["message"]?.GetValue<string>() ?? "The stream failed.";
+        throw new Exception(string.IsNullOrEmpty(code) ? message : $"{code}: {message}");
+    }
+
     var delta = node["choices"]?[0]?["delta"]?["content"]?.GetValue<string>();
     if (!string.IsNullOrEmpty(delta))
     {
@@ -188,7 +218,7 @@ while (await reader.ReadLineAsync() is { } chunk)
 
 `HttpCompletionOption.ResponseHeadersRead` is the line that makes it stream rather than buffer. Without it you wait for the whole response and then print it all at once, which defeats the point.
 
-The `try`/`catch` around the parse is not defensive padding. OpenRouter sends comment lines and keep-alives during long generations, and a strict parser will fall over on them.
+The first check skips OpenRouter's comment lines and keep-alives. The parse guard skips a malformed data event. The explicit error check matters because a provider can fail after streaming starts. At that point the HTTP status is already 200, so OpenRouter reports the failure inside the final SSE event instead.
 
 That cost figure is what makes the tool worth keeping. After every turn:
 
@@ -200,7 +230,7 @@ Six decimal places, because two is useless at these amounts. When you are compar
 
 **Browsing the Catalogue** 🔍
 
-`GET /api/v1/models` is public and needs no key. It returns everything OpenRouter can route to, currently 337 models, with pricing, context length and a description.
+`GET /api/v1/models` is public and needs no key. It returns everything OpenRouter can route to, with pricing, context length and a description. The count changes as models arrive and leave, so `orchat` reads the live catalogue rather than keeping a fixed list.
 
 `/models` sorts by output price, cheapest first, and numbers the rows so you can act on them:
 
@@ -224,17 +254,27 @@ Mostly. Some entries omit pricing, and some quote it as a number. `GetValue<stri
 ```csharp
 static double Price(JsonNode? n) => n?.GetValueKind() switch
 {
-    JsonValueKind.String => double.TryParse(n.GetValue<string>(), out var v) ? v : 0,
+    JsonValueKind.String => double.TryParse(
+        n.GetValue<string>(),
+        NumberStyles.Float,
+        CultureInfo.InvariantCulture,
+        out var v) ? v : 0,
     JsonValueKind.Number => n.GetValue<double>(),
     _ => 0
 };
 ```
 
-Same for `context_length`, which is missing on a few entries. This is the sort of thing that never shows up against a mock and always shows up against the real catalogue.
+OpenRouter uses a dot as the decimal separator, so string prices must use the invariant
+culture. Without it, `0.000003` becomes `3` under `de-DE` and fails to `0` under
+`fr-FR`. The source imports `System.Globalization` for `NumberStyles` and `CultureInfo`.
+The same kind check applies to `context_length`, which is missing on a few entries. This
+is the sort of thing that never shows up against a mock and always shows up against the
+real catalogue.
 
 **Free Models, and Why They Did Not Help** 🆓
 
-OpenRouter carries a genuine free tier. Models with a `:free` suffix cost nothing, currently seventeen of them, rate limited but real. For a chat client that is a gift.
+OpenRouter carries a genuine free tier. Models with a `:free` suffix cost nothing. They
+are rate limited, but real. For a chat client that is a gift.
 
 For my actual problem it was useless. A free call spends nothing, so there is no charge, so it may not count as the billable activity that resets credit expiry. If you are keeping an account alive, use a paid model. A request costing a fraction of a penny is the entire point.
 
@@ -349,7 +389,7 @@ Then:
 > /models free
 > /models use 14
 > explain server-sent events in two sentences
-> /model anthropic/claude-sonnet-4.5
+> /model openai/gpt-5.6-luna
 > the answer above came from a much smaller model. what did it miss?
 > /cost
 ```
