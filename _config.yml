@@ -16,6 +16,12 @@ markdown: kramdown
 # Permalinks
 # excerpt_separator: ''
 
+# Build in UK time. Without this Jekyll uses the build machine's timezone,
+# which is UTC on GitHub Pages. A post dated with no time sits at 00:00, so
+# during BST it stays "in the future" for the first hour of the day and
+# future: false silently drops it from the build.
+timezone: Europe/London
+
 # Setup
 title: "solrevdev tech radar"
 short_title: "solrevdev"
