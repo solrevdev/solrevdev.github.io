@@ -38,12 +38,65 @@ publish the article.
 - When publishing, rename the file to `_posts/YYYY-MM-DD-slug.md` and make sure
   any `date:` front matter, if present, matches that filename date.
 - Do not silently publish an article by removing `published: false`.
-- Do not use a future date to hold a post back. `_config.yml` sets no `future`
-  key, so Jekyll defaults to `future: false` and the post stays invisible on
-  GitHub Pages until the date passes, with no error to explain why. Use
-  `published: false` with the intended date instead.
+- Prefer `published: false` with the intended date over a future date. Setting a
+  future date does hold a post back, but it fails silently and needs a manual
+  step later. See the section below before choosing it.
 - If the user asks for a PR, keep the PR focused on the article and its related
   assets unless they explicitly ask for wider site changes.
+
+## Queuing A Post With A Future Date
+
+A future date works as a queue, but it does not publish anything by itself.
+Understand the mechanism before using it.
+
+`_config.yml` sets no `future` key, so Jekyll defaults to `future: false` and
+excludes any post dated later than the build. This site is a legacy GitHub Pages
+build: there is no Actions workflow, `_site` is gitignored, and GitHub runs
+Jekyll server-side only when something pushes. Nothing rebuilds on a schedule.
+
+So merging a future-dated post does nothing on the day it is due. The post stays
+invisible, with no error anywhere, until a build runs on or after its date.
+
+**If you use a future date, a rebuild must be triggered on or after that date.**
+Request one through the Pages build API, which avoids an empty commit:
+
+```bash
+gh api -X POST repos/solrevdev/solrevdev.github.io/pages/builds
+```
+
+Do not run that before the date. A build run early just rebuilds the site
+without the post and changes nothing.
+
+Verify locally first. If the post does not appear in a plain build, it will not
+appear on GitHub either:
+
+```bash
+# no --future flag, so this mirrors what GitHub Pages does
+bundle exec jekyll build --destination /tmp/jekyll-check --quiet
+ls /tmp/jekyll-check/YYYY/MM/DD/
+```
+
+Then trigger the build and confirm it landed:
+
+```bash
+gh api -X POST repos/solrevdev/solrevdev.github.io/pages/builds
+gh api repos/solrevdev/solrevdev.github.io/pages/builds/latest --jq '.status'
+curl -s -o /dev/null -w '%{http_code}\n' https://solrevdev.com/YYYY/MM/DD/slug.html
+```
+
+`status` should reach `built`, and the URL should return `200`. The CDN can lag a
+few minutes after a successful build.
+
+Checks worth running before triggering, in this order:
+
+1. Today is on or after the post date.
+2. The post file exists and has no `published: false`.
+3. The branch is `master` and the post is pushed. Pages builds `master`.
+4. A local build without `--future` includes the post.
+
+A fuller script that wraps all of the above lives outside this repo in the
+maintainer's notes folder. The commands above are the whole mechanism, so the
+script is a convenience rather than a requirement.
 
 ## Writing Style
 
