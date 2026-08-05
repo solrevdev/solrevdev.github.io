@@ -57,6 +57,29 @@ Jekyll server-side only when something pushes. Nothing rebuilds on a schedule.
 So merging a future-dated post does nothing on the day it is due. The post stays
 invisible, with no error anywhere, until a build runs on or after its date.
 
+### The timezone key, and why it must stay
+
+"Later than the build" is measured in the site's timezone. `_config.yml` pins
+it:
+
+```yaml
+timezone: Europe/London
+```
+
+Keep that key. Without it Jekyll falls back to the timezone of whatever machine
+runs the build, which is UTC on GitHub Pages and UK time on your Mac. A post
+dated `2026-08-06` with no time in `date:` sits at 00:00. Read as 00:00 UTC that
+is an hour later than UK midnight during BST, so a build in that window treats
+the post as future-dated and drops it. Read as 00:00 London it is 23:00 UTC the
+day before, already in the past, and the post builds.
+
+This bites same-day posts, not only future-dated ones, and it fails in the worst
+possible way: the local check passes and the live URL still returns 404. It
+happened on 6 August 2026 with
+`_posts/2026-08-06-why-my-ga4-explorations-only-went-back-two-months.md`. The
+Pages build reported `built` and the post was simply absent from it. Pinning the
+timezone fixed it on the next build.
+
 **If you use a future date, a rebuild must be triggered on or after that date.**
 Request one through the Pages build API, which avoids an empty commit:
 
@@ -67,8 +90,13 @@ gh api -X POST repos/solrevdev/solrevdev.github.io/pages/builds
 Do not run that before the date. A build run early just rebuilds the site
 without the post and changes nothing.
 
-Verify locally first. If the post does not appear in a plain build, it will not
-appear on GitHub either:
+Verify locally first. Because the timezone is pinned, your Mac and GitHub agree
+on what counts as the future, so a plain local build mirrors Pages in both
+directions: missing locally means missing on GitHub, and present locally means
+present on GitHub. That second half only holds while the `timezone` key is
+there.
+
+Run it like this:
 
 ```bash
 # no --future flag, so this mirrors what GitHub Pages does
@@ -92,11 +120,30 @@ Checks worth running before triggering, in this order:
 1. Today is on or after the post date.
 2. The post file exists and has no `published: false`.
 3. The branch is `master` and the post is pushed. Pages builds `master`.
-4. A local build without `--future` includes the post.
+4. `_config.yml` still sets `timezone: Europe/London`.
+5. A local build without `--future` includes the post.
 
-A fuller script that wraps all of the above lives outside this repo in the
-maintainer's notes folder. The commands above are the whole mechanism, so the
-script is a convenience rather than a requirement.
+A script wraps all of the above, triggers the build, waits for it to finish, and
+polls the live URL until it returns 200. It lives outside this repo:
+
+```text
+~/Dropbox/Projects/foremost/trello/weekly-current-todo-list/seedfolder-blog-publish-future-post.sh
+```
+
+The date and slug are the two halves of the post filename. Pass `--yes` whenever
+an agent or any other non-interactive shell runs it, or it blocks forever on the
+confirm prompt:
+
+```bash
+./seedfolder-blog-publish-future-post.sh \
+    2026-08-06 why-my-ga4-explorations-only-went-back-two-months --yes
+```
+
+Re-running it is safe. It only asks GitHub for another build, so run it again if
+the CDN was still catching up when the final check timed out.
+
+The commands above are the whole mechanism, so the script is a convenience
+rather than a requirement.
 
 ## Writing Style
 

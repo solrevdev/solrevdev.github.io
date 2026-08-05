@@ -169,6 +169,11 @@ key, so Jekyll defaults to `future: false` and GitHub Pages will hide the post
 until the date passes without reporting an error. Use `published: false`
 instead.
 
+`_config.yml` does set `timezone: Europe/London`, and that key needs to stay.
+Without it GitHub builds in UTC while your Mac builds in UK time, and a post
+dated today with no time can count as future-dated on GitHub for the first hour
+of a BST day. See `AGENTS.md` for the full explanation and the recovery steps.
+
 After merging, GitHub Pages normally rebuilds automatically. If a manual rebuild
 is needed, use the GitHub CLI from an authenticated checkout of this repository:
 
