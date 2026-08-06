@@ -127,7 +127,7 @@ A script wraps all of the above, triggers the build, waits for it to finish, and
 polls the live URL until it returns 200. It lives outside this repo:
 
 ```text
-~/Dropbox/Projects/foremost/trello/weekly-current-todo-list/seedfolder-blog-publish-future-post.sh
+~/Dropbox/_shared/scripts/seedfolder-blog-publish-future-post.sh
 ```
 
 The date and slug are the two halves of the post filename. Pass `--yes` whenever
