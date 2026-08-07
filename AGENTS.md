@@ -123,19 +123,24 @@ Checks worth running before triggering, in this order:
 4. `_config.yml` still sets `timezone: Europe/London`.
 5. A local build without `--future` includes the post.
 
-A script wraps all of the above, triggers the build, waits for it to finish, and
-polls the live URL until it returns 200. It lives outside this repo:
+A script in this repo wraps all of the above. It runs every check in order,
+triggers the build, waits for it to finish, and polls the live URL until it
+returns 200:
 
 ```text
-~/Dropbox/Projects/foremost/trello/weekly-current-todo-list/seedfolder-blog-publish-future-post.sh
+script/publish-post
 ```
+
+It works out the repo root from its own location, so it runs from any clone on
+any machine and from any working directory. `script` is in the `exclude:` list
+in `_config.yml`, so it is never served from the site.
 
 The date and slug are the two halves of the post filename. Pass `--yes` whenever
 an agent or any other non-interactive shell runs it, or it blocks forever on the
 confirm prompt:
 
 ```bash
-./seedfolder-blog-publish-future-post.sh \
+script/publish-post \
     2026-08-06 why-my-ga4-explorations-only-went-back-two-months --yes
 ```
 
@@ -306,6 +311,8 @@ _layouts/         Jekyll layouts
 _includes/        Jekyll includes
 public/css/       SCSS stylesheets
 images/           Blog post cover and social images
+script/           Maintenance scripts, excluded from the built site
+script/publish-post   Publishes a future-dated post, see above
 README.md         Human maintainer workflow
 AGENTS.md         AI agent workflow, the single source
 CLAUDE.md         Pointer to AGENTS.md

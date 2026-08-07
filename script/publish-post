@@ -1,0 +1,232 @@
+#!/bin/bash
+#
+# Publish a future-dated Jekyll post on solrevdev.com.
+#
+# WHY THIS EXISTS
+#
+# The blog is a legacy GitHub Pages site: no Actions workflow, _site is
+# gitignored, and GitHub builds Jekyll server-side from master on push.
+#
+# _config.yml sets no `future` key, so Jekyll defaults to `future: false`.
+# A post dated in the future is silently excluded from every build until its
+# date arrives. Merging it does not publish it. Nothing rebuilds on its own,
+# so the post sits invisible until something triggers a fresh build.
+#
+# This script triggers that build, on or after the date, and checks it worked.
+#
+# USAGE
+#
+#   script/publish-post <YYYY-MM-DD> <post-slug> [--yes] [--skip-local]
+#
+# The date and slug come straight off the filename. For
+# _posts/2026-08-06-why-my-ga4-explorations-only-went-back-two-months.md
+# the date is 2026-08-06 and the slug is everything after it, minus the .md.
+#
+# WORKED EXAMPLE (this one really ran, on 6 Aug 2026)
+#
+#   script/publish-post \
+#       2026-08-06 why-my-ga4-explorations-only-went-back-two-months --yes
+#
+#   ...published https://solrevdev.com/2026/08/06/why-my-ga4-explorations-only-went-back-two-months.html
+#
+# FLAGS
+#
+#   --yes, -y     Skip the "trigger a rebuild?" prompt. REQUIRED when an agent
+#                 or any non-interactive shell runs this, otherwise the script
+#                 blocks forever on `read` waiting for a keypress nobody sends.
+#   --skip-local  Skip the local Jekyll build check. Use when you have already
+#                 built locally, or when the bundle is not installed. You lose
+#                 the early warning and find out from the 404 instead.
+#
+# RE-RUNNING IS SAFE. It just asks GitHub for another Pages build. Run it again
+# if the CDN was still catching up and the final check timed out.
+#
+# IF IT SAYS "built" BUT THE URL 404s
+#
+# Check `timezone:` in _config.yml. Without it Jekyll uses the build machine's
+# timezone, and GitHub Pages builds in UTC. A post dated with no time sits at
+# 00:00, so during BST it stays "in the future" for the first hour of the day
+# and future: false drops it. The local check below passes because your Mac is
+# on BST, so you get a green tick and a 404. The repo now pins
+# `timezone: Europe/London`, which keeps the local check honest.
+#
+set -euo pipefail
+
+REPO="solrevdev/solrevdev.github.io"
+# Derived from this script's own location, so it works in any clone on any
+# machine. The script lives in script/, so the repo root is one level up.
+REPO_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SITE="https://solrevdev.com"
+
+POST_DATE="${1:-}"
+POST_SLUG="${2:-}"
+shift 2 2>/dev/null || true
+
+ASSUME_YES=false
+SKIP_LOCAL=false
+for arg in "$@"; do
+    case "$arg" in
+        --yes|-y)     ASSUME_YES=true ;;
+        --skip-local) SKIP_LOCAL=true ;;
+        *) echo "Unknown flag: $arg" >&2; exit 1 ;;
+    esac
+done
+
+if [[ -z "$POST_DATE" || -z "$POST_SLUG" ]]; then
+    echo "Usage: $0 <YYYY-MM-DD> <post-slug> [--yes] [--skip-local]" >&2
+    echo >&2
+    echo "Example (a real one that published successfully):" >&2
+    echo "  $0 2026-08-06 why-my-ga4-explorations-only-went-back-two-months --yes" >&2
+    echo >&2
+    echo "Date and slug come from the filename:" >&2
+    echo "  _posts/2026-08-06-why-my-ga4-explorations-only-went-back-two-months.md" >&2
+    echo "         |________| |___________________________________________|" >&2
+    echo "            date                        slug" >&2
+    echo >&2
+    echo "  --yes         skip the confirm prompt. Required for agents and any" >&2
+    echo "                non-interactive shell, or the script hangs on read." >&2
+    echo "  --skip-local  skip the local Jekyll verification build." >&2
+    exit 1
+fi
+
+if ! [[ "$POST_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+    echo "❌ Date must be YYYY-MM-DD, got '$POST_DATE'" >&2
+    exit 1
+fi
+
+YEAR="${POST_DATE:0:4}"; MONTH="${POST_DATE:5:2}"; DAY="${POST_DATE:8:2}"
+POST_FILE="_posts/${POST_DATE}-${POST_SLUG}.md"
+POST_URL="${SITE}/${YEAR}/${MONTH}/${DAY}/${POST_SLUG}.html"
+TODAY="$(date +%Y-%m-%d)"
+
+echo "=================================================="
+echo "  Post file : $POST_FILE"
+echo "  Post URL  : $POST_URL"
+echo "  Post date : $POST_DATE"
+echo "  Today     : $TODAY"
+echo "=================================================="
+echo
+
+# ---------------------------------------------------------------
+# 1. Refuse to run early. This is the whole point of the script.
+# ---------------------------------------------------------------
+if [[ "$TODAY" < "$POST_DATE" ]]; then
+    echo "❌ Too early. The post is dated $POST_DATE and today is $TODAY."
+    echo "   Jekyll will exclude it from the build and you will get a 404."
+    echo "   Run this on or after $POST_DATE."
+    exit 1
+fi
+echo "✅ Date has arrived. Jekyll will include the post."
+echo
+
+# ---------------------------------------------------------------
+# 2. Sanity check the repo and the file.
+# ---------------------------------------------------------------
+cd "$REPO_PATH"
+
+if [[ ! -f "$POST_FILE" ]]; then
+    echo "❌ $POST_FILE does not exist in $REPO_PATH" >&2
+    exit 1
+fi
+
+if grep -qE "^published:[[:space:]]*false" "$POST_FILE"; then
+    echo "❌ $POST_FILE has 'published: false'."
+    echo "   The date alone will not publish it. Remove the flag or set it true."
+    exit 1
+fi
+echo "✅ Post file exists and is not held back by 'published: false'."
+
+BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+if [[ "$BRANCH" != "master" ]]; then
+    echo "⚠️  On branch '$BRANCH', but Pages builds from 'master'."
+    echo "   Merge first, or the rebuild will not include your post."
+fi
+
+if [[ -n "$(git status --porcelain)" ]]; then
+    echo "⚠️  Working tree has uncommitted changes. GitHub builds what is pushed."
+fi
+
+if ! git diff --quiet HEAD origin/master -- "$POST_FILE" 2>/dev/null; then
+    echo "⚠️  $POST_FILE differs from origin/master. Push before rebuilding."
+fi
+echo
+
+# ---------------------------------------------------------------
+# 3. Prove locally that the post now builds WITHOUT --future.
+#    If it does not appear here, it will not appear on GitHub either.
+# ---------------------------------------------------------------
+if [[ "$SKIP_LOCAL" == false ]]; then
+    echo "Building locally without --future to confirm the post is picked up..."
+    TMP_DEST="$(mktemp -d)"
+    if bundle exec jekyll build --destination "$TMP_DEST" --quiet; then
+        if [[ -f "${TMP_DEST}/${YEAR}/${MONTH}/${DAY}/${POST_SLUG}.html" ]]; then
+            echo "✅ Post builds locally without --future. GitHub will include it."
+        else
+            echo "❌ Post did NOT appear in a local build without --future."
+            echo "   Check the filename date, the slug, and the published flag."
+            rm -rf "$TMP_DEST"
+            exit 1
+        fi
+    else
+        echo "❌ Local Jekyll build failed. Fix that before triggering a rebuild."
+        rm -rf "$TMP_DEST"
+        exit 1
+    fi
+    rm -rf "$TMP_DEST"
+    echo
+fi
+
+# ---------------------------------------------------------------
+# 4. Trigger the GitHub Pages build.
+# ---------------------------------------------------------------
+if [[ "$ASSUME_YES" == false ]]; then
+    read -r -p "Trigger a GitHub Pages rebuild of $REPO now? [y/N] " reply
+    [[ "$reply" =~ ^[Yy]$ ]] || { echo "Aborted."; exit 0; }
+fi
+
+echo "Requesting a Pages build..."
+gh api -X POST "repos/${REPO}/pages/builds" --jq '.status' \
+    || { echo "❌ Failed to request the build." >&2; exit 1; }
+
+# ---------------------------------------------------------------
+# 5. Wait for it to finish.
+# ---------------------------------------------------------------
+echo "Waiting for the build to complete..."
+for i in $(seq 1 40); do
+    STATUS="$(gh api "repos/${REPO}/pages/builds/latest" --jq '.status' 2>/dev/null || echo "unknown")"
+    case "$STATUS" in
+        built)
+            echo "✅ Build finished: built"
+            break ;;
+        errored)
+            echo "❌ Build errored. Details:"
+            gh api "repos/${REPO}/pages/builds/latest" --jq '.error.message'
+            exit 1 ;;
+        *)
+            printf "  attempt %02d: %s\n" "$i" "$STATUS"
+            sleep 15 ;;
+    esac
+done
+
+# ---------------------------------------------------------------
+# 6. Confirm the post is actually live.
+# ---------------------------------------------------------------
+echo
+echo "Checking $POST_URL ..."
+for i in $(seq 1 10); do
+    CODE="$(curl -s -o /dev/null -w '%{http_code}' "$POST_URL" || echo "000")"
+    if [[ "$CODE" == "200" ]]; then
+        echo "✅ Live: $POST_URL"
+        echo
+        echo "Also worth eyeballing:"
+        echo "  $SITE/"
+        echo "  $SITE/archive/"
+        exit 0
+    fi
+    printf "  attempt %02d: HTTP %s\n" "$i" "$CODE"
+    sleep 20
+done
+
+echo "⚠️  Build reported success but $POST_URL is not returning 200 yet."
+echo "   The CDN can lag a few minutes. Check again shortly."
+exit 1
