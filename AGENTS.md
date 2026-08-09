@@ -237,6 +237,28 @@ below 768px, and 200px below 480px. Keep the SVG under 50KB.
 - Use a concise `summary:` so the home page does not leak large code blocks or
   overly long paragraphs.
 
+### Indexing and the sitemap
+
+Search Console reported Soft 404 on 9 August 2026, for the site and again for
+the sitemap. Two sets of pages caused it: the paginated index pages, which hold
+five one-line excerpts and the nav and nothing else, and seven Blogger-era posts
+with almost no body text. Three things came out of that fix.
+
+`robots.txt` names `https://solrevdev.com/sitemap.xml`. It used to say
+`http://www.solrevdev.com/...`, which is the wrong scheme and the wrong host, and
+both redirect.
+
+`sitemap.xml` in the repo root replaces the one `jekyll-sitemap` generates; the
+plugin steps aside when a `sitemap.xml` already exists in the source. It skips
+`/page2/` onwards. Do not delete the file expecting the plugin to take over
+cleanly, because the paginated pages come straight back.
+
+`_includes/head.html` emits `noindex, follow` on paginated pages, and honours a
+`robots:` key in front matter otherwise. A post that is too thin to index takes
+both `robots: noindex, follow` and `sitemap: false`; a noindexed URL must never
+sit in a sitemap. Every post stays listed on `/archive/`, so nothing loses its
+crawl path. Expanding one of those posts means removing both keys.
+
 ## Styling
 
 - Custom styles live in `public/css/custom.scss`.

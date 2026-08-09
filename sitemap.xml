@@ -1,0 +1,53 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%}
+This file replaces the one jekyll-sitemap generates. The plugin skips its own
+sitemap when a sitemap.xml already exists in the source, so this template wins.
+
+It exists to keep the paginated index pages out of the sitemap. Jekyll-paginate
+turns index.html into /page2/ through /page17/, each carrying five one-line
+excerpts and the nav and nothing else. Google read those as Soft 404 and said so
+in Search Console on 9 August 2026. They are noindexed in _includes/head.html,
+and a noindexed URL must not be nominated in a sitemap, so it is dropped here
+too. Every post is still reachable from /archive/, which lists them all.
+
+Otherwise this mirrors the plugin template: collections and pages, minus
+404.html, minus anything with `sitemap: false` in its front matter.
+{%- endcomment -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign collections = site.collections | where_exp: 'collection', 'collection.output != false' -%}
+{%- for collection in collections -%}
+{%- assign docs = collection.docs | where_exp: 'doc', 'doc.sitemap != false' -%}
+{%- for doc in docs %}
+  <url>
+    <loc>{{ doc.url | replace: '/index.html', '/' | absolute_url | xml_escape }}</loc>
+{%- if doc.last_modified_at or doc.date %}
+    <lastmod>{{ doc.last_modified_at | default: doc.date | date_to_xmlschema }}</lastmod>
+{%- endif %}
+  </url>
+{%- endfor -%}
+{%- endfor -%}
+
+{%- assign pages = site.html_pages | where_exp: 'doc', 'doc.sitemap != false' | where_exp: 'doc', 'doc.url != "/404.html"' -%}
+{%- for page in pages -%}
+{%- comment -%}
+jekyll-paginate stores the page number on a Ruby attribute, not in front matter,
+so `page.paginator` is nil here and cannot be tested. What it does set is `dir`,
+to the `paginate_path` default of `/page:num`. So read the number back off the
+directory. `plus: 0` yields 0 for anything non-numeric, which keeps a real page
+such as /pages/foo/ in the sitemap. Page 1 is the home page and has dir `/`.
+{%- endcomment -%}
+{%- assign page_num = page.dir | remove: '/' | remove_first: 'page' | plus: 0 -%}
+{%- unless page_num > 1 %}
+  <url>
+    <loc>{{ page.url | replace: '/index.html', '/' | absolute_url | xml_escape }}</loc>
+{%- if page.last_modified_at %}
+    <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
+{%- endif %}
+  </url>
+{%- endunless -%}
+{%- endfor %}
+</urlset>

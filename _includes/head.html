@@ -21,7 +21,16 @@
     <link rel="canonical" href="{{ page.canonical_url }}" />
     {% endif %}
 
-    {% if page.robots %}
+    {%- comment -%}
+    Paginated index pages (/page2/ onwards) carry five one-line excerpts and the
+    nav and nothing else, so Google reported them as Soft 404. Keep them
+    crawlable but out of the index; every post is still listed on /archive/.
+    Page 1 is the home page and stays indexable. `sitemap.xml` drops the same
+    pages, because a noindexed URL must not sit in a sitemap.
+    {%- endcomment -%}
+    {% if paginator and paginator.page > 1 %}
+    <meta name="robots" content="noindex, follow">
+    {% elsif page.robots %}
     <meta name="robots" content="{{ page.robots }}">
     {% endif %}
 
