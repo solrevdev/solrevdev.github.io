@@ -337,10 +337,10 @@ script/           Maintenance scripts, excluded from the built site
 script/publish-post   Publishes a future-dated post, see above
 README.md         Human maintainer workflow
 AGENTS.md         AI agent workflow, the single source
-CLAUDE.md         Pointer to AGENTS.md
 .github/copilot-instructions.md   Pointer to AGENTS.md
 ```
 
-`AGENTS.md` is the only agent guidance in this repo. `CLAUDE.md` and
-`.github/copilot-instructions.md` exist because those tools look for those
-paths; both just point here. Add new guidance to this file, not to them.
+`AGENTS.md` is the only agent guidance in this repo. Claude Code 2.1.277 or
+later reads it when no `CLAUDE.md` exists, so do not add one, including by
+running `/init`. `.github/copilot-instructions.md` exists because Copilot looks
+for that path; it just points here. Add new guidance to this file, not to it.
