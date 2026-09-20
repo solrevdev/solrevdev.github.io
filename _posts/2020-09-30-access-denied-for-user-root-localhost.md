@@ -8,6 +8,11 @@ tags:
 - dotnetcore
 - ubuntu
 - mysql
+# Thin: a three-command fix and little else, so Google reported this as a
+# Soft 404 on 20 Sept 2026. The post stays live and linked from /archive/; it
+# just leaves the index and the sitemap. Remove both keys if it is expanded.
+robots: noindex, follow
+sitemap: false
 
 ---
 Every time `apt-get upgrade` upgrades my local MySQL instance on my Ubuntu laptop I get the following error:
